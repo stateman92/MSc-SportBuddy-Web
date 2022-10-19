@@ -1,1 +1,2 @@
-# MSc-SportBuddy-Web
+# SportBuddy-Wev
+SportBuddy Web admin app
