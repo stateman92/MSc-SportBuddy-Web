@@ -8,13 +8,16 @@ import {UploadComponent} from './upload/upload.component';
 import {CommandsComponent} from './commands/commands.component';
 
 import {ApiModule, Configuration, ConfigurationParameters} from './OpenAPI';
-import {AppConfigComponent} from './appconfig/app-config-component.service';
+import {AppConfigComponentService} from './services/appConfig/app-config-component.service';
 import {HttpClientModule} from "@angular/common/http";
-import {Environment} from "./appconfig/environment";
-import { LoginComponent } from './login/login.component';
+import {Environment} from "./services/appConfig/environment";
+import {LoginComponent} from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 const environment = Environment.dev
-const appConfig = new AppConfigComponent(environment)
+const appConfig = new AppConfigComponentService(environment)
 
 function apiConfigFactory(): Configuration {
   const params: ConfigurationParameters = {
@@ -35,7 +38,11 @@ function apiConfigFactory(): Configuration {
     ApiModule.forRoot(apiConfigFactory),
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [
@@ -43,7 +50,4 @@ function apiConfigFactory(): Configuration {
   ]
 })
 export class AppModule {
-  constructor() {
-    console.log(appConfig.serverUrl);
-  }
 }
