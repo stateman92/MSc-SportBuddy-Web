@@ -26,3 +26,9 @@ SportBuddy Web admin app
 - Make sure you've installed [OpenAPI generator](https://github.com/OpenAPITools/openapi-generator) - if not, use e.g. `brew install openapi-generator` via [Homebrew](https://brew.sh/)
 
 - Run `openapi-generator generate -i /path/to/descriptor/swagger.yaml -g typescript-angular -o /path/to/output` in the terminal
+
+#### Remove default clashing key-binding
+
+- If you want, you can install Presentation Assistant (WebStorm / Preferences / Plugins) to see the action you make with shortcuts
+
+- The shift + option + X is bound by default to the Clear context action, while it should write a '>' symbol. To remove the former action, go to WebStorm / Preferences / Keymap and search for "Clear context". There you can remove the binding
