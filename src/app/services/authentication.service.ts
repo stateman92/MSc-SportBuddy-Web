@@ -21,7 +21,7 @@ export class AuthenticationService {
   }
 
   login(email, password) {
-    return this.backendService.loginPost(email, password)
+    return this.backendService.adminLoginPost(email, password)
       .pipe(map(user => {
         this.storageService.set(StorageKeys.user, user.user);
         this.storageService.set(StorageKeys.token, user.token);

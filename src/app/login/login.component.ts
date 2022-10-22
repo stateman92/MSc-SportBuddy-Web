@@ -27,13 +27,13 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  get f() {
+  get form() {
     return this.loginForm.controls;
   }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
 
@@ -48,10 +48,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    setTimeout(() => {
-      this.loading = false;
-    }, 3000)
-    this.authenticationService.login(this.f['username'].value, this.f['password'].value)
+    this.authenticationService.login(this.form['email'].value, this.form['password'].value)
       .pipe(first())
       .subscribe(
         data => {

@@ -1,19 +1,20 @@
+<hr>
 <h1 style="text-align: center;">Login (for admins)</h1>
 <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="login-wrapper">
   <div class="form-group">
-    <label for="username">Email</label>
-    <input [disabled]="loading" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" class="form-control" formControlName="username"
+    <label for="email">Email</label>
+    <input [disabled]="loading" [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control" formControlName="email"
            type="text"/>
-    <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-      <div *ngIf="f['username'].errors['required']">Email is required</div>
+    <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+      <div *ngIf="form['email'].errors['required']">Email is required</div>
     </div>
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input [disabled]="loading" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" class="form-control" formControlName="password"
+    <input [disabled]="loading" [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control" formControlName="password"
            type="password"/>
-    <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-      <div *ngIf="f['password'].errors['required']">Password is required</div>
+    <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
+      <div *ngIf="form['password'].errors['required']">Password is required</div>
     </div>
   </div>
   <div class="form-group" style="text-align: center;">
