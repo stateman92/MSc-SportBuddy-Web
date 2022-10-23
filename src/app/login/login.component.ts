@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthenticationService} from "../services/authentication.service";
 import {first} from "rxjs";
+import {AlertService} from "../services/alert/service/alert.service";
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private alertService: AlertService
   ) {
     if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/']).then(_ => {
@@ -52,11 +54,13 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
+          this.alertService.success("Success Success Success Success Success Success Success Success Success ")
           this.router.navigate([this.returnUrl]).then(_ => {
           });
           this.loading = false;
         },
         error => {
+          this.alertService.error("Error Error Error Error Error Error Error Error ")
           this.loading = false;
         });
   }
