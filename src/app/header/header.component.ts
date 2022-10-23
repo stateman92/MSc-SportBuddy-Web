@@ -19,4 +19,8 @@ export class HeaderComponent {
         this.visible = false;
       });
   }
+
+  logout() {
+    this.authenticationService.logout()
+  }
 }
