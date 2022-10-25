@@ -4,7 +4,7 @@
   margin: 2em auto;
 }
 
-.clearButton {
-  all: unset;
-  cursor: pointer;
+.label {
+  font-size: 20px;
+  padding-bottom: 5px;
 }

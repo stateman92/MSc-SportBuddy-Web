@@ -1,7 +1,7 @@
 <h1 style="text-align: center;">Login (for admins)</h1>
 <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="login-wrapper">
   <div class="form-group">
-    <label for="email">Email</label>
+    <label class="label" for="email">Email</label>
     <input [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control"
            formControlName="email"
            type="text"/>
@@ -9,8 +9,9 @@
       <div *ngIf="form['email'].errors['required']">Email is required</div>
     </div>
   </div>
+  <br>
   <div class="form-group">
-    <label for="password">Password</label>
+    <label class="label" for="password">Password</label>
     <input [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control"
            formControlName="password"
            type="password"/>
@@ -18,12 +19,13 @@
       <div *ngIf="form['password'].errors['required']">Password is required</div>
     </div>
   </div>
+  <br>
   <div class="form-group" style="text-align: center;">
-    <button *ngIf="loading" class="clearButton">
-      <mat-spinner *ngIf="loading" diameter="35"></mat-spinner>
-    </button>
-    <button *ngIf="!loading" [disabled]="loading" class="btn btn-primary">
-      Login
+    <button class="btn btn-primary" type="button" [disabled]="loading" (click)="onSubmit()">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      &nbsp;
+      <span>{{loading ? "Loading..." : "Login"}}</span>
+      &nbsp;
     </button>
   </div>
 </form>
