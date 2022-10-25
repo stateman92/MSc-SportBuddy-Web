@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {AlertComponent} from './services/alert/component/alert.component';
+import { UsersComponent } from './users/users.component';
 
 const environment = Environment.dev
 const appConfig = new AppConfigComponentService(environment)
@@ -34,7 +35,8 @@ function apiConfigFactory(): Configuration {
     UploadComponent,
     CommandsComponent,
     LoginComponent,
-    AlertComponent
+    AlertComponent,
+    UsersComponent
   ],
   imports: [
     ApiModule.forRoot(apiConfigFactory),

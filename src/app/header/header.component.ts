@@ -8,9 +8,8 @@ import {AuthenticationService} from "../services/authentication/authentication.s
 })
 export class HeaderComponent {
   visible = false;
-  collapsed = true;
 
-  constructor(private authenticationService: AuthenticationService) {
+  constructor(private readonly authenticationService: AuthenticationService) {
     this.authenticationService.currentUser.subscribe(
       data => {
         this.visible = data != null;

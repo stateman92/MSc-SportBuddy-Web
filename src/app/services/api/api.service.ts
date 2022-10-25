@@ -27,6 +27,10 @@ export class ApiService {
     return this.backendService.clearDatabasePost().pipe(first()).subscribe();
   }
 
+  getUsers() {
+    return this.backendService.usersGet().pipe(first());
+  }
+
   resetDatabase() {
     return this.backendService.resetDatabasePost().pipe(first()).subscribe();
   }

@@ -1,0 +1,31 @@
+<button (click)="export()"
+        [disabled]="loading"
+        class="btn btn-primary"
+        type="button"
+        style="float: right;margin: 25px;">
+  <span *ngIf="loading" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
+  <span>&nbsp;Export&nbsp;</span>
+</button>
+
+<div>
+  <table id="table">
+    <tr>
+      <th style="width:100px">Id</th>
+      <th style="width:100px">Name</th>
+      <th style="width:100px">Email</th>
+      <th style="width:100px">Password (hashed)</th>
+      <th style="width:100px">ProfileImage</th>
+      <th style="width:100px">Token</th>
+      <th style="width:100px">Chats</th>
+    </tr>
+    <tr *ngFor="let item of users">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.password}}</td>
+      <td>{{item.profileImage}}</td>
+      <td>{{item.token}}</td>
+      <td>{{item.chats.join(", ")}}</td>
+    </tr>
+  </table>
+</div>

@@ -1,5 +1,6 @@
 export enum RoutePaths {
   default = '',
   upload = 'upload',
-  commands = 'commands'
+  commands = 'commands',
+  users = 'users'
 }

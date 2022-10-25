@@ -1,31 +1,46 @@
 <h1 style="text-align: center;">Login (for admins)</h1>
-<form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="login-wrapper">
-  <div class="form-group">
-    <label class="label" for="email">Email</label>
-    <input [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control"
-           formControlName="email"
-           type="text"/>
-    <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
-      <div *ngIf="form['email'].errors['required']">Email is required</div>
+<form (ngSubmit)="onSubmit()" class="login-wrapper">
+  <div class="mb-3">
+    <label class="form-label" for="exampleInputEmail1">Email</label>
+    <div class="input-group has-validation" id="exampleInputEmail1">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input (change)="onEmailChange()"
+             (input)="onEmailChange()"
+             [(ngModel)]="email"
+             [disabled]="loading"
+             aria-describedby="inputGroupPrepend"
+             class="form-control {{ emailValidity }}"
+             name="email"
+             required
+             type="text">
+      <div class="invalid-feedback">Please enter an email.</div>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" for="exampleInputPassword1">Password</label>
+
+    <div class="input-group has-validation" id="exampleInputPassword1">
+      <input (change)="onPasswordChange()"
+             (input)="onPasswordChange()"
+             [(ngModel)]="password"
+             [disabled]="loading"
+             class="form-control {{ passwordValidity }}"
+             name="password"
+             type="password">
+      <div class="invalid-feedback">Please enter a password.</div>
+      <div class="valid-feedback">Looks good!</div>
     </div>
   </div>
-  <br>
-  <div class="form-group">
-    <label class="label" for="password">Password</label>
-    <input [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control"
-           formControlName="password"
-           type="password"/>
-    <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
-      <div *ngIf="form['password'].errors['required']">Password is required</div>
-    </div>
-  </div>
-  <br>
+
+  <input hidden="true" type="submit"/> <!-- submit with pressing enter -->
+
   <div class="form-group" style="text-align: center;">
-    <button class="btn btn-primary" type="button" [disabled]="loading" (click)="onSubmit()">
-      <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-      &nbsp;
-      <span>{{loading ? "Loading..." : "Login"}}</span>
-      &nbsp;
+    <button (click)="onSubmit()" [disabled]="loading" class="btn btn-primary" type="button">
+      <span *ngIf="loading" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
+      <span>&nbsp;{{loading ? "Loading..." : "Login"}}&nbsp;</span>
     </button>
   </div>
 </form>

@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthenticationService} from "../services/authentication/authentication.service";
 import {first} from "rxjs";
 import {AlertService} from "../services/alert/service/alert.service";
 import {RoutePaths} from "../services/routing/route.paths";
 import {RouterService} from "../services/routing/router.service";
+import {Validity} from "./components/validity";
 
 @Component({
   selector: 'app-login',
@@ -12,57 +12,76 @@ import {RouterService} from "../services/routing/router.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
   loading = false;
-  submitted = false;
+  email = "";
+  password = "";
+  private emailValid: Validity = null;
+  private passwordValid: Validity = null;
 
   constructor(
-    private formBuilder: FormBuilder,
     private routerService: RouterService,
     private authenticationService: AuthenticationService,
     private alertService: AlertService
   ) {
   }
 
-  get form() {
-    return this.loginForm.controls;
+  get emailValidity(): string {
+    switch (this.emailValid) {
+      case Validity.invalid:
+        return 'is-invalid';
+      case Validity.valid:
+        return 'is-valid';
+      default:
+        return null
+    }
+  }
+
+  get passwordValidity(): string {
+    switch (this.passwordValid) {
+      case Validity.invalid:
+        return 'is-invalid';
+      case Validity.valid:
+        return 'is-valid';
+      default:
+        return null
+    }
   }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
     if (this.authenticationService.currentUserValue != null) {
       this.routerService.navigate(RoutePaths.upload)
     }
   }
 
   onSubmit() {
-    this.submitted = true;
-
-    if (this.loginForm.invalid) {
-      return;
-    }
-
     this.loading = true;
-    this.form['email'].disable();
-    this.form['password'].disable();
-    this.authenticationService.login(this.form['email'].value, this.form['password'].value)
+    this.authenticationService.login(this.email, this.password)
       .pipe(first())
       .subscribe(
         data => {
           this.alertService.success("Success Success Success Success Success Success Success Success Success ");
           this.routerService.navigate(RoutePaths.upload)
           this.loading = false;
-          this.form['email'].enable();
-          this.form['password'].enable();
         },
         error => {
           this.alertService.error("Error Error Error Error Error Error Error Error ");
           this.loading = false;
-          this.form['email'].enable();
-          this.form['password'].enable();
         });
+  }
+
+  onEmailChange() {
+    if (this.email == null || this.email === "") {
+      this.emailValid = Validity.invalid
+    } else {
+      this.emailValid = Validity.valid
+    }
+  }
+
+  onPasswordChange() {
+    if (this.password == null || this.password === "") {
+      this.passwordValid = Validity.invalid
+    } else {
+      this.passwordValid = Validity.valid
+    }
   }
 }
