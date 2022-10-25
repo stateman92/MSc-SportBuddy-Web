@@ -1,35 +1,35 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs';
+import {Component, OnInit} from '@angular/core';
 import {AlertService} from "../service/alert.service";
+import {AlertQueue} from "./alert.queue";
+import {Alert} from "../service/alert";
 
 @Component({
   selector: 'app-alert-component',
   templateUrl: 'alert.component.html'
 })
-export class AlertComponent implements OnInit, OnDestroy {
+export class AlertComponent implements OnInit {
   visible: boolean;
-  message: string;
-  cssClass: string;
-  private subscription: Subscription;
-  private timeout: NodeJS.Timeout;
+  alert: Alert;
 
-  constructor(private alertService: AlertService) {
+  constructor(private readonly alertService: AlertService, private readonly alertQueue: AlertQueue) {
   }
 
   ngOnInit() {
-    this.subscription = this.alertService.getAlert()
-      .subscribe(message => {
-        clearTimeout(this.timeout);
-        this.timeout = setTimeout(() => {
-          this.visible = false;
-        }, 2500)
-        this.visible = true;
-        this.cssClass = message.cssStyle;
-        this.message = message.text;
-      });
+    this.setupBindings();
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+  private setupBindings() {
+    this.alertService.getAlert()
+      .subscribe(message => {
+        this.alertQueue.didReceive(message);
+      });
+    this.alertQueue.visibilitySubject
+      .subscribe(visible => {
+        this.visible = visible
+      })
+    this.alertQueue.alertSubject
+      .subscribe(alert => {
+        this.alert = alert
+      })
   }
 }

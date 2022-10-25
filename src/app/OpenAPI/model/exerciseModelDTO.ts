@@ -9,10 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ExerciseMomentDTO } from './exerciseMomentDTO';
+import {ExerciseMomentDTO} from './exerciseMomentDTO';
 
 
-export interface ExerciseModelDTO { 
+export interface ExerciseModelDTO {
     id: string;
     sequence: Array<ExerciseMomentDTO>;
     sequenceCount: number;

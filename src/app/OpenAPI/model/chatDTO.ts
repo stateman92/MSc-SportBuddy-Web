@@ -9,10 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ChatEntryDTO } from './chatEntryDTO';
+import {ChatEntryDTO} from './chatEntryDTO';
 
 
-export interface ChatDTO { 
+export interface ChatDTO {
     chatEntries: Array<ChatEntryDTO>;
     image: string;
     primaryId: string;

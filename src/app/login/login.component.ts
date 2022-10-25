@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthenticationService} from "../services/authentication.service";
+import {AuthenticationService} from "../services/authentication/authentication.service";
 import {first} from "rxjs";
 import {AlertService} from "../services/alert/service/alert.service";
 import {RoutePaths} from "../services/routing/route.paths";
@@ -46,6 +46,8 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
+    this.form['email'].disable();
+    this.form['password'].disable();
     this.authenticationService.login(this.form['email'].value, this.form['password'].value)
       .pipe(first())
       .subscribe(
@@ -53,10 +55,14 @@ export class LoginComponent implements OnInit {
           this.alertService.success("Success Success Success Success Success Success Success Success Success ");
           this.routerService.navigate(RoutePaths.upload)
           this.loading = false;
+          this.form['email'].enable();
+          this.form['password'].enable();
         },
         error => {
           this.alertService.error("Error Error Error Error Error Error Error Error ");
           this.loading = false;
+          this.form['email'].enable();
+          this.form['password'].enable();
         });
   }
 }

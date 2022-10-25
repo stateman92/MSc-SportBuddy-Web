@@ -6,7 +6,7 @@ export class LocalStorageWrapper {
     localStorage.setItem(key, value);
   }
 
-  getItem(key: string): string | null {
+  getItem(key: string) {
     return localStorage.getItem(key)
   }
 

@@ -3,7 +3,7 @@ import config from "../../../assets/config.json";
 import {Environment} from "./environment";
 
 export class AppConfigComponentService {
-  constructor(private environment: Environment) {
+  constructor(private readonly environment: Environment) {
   }
 
   get serverUrl() {

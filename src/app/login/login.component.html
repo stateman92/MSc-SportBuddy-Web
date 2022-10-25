@@ -2,7 +2,7 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="login-wrapper">
   <div class="form-group">
     <label for="email">Email</label>
-    <input [disabled]="loading" [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control"
+    <input [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control"
            formControlName="email"
            type="text"/>
     <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
@@ -11,7 +11,7 @@
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input [disabled]="loading" [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control"
+    <input [ngClass]="{ 'is-invalid': submitted && form['email'].errors }" class="form-control"
            formControlName="password"
            type="password"/>
     <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">

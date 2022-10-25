@@ -1,14 +1,25 @@
 import {Injectable} from "@angular/core";
 import {LocalStorageWrapper} from "./local.storage.wrapper";
 import {StorageKeys} from "./storage.keys";
+import {filter, Observable, Subject} from "rxjs";
+import {map} from "rxjs/operators";
 
 @Injectable({providedIn: 'root'})
 export class StorageService {
-  constructor(private localStorageWrapper: LocalStorageWrapper) {
+  private readonly storageSubject = new Subject<[string, any]>();
+
+  constructor(private readonly localStorageWrapper: LocalStorageWrapper) {
   }
 
   set<T>(key: StorageKeys, value: T) {
     this.localStorageWrapper.setItem(key, JSON.stringify(value));
+    this.storageSubject.next([key, value]);
+  }
+
+  subscribe<T>(key: StorageKeys): Observable<T> {
+    return this.storageSubject
+      .pipe(filter(item => item[0] === key || item[0] === null))
+      .pipe(map(item => item[1] as T));
   }
 
   get<T>(key: StorageKeys): T {
@@ -17,9 +28,11 @@ export class StorageService {
 
   remove(key: StorageKeys) {
     this.localStorageWrapper.removeItem(key);
+    this.storageSubject.next([key, null]);
   }
 
   clear() {
     this.localStorageWrapper.clear();
+    this.storageSubject.next([null, null]);
   }
 }

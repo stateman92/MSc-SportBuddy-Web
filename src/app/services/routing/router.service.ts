@@ -4,7 +4,7 @@ import {RoutePaths} from "./route.paths";
 
 @Injectable({providedIn: 'root'})
 export class RouterService {
-  constructor(readonly router: Router) {
+  constructor(private readonly router: Router) {
   }
 
   navigate(path: RoutePaths) {
