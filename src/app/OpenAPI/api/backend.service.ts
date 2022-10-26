@@ -11,33 +11,28 @@
  */
 /* tslint:disable:no-unused-variable member-ordering */
 
-import {Inject, Injectable, Optional} from '@angular/core';
-import {
-  HttpClient,
-  HttpContext,
-  HttpEvent,
-  HttpHeaders,
-  HttpParameterCodec,
-  HttpParams,
-  HttpResponse
-} from '@angular/common/http';
-import {CustomHttpParameterCodec} from '../encoder';
-import {Observable} from 'rxjs';
+import { Inject, Injectable, Optional }                      from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams,
+         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext
+        }       from '@angular/common/http';
+import { CustomHttpParameterCodec }                          from '../encoder';
+import { Observable }                                        from 'rxjs';
 
 // @ts-ignore
-import {ChatDTO} from '../model/chatDTO';
+import { ChatDTO } from '../model/chatDTO';
 // @ts-ignore
-import {ExerciseModelDTO} from '../model/exerciseModelDTO';
+import { ExerciseModelDTO } from '../model/exerciseModelDTO';
 // @ts-ignore
-import {UserDB} from '../model/userDB';
+import { UserDB } from '../model/userDB';
 // @ts-ignore
-import {UserDTO} from '../model/userDTO';
+import { UserDTO } from '../model/userDTO';
 // @ts-ignore
-import {UserResponseDTO} from '../model/userResponseDTO';
+import { UserResponseDTO } from '../model/userResponseDTO';
 
 // @ts-ignore
-import {BASE_PATH, COLLECTION_FORMATS} from '../variables';
-import {Configuration} from '../configuration';
+import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
+import { Configuration }                                     from '../configuration';
+
 
 
 @Injectable({
@@ -1319,13 +1314,6 @@ export class BackendService {
         }
 
         let localVarHeaders = this.defaultHeaders;
-
-        let localVarCredential: string | undefined;
-        // authentication (Bearer) required
-        localVarCredential = this.configuration.lookupCredential('Bearer');
-        if (localVarCredential) {
-            localVarHeaders = localVarHeaders.set('Authorization', localVarCredential);
-        }
 
         let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
         if (localVarHttpHeaderAcceptSelected === undefined) {

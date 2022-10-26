@@ -11,7 +11,7 @@ import {StorageKeys} from "../../services/storage/components/storage.keys";
 export abstract class BaseComponent implements OnInit {
   constructor(
     protected readonly storageService: StorageService,
-    private readonly routerService: RouterService) {
+    protected readonly routerService: RouterService) {
   }
 
   ngOnInit() {

@@ -9,10 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import {UserDTO} from './userDTO';
+import { UserDTO } from './userDTO';
 
 
-export interface UserResponseDTO {
+export interface UserResponseDTO { 
     token: string;
     user: UserDTO;
 }

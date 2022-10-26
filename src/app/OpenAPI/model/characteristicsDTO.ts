@@ -9,13 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import {HalfPositionTypeDTO} from './halfPositionTypeDTO';
-import {FullPositionTypeDTO} from './fullPositionTypeDTO';
-import {DistanceTypeDTO} from './distanceTypeDTO';
-import {CharacteristicsTypeDTO} from './characteristicsTypeDTO';
+import { HalfPositionTypeDTO } from './halfPositionTypeDTO';
+import { FullPositionTypeDTO } from './fullPositionTypeDTO';
+import { DistanceTypeDTO } from './distanceTypeDTO';
+import { CharacteristicsTypeDTO } from './characteristicsTypeDTO';
 
 
-export interface CharacteristicsDTO {
+export interface CharacteristicsDTO { 
     firstHalfPositionType?: HalfPositionTypeDTO;
     firstFullPositionType?: FullPositionTypeDTO;
     secondFullPositionType?: FullPositionTypeDTO;

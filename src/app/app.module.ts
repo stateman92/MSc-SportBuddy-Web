@@ -14,10 +14,10 @@ import {Environment} from "./services/appConfig/components/environment";
 import {LoginComponent} from './modules/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {AlertComponent} from './services/alert/component/alert.component';
 import {UsersComponent} from './modules/users/users.component';
 import {StorageService} from "./services/storage/storage.service";
+import {ResetPasswordComponent} from './modules/reset-password/reset-password.component';
 
 export const environment = Environment.dev
 const appConfig = new AppConfigService(environment)
@@ -37,7 +37,8 @@ function apiConfigFactory(): Configuration {
     CommandsComponent,
     LoginComponent,
     AlertComponent,
-    UsersComponent
+    UsersComponent,
+    ResetPasswordComponent
   ],
   imports: [
     ApiModule.forRoot(apiConfigFactory),
@@ -46,8 +47,7 @@ function apiConfigFactory(): Configuration {
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [
@@ -59,7 +59,7 @@ export class AppModule {
     private readonly storageService: StorageService
   ) {
     if (environment == Environment.dev) {
-      this.storageService.clear();
+      //this.storageService.clear();
     }
   }
 }

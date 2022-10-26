@@ -9,10 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import {CharacteristicsDTO} from './characteristicsDTO';
+import { CharacteristicsDTO } from './characteristicsDTO';
 
 
-export interface ExerciseErrorDTO {
+export interface ExerciseErrorDTO { 
     characteristics: CharacteristicsDTO;
     /**
      * the identifier of the client side text

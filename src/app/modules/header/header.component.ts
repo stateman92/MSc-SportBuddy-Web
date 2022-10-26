@@ -22,11 +22,12 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   }
 
   override ngOnInit() {
-    super.ngOnInit();
+    // super.ngOnInit(); explicitly bypass token handling
     this.storageService.subscribe<string>(StorageKeys.token)
       .subscribe(token => {
         this.visible = token !== null && token !== undefined;
       })
+    this.storageService.set(StorageKeys.token, this.storageService.get(StorageKeys.token));
   }
 
   logout() {

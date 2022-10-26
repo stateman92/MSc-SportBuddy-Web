@@ -9,11 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import {CharacteristicsDTO} from './characteristicsDTO';
-import {ExerciseErrorDTO} from './exerciseErrorDTO';
+import { CharacteristicsDTO } from './characteristicsDTO';
+import { ExerciseErrorDTO } from './exerciseErrorDTO';
 
 
-export interface ExerciseMomentDTO {
+export interface ExerciseMomentDTO { 
     armCharacteristics: CharacteristicsDTO;
     legCharacteristics: CharacteristicsDTO;
     errors: Array<ExerciseErrorDTO>;

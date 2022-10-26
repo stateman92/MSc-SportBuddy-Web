@@ -24,12 +24,13 @@ export class AuthenticationService {
 
   login(email, password) {
     return this.apiService.login(email, password)
-      .pipe(map(user => {
-        this.storageService.set(StorageKeys.user, user.user);
-        this.storageService.set(StorageKeys.token, user.token);
-        this.currentUserSubject.next(user.user);
-        return user.user;
-      }));
+      .pipe(
+        map(user => {
+          this.storageService.set(StorageKeys.user, user.user);
+          this.storageService.set(StorageKeys.token, user.token);
+          this.currentUserSubject.next(user.user);
+          return user.user })
+      );
   }
 
   isEmailRightFormatted(email: string) {

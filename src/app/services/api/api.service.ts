@@ -67,6 +67,12 @@ export class ApiService {
     ).subscribe();
   }
 
+  resetPassword(id: string, password: string) {
+    return this.backendService.saveNewPasswordPost(id, password).pipe(
+      first()
+    );
+  }
+
   uploadExercise(exercise: ExerciseModelDTO) {
     return this.backendService.uploadExerciseModelPost(exercise).pipe(
       first(),

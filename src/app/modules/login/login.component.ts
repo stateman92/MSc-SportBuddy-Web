@@ -7,13 +7,14 @@ import {RouterService} from "../../services/routing/router.service";
 import {Validity} from "./components/validity";
 import {StorageService} from "../../services/storage/storage.service";
 import {StorageKeys} from "../../services/storage/components/storage.keys";
+import {BaseComponent} from "../base/base.component";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends BaseComponent implements OnInit {
   loading = false;
   email = "";
   password = "";
@@ -21,11 +22,12 @@ export class LoginComponent implements OnInit {
   private passwordValid: Validity = null;
 
   constructor(
-    private readonly routerService: RouterService,
     private readonly authenticationService: AuthenticationService,
     private readonly alertService: AlertService,
-    private readonly storageService: StorageService
+    storageService: StorageService,
+    routerService: RouterService
   ) {
+    super(storageService, routerService);
   }
 
   get emailValidity() {
@@ -50,7 +52,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  override ngOnInit() {
+    // super.ngOnInit(); explicitly bypass token handling
     if (this.routerService.currentRoute !== RoutePaths.login) {
       this.routerService.navigate(RoutePaths.login);
     }
@@ -63,7 +66,6 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.loading = true;
     this.authenticationService.login(this.email, this.password)
-      .pipe(first())
       .subscribe(
         _ => {
           this.alertService.success("Success Success Success Success Success Success Success Success Success ");
