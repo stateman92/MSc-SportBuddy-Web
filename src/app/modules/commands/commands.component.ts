@@ -8,7 +8,10 @@ import {ConfirmationService} from "../../services/confirmation/confirmation.serv
   styleUrls: ['./commands.component.css']
 })
 export class CommandsComponent {
-  constructor(private readonly apiService: ApiService, private readonly confirmationService: ConfirmationService) {
+  constructor(
+    private readonly apiService: ApiService,
+    private readonly confirmationService: ConfirmationService)
+  {
   }
 
   clearDatabase() {

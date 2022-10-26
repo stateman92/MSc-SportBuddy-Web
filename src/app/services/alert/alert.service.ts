@@ -25,4 +25,8 @@ export class AlertService {
   clear() {
     this.subject.next(null);
   }
+
+  logout() {
+    this.error("Invalid credentials, please log in again.");
+  }
 }

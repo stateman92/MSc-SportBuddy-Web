@@ -3,10 +3,15 @@ import {Router} from "@angular/router";
 import {RoutePaths} from "./components/route.paths";
 import {StorageService} from "../storage/storage.service";
 import {StorageKeys} from "../storage/components/storage.keys";
+import {AlertService} from "../alert/alert.service";
 
 @Injectable({providedIn: 'root'})
 export class RouterService {
-  constructor(private readonly router: Router, private readonly storageService: StorageService) {
+  constructor(
+    private readonly router: Router,
+    private readonly storageService: StorageService,
+    private readonly alertService: AlertService
+  ) {
     this.setup();
   }
 
@@ -15,11 +20,17 @@ export class RouterService {
     });
   }
 
+  logout() {
+    this.storageService.clear();
+    this.navigate(RoutePaths.default);
+    this.alertService.logout();
+  }
+
   private setup() {
     this.storageService.subscribe<string>(StorageKeys.token)
       .subscribe(token => {
         if (token === null || token === undefined) {
-          this.navigate(RoutePaths.default);
+          this.logout();
         }
       })
   }

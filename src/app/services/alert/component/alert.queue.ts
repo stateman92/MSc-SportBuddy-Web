@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Alert} from "./alert";
 import {TimingService} from "../../timing/timing.service";
-import {Timer} from "../../timing/timer";
+import {Timer} from "../../timing/components/timer";
 import {Subject} from "rxjs";
 
 @Injectable({providedIn: 'root'})

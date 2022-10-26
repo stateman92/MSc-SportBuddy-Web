@@ -12,7 +12,10 @@ export class AuthenticationService {
   currentUser: Observable<UserDTO>;
   private currentUserSubject: BehaviorSubject<UserDTO>;
 
-  constructor(private readonly apiService: ApiService, private readonly storageService: StorageService) {
+  constructor(
+    private readonly apiService: ApiService,
+    private readonly storageService: StorageService
+  ) {
     this.currentUserSubject = new BehaviorSubject<UserDTO>(storageService.get(StorageKeys.user));
     this.currentUser = this.currentUserSubject.asObservable();
   }

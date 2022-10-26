@@ -8,7 +8,9 @@ import {map} from "rxjs/operators";
 export class StorageService {
   private readonly storageSubject = new Subject<[string, any]>();
 
-  constructor(private readonly localStorageWrapper: LocalStorageWrapper) {
+  constructor(
+    private readonly localStorageWrapper: LocalStorageWrapper
+  ) {
   }
 
   set<T>(key: StorageKeys, value: T) {

@@ -21,10 +21,10 @@ export class LoginComponent implements OnInit {
   private passwordValid: Validity = null;
 
   constructor(
-    private routerService: RouterService,
-    private authenticationService: AuthenticationService,
-    private alertService: AlertService,
-    private storageService: StorageService
+    private readonly routerService: RouterService,
+    private readonly authenticationService: AuthenticationService,
+    private readonly alertService: AlertService,
+    private readonly storageService: StorageService
   ) {
   }
 

@@ -11,7 +11,10 @@ import {StorageKeys} from "../../services/storage/components/storage.keys";
 export class HeaderComponent implements OnInit {
   visible = false;
 
-  constructor(private readonly authenticationService: AuthenticationService, private readonly storageService: StorageService) {
+  constructor(
+    private readonly authenticationService: AuthenticationService,
+    private readonly storageService: StorageService
+  ) {
   }
 
   ngOnInit() {

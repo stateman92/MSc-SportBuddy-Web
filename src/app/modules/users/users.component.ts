@@ -15,10 +15,12 @@ export class UsersComponent implements OnInit {
   users = Array<UserDB>();
   loading = false;
 
-  constructor(private readonly apiService: ApiService,
-              private readonly timingService: TimingService,
-              private readonly exportService: ExportService,
-              private readonly usersCacheService: UsersCacheService) {
+  constructor(
+    private readonly apiService: ApiService,
+    private readonly timingService: TimingService,
+    private readonly exportService: ExportService,
+    private readonly usersCacheService: UsersCacheService
+  ) {
   }
 
   ngOnInit() {

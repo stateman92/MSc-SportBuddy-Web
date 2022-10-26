@@ -1,11 +1,8 @@
 import {Injectable} from "@angular/core";
-import {Timer} from "./timer";
+import {Timer} from "./components/timer";
 
 @Injectable({providedIn: 'root'})
 export class TimingService {
-  constructor() {
-  }
-
   setTimeout(callback: () => void, ms: number) {
     return new Timer(setTimeout(() => {
       callback()
