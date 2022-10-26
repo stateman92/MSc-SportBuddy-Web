@@ -3,22 +3,18 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 import {StorageService} from "../storage/storage.service";
-import {StorageKeys} from "../storage/storage.keys";
+import {StorageKeys} from "../storage/components/storage.keys";
 import {ApiService} from "../api/api.service";
 import {UserDTO} from "../../OpenAPI";
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
-  public currentUser: Observable<UserDTO>;
+  currentUser: Observable<UserDTO>;
   private currentUserSubject: BehaviorSubject<UserDTO>;
 
   constructor(private readonly apiService: ApiService, private readonly storageService: StorageService) {
     this.currentUserSubject = new BehaviorSubject<UserDTO>(storageService.get(StorageKeys.user));
     this.currentUser = this.currentUserSubject.asObservable();
-  }
-
-  public get currentUserValue(): UserDTO {
-    return this.currentUserSubject.value;
   }
 
   login(email, password) {
@@ -31,9 +27,22 @@ export class AuthenticationService {
       }));
   }
 
+  isEmailRightFormatted(email: string) {
+    const atParts = email.split('@');
+    const dotParts = email.split('.');
+    if (atParts.length !== 2 || dotParts.length < 2) {
+      return false;
+    }
+    return email.includes('@') &&
+      email.indexOf('@') === email.lastIndexOf('@') &&
+      atParts[0] !== '' &&
+      atParts[1] !== '' &&
+      dotParts[dotParts.length - 1] !== '' &&
+      dotParts[dotParts.length - 2] !== '';
+  }
+
   logout() {
-    this.storageService.remove(StorageKeys.user);
-    this.storageService.remove(StorageKeys.token);
+    this.storageService.clear();
     this.currentUserSubject.next(null);
     this.apiService.logout();
   }

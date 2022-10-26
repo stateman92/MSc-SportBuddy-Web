@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthenticationService} from "../services/authentication/authentication.service";
+import {AuthenticationService} from "../../services/authentication/authentication.service";
 import {first} from "rxjs";
-import {AlertService} from "../services/alert/service/alert.service";
-import {RoutePaths} from "../services/routing/route.paths";
-import {RouterService} from "../services/routing/router.service";
+import {AlertService} from "../../services/alert/alert.service";
+import {RoutePaths} from "../../services/routing/components/route.paths";
+import {RouterService} from "../../services/routing/router.service";
 import {Validity} from "./components/validity";
+import {StorageService} from "../../services/storage/storage.service";
+import {StorageKeys} from "../../services/storage/components/storage.keys";
 
 @Component({
   selector: 'app-login',
@@ -21,34 +23,14 @@ export class LoginComponent implements OnInit {
   constructor(
     private routerService: RouterService,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private storageService: StorageService
   ) {
   }
 
-  get emailValidity(): string {
-    switch (this.emailValid) {
-      case Validity.invalid:
-        return 'is-invalid';
-      case Validity.valid:
-        return 'is-valid';
-      default:
-        return null
-    }
-  }
-
-  get passwordValidity(): string {
-    switch (this.passwordValid) {
-      case Validity.invalid:
-        return 'is-invalid';
-      case Validity.valid:
-        return 'is-valid';
-      default:
-        return null
-    }
-  }
-
   ngOnInit() {
-    if (this.authenticationService.currentUserValue != null) {
+    const token = this.storageService.get(StorageKeys.token);
+    if (token !== null && token !== undefined) {
       this.routerService.navigate(RoutePaths.upload)
     }
   }
@@ -58,19 +40,19 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.email, this.password)
       .pipe(first())
       .subscribe(
-        data => {
+        _ => {
           this.alertService.success("Success Success Success Success Success Success Success Success Success ");
           this.routerService.navigate(RoutePaths.upload)
           this.loading = false;
         },
-        error => {
+        _ => {
           this.alertService.error("Error Error Error Error Error Error Error Error ");
           this.loading = false;
         });
   }
 
   onEmailChange() {
-    if (this.email == null || this.email === "") {
+    if (this.email == null || this.email === "" || !this.authenticationService.isEmailRightFormatted(this.email)) {
       this.emailValid = Validity.invalid
     } else {
       this.emailValid = Validity.valid
@@ -82,6 +64,28 @@ export class LoginComponent implements OnInit {
       this.passwordValid = Validity.invalid
     } else {
       this.passwordValid = Validity.valid
+    }
+  }
+
+  get emailValidity() {
+    switch (this.emailValid) {
+      case Validity.invalid:
+        return 'is-invalid';
+      case Validity.valid:
+        return 'is-valid';
+      default:
+        return null
+    }
+  }
+
+  get passwordValidity() {
+    switch (this.passwordValid) {
+      case Validity.invalid:
+        return 'is-invalid';
+      case Validity.valid:
+        return 'is-valid';
+      default:
+        return null
     }
   }
 }

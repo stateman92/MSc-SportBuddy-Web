@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {ApiService} from "../services/api/api.service";
-import {ConfirmationService} from "../services/confirmation/confirmation.service";
+import {ApiService} from "../../services/api/api.service";
+import {ConfirmationService} from "../../services/confirmation/confirmation.service";
 
 @Component({
   selector: 'app-commands',

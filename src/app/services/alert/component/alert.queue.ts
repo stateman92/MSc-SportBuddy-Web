@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Alert} from "../service/alert";
+import {Alert} from "./alert";
 import {TimingService} from "../../timing/timing.service";
 import {Timer} from "../../timing/timer";
 import {Subject} from "rxjs";

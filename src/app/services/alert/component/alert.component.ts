@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AlertService} from "../service/alert.service";
+import {AlertService} from "../alert.service";
 import {AlertQueue} from "./alert.queue";
-import {Alert} from "../service/alert";
+import {Alert} from "./alert";
 
 @Component({
   selector: 'app-alert-component',

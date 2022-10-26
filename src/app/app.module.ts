@@ -1,25 +1,25 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppRoutingModule} from './services/routing/app.routing.module';
+import {AppRoutingModule} from './services/routing/components/app.routing.module';
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
-import {UploadComponent} from './upload/upload.component';
-import {CommandsComponent} from './commands/commands.component';
+import {HeaderComponent} from './modules/header/header.component';
+import {UploadComponent} from './modules/upload/upload.component';
+import {CommandsComponent} from './modules/commands/commands.component';
 
 import {ApiModule, Configuration, ConfigurationParameters} from './OpenAPI';
-import {AppConfigComponentService} from './services/appConfig/app-config-component.service';
+import {AppConfigService} from './services/appConfig/app.config.service';
 import {HttpClientModule} from "@angular/common/http";
-import {Environment} from "./services/appConfig/environment";
-import {LoginComponent} from './login/login.component';
+import {Environment} from "./services/appConfig/components/environment";
+import {LoginComponent} from './modules/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {AlertComponent} from './services/alert/component/alert.component';
-import { UsersComponent } from './users/users.component';
+import {UsersComponent} from './modules/users/users.component';
 
 const environment = Environment.dev
-const appConfig = new AppConfigComponentService(environment)
+const appConfig = new AppConfigService(environment)
 
 function apiConfigFactory(): Configuration {
   const params: ConfigurationParameters = {

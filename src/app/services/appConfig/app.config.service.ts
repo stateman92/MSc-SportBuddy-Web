@@ -1,8 +1,8 @@
 // @ts-ignore
 import config from "../../../assets/config.json";
-import {Environment} from "./environment";
+import {Environment} from "./components/environment";
 
-export class AppConfigComponentService {
+export class AppConfigService {
   constructor(private readonly environment: Environment) {
   }
 

@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Login (for admins)</h1>
+<h1 style="text-align: center;">Login</h1>
 <form (ngSubmit)="onSubmit()" class="login-wrapper">
   <div class="mb-3">
     <label class="form-label" for="exampleInputEmail1">Email</label>
@@ -9,11 +9,12 @@
              [(ngModel)]="email"
              [disabled]="loading"
              aria-describedby="inputGroupPrepend"
+             autofocus
              class="form-control {{ emailValidity }}"
              name="email"
              required
              type="text">
-      <div class="invalid-feedback">Please enter an email.</div>
+      <div class="invalid-feedback">Please enter a valid email.</div>
       <div class="valid-feedback">Looks good!</div>
     </div>
     <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div>
@@ -38,7 +39,8 @@
   <input hidden="true" type="submit"/> <!-- submit with pressing enter -->
 
   <div class="form-group" style="text-align: center;">
-    <button (click)="onSubmit()" [disabled]="loading" class="btn btn-primary" type="button">
+    <button (click)="onSubmit()" [disabled]="loading || emailValidity !== 'is-valid' || passwordValidity !== 'is-valid'"
+            class="btn btn-primary" type="button">
       <span *ngIf="loading" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
       <span>&nbsp;{{loading ? "Loading..." : "Login"}}&nbsp;</span>
     </button>

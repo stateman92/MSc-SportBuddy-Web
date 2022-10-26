@@ -14,7 +14,7 @@
   max-width: 150px;
 }
 
-#table tr:nth-child(even){
+#table tr:nth-child(even) {
   background-color: #f1f1f1;
 }
 

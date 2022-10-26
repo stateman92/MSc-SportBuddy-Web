@@ -1,0 +1,21 @@
+<nav *ngIf="visible" aria-label="Second navbar example" class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container-fluid" style="padding: 10px 50px;">
+    <a class="navbar-brand">SportBuddy Admin</a>
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a aria-current="page" class="nav-link active" routerLink="/upload">Upload</a>
+        </li>
+        <li class="nav-item">
+          <a aria-current="page" class="nav-link active" routerLink="/commands">Commands</a>
+        </li>
+        <li class="nav-item">
+          <a aria-current="page" class="nav-link active" routerLink="/users">Users</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <a (click)="logout()" aria-current="page" class="nav-link active" href="/" role="button">Log out</a>
+      </ul>
+    </div>
+  </div>
+</nav>

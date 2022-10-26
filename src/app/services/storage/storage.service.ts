@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
-import {LocalStorageWrapper} from "./local.storage.wrapper";
-import {StorageKeys} from "./storage.keys";
+import {LocalStorageWrapper} from "./components/local.storage.wrapper";
+import {StorageKeys} from "./components/storage.keys";
 import {filter, Observable, Subject} from "rxjs";
 import {map} from "rxjs/operators";
 
