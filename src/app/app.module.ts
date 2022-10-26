@@ -19,8 +19,8 @@ import {UsersComponent} from './modules/users/users.component';
 import {StorageService} from "./services/storage/storage.service";
 import {ResetPasswordComponent} from './modules/reset-password/reset-password.component';
 
-export const environment = Environment.dev
-const appConfig = new AppConfigService(environment)
+export const environment = Environment.prod;
+const appConfig = new AppConfigService(environment);
 
 function apiConfigFactory(): Configuration {
   const params: ConfigurationParameters = {
@@ -55,11 +55,4 @@ function apiConfigFactory(): Configuration {
   ]
 })
 export class AppModule {
-  constructor(
-    private readonly storageService: StorageService
-  ) {
-    if (environment == Environment.dev) {
-      //this.storageService.clear();
-    }
-  }
 }
