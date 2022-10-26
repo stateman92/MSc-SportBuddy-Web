@@ -28,7 +28,32 @@ export class LoginComponent implements OnInit {
   ) {
   }
 
+  get emailValidity() {
+    switch (this.emailValid) {
+      case Validity.invalid:
+        return 'is-invalid';
+      case Validity.valid:
+        return 'is-valid';
+      default:
+        return null
+    }
+  }
+
+  get passwordValidity() {
+    switch (this.passwordValid) {
+      case Validity.invalid:
+        return 'is-invalid';
+      case Validity.valid:
+        return 'is-valid';
+      default:
+        return null
+    }
+  }
+
   ngOnInit() {
+    if (this.routerService.currentRoute !== RoutePaths.login) {
+      this.routerService.navigate(RoutePaths.login);
+    }
     const token = this.storageService.get(StorageKeys.token);
     if (token !== null && token !== undefined) {
       this.routerService.navigate(RoutePaths.upload)
@@ -64,28 +89,6 @@ export class LoginComponent implements OnInit {
       this.passwordValid = Validity.invalid
     } else {
       this.passwordValid = Validity.valid
-    }
-  }
-
-  get emailValidity() {
-    switch (this.emailValid) {
-      case Validity.invalid:
-        return 'is-invalid';
-      case Validity.valid:
-        return 'is-valid';
-      default:
-        return null
-    }
-  }
-
-  get passwordValidity() {
-    switch (this.passwordValid) {
-      case Validity.invalid:
-        return 'is-invalid';
-      case Validity.valid:
-        return 'is-valid';
-      default:
-        return null
     }
   }
 }

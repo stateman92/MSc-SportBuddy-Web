@@ -17,8 +17,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {AlertComponent} from './services/alert/component/alert.component';
 import {UsersComponent} from './modules/users/users.component';
+import {StorageService} from "./services/storage/storage.service";
 
-const environment = Environment.dev
+export const environment = Environment.dev
 const appConfig = new AppConfigService(environment)
 
 function apiConfigFactory(): Configuration {
@@ -54,4 +55,11 @@ function apiConfigFactory(): Configuration {
   ]
 })
 export class AppModule {
+  constructor(
+    private readonly storageService: StorageService
+  ) {
+    if (environment == Environment.dev) {
+      this.storageService.clear();
+    }
+  }
 }

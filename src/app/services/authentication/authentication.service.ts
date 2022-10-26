@@ -6,6 +6,7 @@ import {StorageService} from "../storage/storage.service";
 import {StorageKeys} from "../storage/components/storage.keys";
 import {ApiService} from "../api/api.service";
 import {UserDTO} from "../../OpenAPI";
+import {RouterService} from "../routing/router.service";
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
@@ -14,7 +15,8 @@ export class AuthenticationService {
 
   constructor(
     private readonly apiService: ApiService,
-    private readonly storageService: StorageService
+    private readonly storageService: StorageService,
+    private readonly routerService: RouterService
   ) {
     this.currentUserSubject = new BehaviorSubject<UserDTO>(storageService.get(StorageKeys.user));
     this.currentUser = this.currentUserSubject.asObservable();
@@ -45,7 +47,7 @@ export class AuthenticationService {
   }
 
   logout() {
-    this.storageService.clear();
+    this.routerService.logout(false);
     this.currentUserSubject.next(null);
     this.apiService.logout();
   }

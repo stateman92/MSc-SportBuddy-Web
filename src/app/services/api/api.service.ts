@@ -88,7 +88,7 @@ export class ApiService {
 
   private handleError(error: any) {
     if (error.status === 401) {
-      this.routerService.logout();
+      this.routerService.logout(true);
     }
   }
 }

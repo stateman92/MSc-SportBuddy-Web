@@ -7,6 +7,7 @@ import {UsersComponent} from "../../../modules/users/users.component";
 
 export const routes: Routes = [
   {path: RoutePaths.default, component: LoginComponent},
+  {path: RoutePaths.login, component: LoginComponent},
   {path: RoutePaths.upload, component: UploadComponent},
   {path: RoutePaths.commands, component: CommandsComponent},
   {path: RoutePaths.users, component: UsersComponent}
