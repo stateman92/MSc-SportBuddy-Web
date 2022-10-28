@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthenticationService} from "../../services/authentication/authentication.service";
-import {AlertService} from "../../services/alert/alert.service";
-import {RoutePaths} from "../../services/routing/components/route.paths";
-import {RouterService} from "../../services/routing/router.service";
-import {Validity} from "./components/validity";
-import {StorageService} from "../../services/storage/storage.service";
-import {StorageKeys} from "../../services/storage/components/storage.keys";
-import {BaseComponent} from "../base/base.component";
+import {AuthenticationService} from '../../services/authentication/authentication.service';
+import {AlertService} from '../../services/alert/alert.service';
+import {RoutePaths} from '../../services/routing/components/route.paths';
+import {RouterService} from '../../services/routing/router.service';
+import {Validity} from './components/validity';
+import {StorageService} from '../../services/storage/storage.service';
+import {StorageKeys} from '../../services/storage/components/storage.keys';
+import {BaseComponent} from '../base/base.component';
 
 @Component({
   selector: 'app-login',

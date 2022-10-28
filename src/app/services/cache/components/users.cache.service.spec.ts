@@ -1,4 +1,4 @@
-import {UsersCacheService} from "./users.cache.service";
+import {UsersCacheService} from './users.cache.service';
 
 describe('UsersCacheService', () => {
   let service: UsersCacheService;

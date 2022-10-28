@@ -1,6 +1,6 @@
 // @ts-ignore
-import config from "../../../assets/config.json";
-import {Environment} from "./components/environment";
+import config from '../../../assets/config/config.json';
+import {Environment} from './components/environment';
 
 export class AppConfigService {
   constructor(

@@ -9,14 +9,13 @@ import {CommandsComponent} from './modules/commands/commands.component';
 
 import {ApiModule, Configuration, ConfigurationParameters} from './OpenAPI';
 import {AppConfigService} from './services/appConfig/app.config.service';
-import {HttpClientModule} from "@angular/common/http";
-import {Environment} from "./services/appConfig/components/environment";
+import {HttpClientModule} from '@angular/common/http';
+import {Environment} from './services/appConfig/components/environment';
 import {LoginComponent} from './modules/login/login.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AlertComponent} from './services/alert/component/alert.component';
 import {UsersComponent} from './modules/users/users.component';
-import {StorageService} from "./services/storage/storage.service";
 import {ResetPasswordComponent} from './modules/reset-password/reset-password.component';
 
 export const environment = Environment.prod;

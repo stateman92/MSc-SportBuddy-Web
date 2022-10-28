@@ -1,7 +1,7 @@
-import {StorageService} from "./storage.service";
-import {StorageKeys} from "./components/storage.keys";
-import {LocalStorageWrapper} from "./components/local.storage.wrapper";
-import {UuidService} from "../uuid/uuid.service";
+import {StorageService} from './storage.service';
+import {StorageKeys} from './components/storage.keys';
+import {LocalStorageWrapper} from './components/local.storage.wrapper';
+import {UuidService} from '../uuid/uuid.service';
 
 describe('StorageService', () => {
   let service: StorageService;

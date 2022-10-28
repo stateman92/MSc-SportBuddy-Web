@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthenticationService} from "../../services/authentication/authentication.service";
-import {StorageService} from "../../services/storage/storage.service";
-import {StorageKeys} from "../../services/storage/components/storage.keys";
-import {BaseComponent} from "../base/base.component";
-import {RouterService} from "../../services/routing/router.service";
+import {AuthenticationService} from '../../services/authentication/authentication.service';
+import {StorageService} from '../../services/storage/storage.service';
+import {StorageKeys} from '../../services/storage/components/storage.keys';
+import {BaseComponent} from '../base/base.component';
+import {RouterService} from '../../services/routing/router.service';
 
 @Component({
   selector: 'app-header',

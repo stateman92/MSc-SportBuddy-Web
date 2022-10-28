@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {BaseComponent} from "../base/base.component";
-import {AuthenticationService} from "../../services/authentication/authentication.service";
-import {StorageService} from "../../services/storage/storage.service";
-import {RouterService} from "../../services/routing/router.service";
-import {ApiService} from "../../services/api/api.service";
-import {ActivatedRoute} from "@angular/router";
-import {RoutePaths} from "../../services/routing/components/route.paths";
-import {AlertService} from "../../services/alert/alert.service";
+import {BaseComponent} from '../base/base.component';
+import {AuthenticationService} from '../../services/authentication/authentication.service';
+import {StorageService} from '../../services/storage/storage.service';
+import {RouterService} from '../../services/routing/router.service';
+import {ApiService} from '../../services/api/api.service';
+import {ActivatedRoute} from '@angular/router';
+import {RoutePaths} from '../../services/routing/components/route.paths';
+import {AlertService} from '../../services/alert/alert.service';
 
 @Component({
   selector: 'app-reset-password',

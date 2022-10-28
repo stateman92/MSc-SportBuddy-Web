@@ -1,4 +1,4 @@
-import {LocalStorageWrapper} from "./local.storage.wrapper";
+import {LocalStorageWrapper} from './local.storage.wrapper';
 
 describe('LocalStorageWrapper', () => {
   let service: LocalStorageWrapper;
