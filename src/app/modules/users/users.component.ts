@@ -3,7 +3,7 @@ import {UserDB} from "../../OpenAPI";
 import {ApiService} from "../../services/api/api.service";
 import {TimingService} from "../../services/timing/timing.service";
 import {ExportService} from "../../services/export/export.service";
-import {UsersCacheService} from "../../services/cache/components/users.cache";
+import {UsersCacheService} from "../../services/cache/components/users.cache.service";
 import {BaseComponent} from "../base/base.component";
 import {StorageService} from "../../services/storage/storage.service";
 import {RouterService} from "../../services/routing/router.service";
@@ -16,6 +16,9 @@ import {RouterService} from "../../services/routing/router.service";
 export class UsersComponent extends BaseComponent implements OnInit {
   users = Array<UserDB>();
   loading = false;
+  loadingExport = false;
+  loadingExportCsv = false;
+  loadingRefresh = false;
 
   constructor(
     private readonly apiService: ApiService,
@@ -39,6 +42,7 @@ export class UsersComponent extends BaseComponent implements OnInit {
       this.apiService.getUsers()
         .subscribe(users => {
           this.loading = false;
+          this.loadingRefresh = false;
           this.users = users;
           this.usersCacheService.set(users);
         })
@@ -47,13 +51,26 @@ export class UsersComponent extends BaseComponent implements OnInit {
 
   export() {
     this.loading = true;
+    this.loadingExport = true;
     this.timingService.setTimeout(() => {
       this.exportService.export(document.getElementById('table'), 'users');
       this.loading = false;
+      this.loadingExport = false;
+    }, 750);
+  }
+
+  exportCsv() {
+    this.loading = true;
+    this.loadingExportCsv = true;
+    this.timingService.setTimeout(() => {
+      this.exportService.exportCsv(document.getElementById('table'), 'users');
+      this.loading = false;
+      this.loadingExportCsv = false;
     }, 750);
   }
 
   refresh() {
+    this.loadingRefresh = true;
     this.users = [];
     this.usersCacheService.set([]);
     this.ngOnInit();

@@ -3,8 +3,17 @@
         class="btn btn-primary"
         style="float: right;margin: 25px;"
         type="button">
-  <span *ngIf="loading" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
+  <span *ngIf="loadingExport" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
   <span>&nbsp;Export&nbsp;</span>
+</button>
+
+<button (click)="exportCsv()"
+        [disabled]="loading"
+        class="btn btn-primary"
+        style="float: right;margin: 25px;"
+        type="button">
+  <span *ngIf="loadingExportCsv" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
+  <span>&nbsp;Export CSV&nbsp;</span>
 </button>
 
 <button (click)="refresh()"
@@ -12,7 +21,7 @@
         class="btn btn-primary"
         style="float: right;margin: 25px;"
         type="button">
-  <span *ngIf="loading" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
+  <span *ngIf="loadingRefresh" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
   <span>&nbsp;Refresh&nbsp;</span>
 </button>
 

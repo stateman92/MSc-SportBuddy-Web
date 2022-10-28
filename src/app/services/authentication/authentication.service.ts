@@ -29,7 +29,8 @@ export class AuthenticationService {
           this.storageService.set(StorageKeys.user, user.user);
           this.storageService.set(StorageKeys.token, user.token);
           this.currentUserSubject.next(user.user);
-          return user.user })
+          return user.user
+        })
       );
   }
 
