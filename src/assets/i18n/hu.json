@@ -1,5 +1,73 @@
 {
-  "TEST": {
-    "WELCOME": "üdv"
+  "alert": {
+    "success": "Siker!",
+    "error": "Hiba!",
+    "logout": "Érvénytelen bejelentkezési adatok, kérjük, jelentkezz be újra."
+  },
+  "commands": {
+    "reset": {
+      "text": "Adatbázis visszaállítása",
+      "description": "Ezzel a paranccsal visszaállíthatod az adatbázist, és az egyetlen entitás az admin felhasználó lesz.",
+      "button": "Visszaállítás",
+      "new": "Új",
+      "confirmation": "Biztos vagy benne, hogy visszaállítod?"
+    },
+    "clear": {
+      "text": "Adatbázis törlése",
+      "description": "Ezzel a paranccsal visszaállíthatod az adatbázist, és az a kezdeti állapotásban lesz.",
+      "button": "Törlés",
+      "confirmation": "Biztos vagy benne, hogy törlöd?"
+    }
+  },
+  "header": {
+    "upload": "Feltöltés",
+    "commands": "Parancsok",
+    "users": "Felhasználók",
+    "logout": "Kijelentkezés"
+  },
+  "login": {
+    "title": "Bejelentkezés",
+    "email": {
+      "title": "Email",
+      "invalid": "Írj be egy érvényes emailt.",
+      "valid": "Oké!",
+      "security": "Nem osztjuk meg az emailedet senkivel."
+    },
+    "password": {
+      "title": "Jelszó",
+      "invalid": "Írj be egy jelszót.",
+      "valid": "Oké!"
+    },
+    "button": {
+      "loading": "Betöltés...",
+      "login": "Bejelentkezés"
+    },
+    "result": {
+      "success": "Sikeres belépés!",
+      "error": "Hiba a bejelentkezés közben. Kérjük próbáld újra."
+    }
+  },
+  "reset": {
+    "title": "Jelszó visszaállítása",
+    "password": "Jelszó:",
+    "confirm": "Jelszó megerősítése:",
+    "submit": "Beküldés",
+    "success": "Sikeres módosítás!",
+    "error": "Sikertelen módosítás. Próbáld újra később."
+  },
+  "users": {
+    "export": "Exportálás",
+    "exportCsv": "Exportálás CSV-be",
+    "refresh": "Frissítés",
+    "file": "felhasznalok",
+    "table": {
+      "id": "Azonosító",
+      "name": "Név",
+      "email": "Email",
+      "password": "Jelszó (hashelt)",
+      "image": "Profilkép",
+      "token": "Token",
+      "chats": "Chatek"
+    }
   }
 }

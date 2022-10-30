@@ -1,7 +1,7 @@
-<h1 style="text-align: center;">Login</h1>
+<h1 style="text-align: center;">{{'login.title' | translate}}</h1>
 <form (ngSubmit)="onSubmit()" class="login-wrapper">
   <div class="mb-3">
-    <label class="form-label" for="exampleInputEmail1">Email</label>
+    <label class="form-label" for="exampleInputEmail1">{{'login.email.title' | translate}}</label>
     <div class="input-group has-validation" id="exampleInputEmail1">
       <span class="input-group-text" id="inputGroupPrepend">@</span>
       <input (change)="onEmailChange()"
@@ -14,14 +14,14 @@
              name="email"
              required
              type="text">
-      <div class="invalid-feedback">Please enter a valid email.</div>
-      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">{{'login.email.invalid' | translate}}</div>
+      <div class="valid-feedback">{{'login.email.valid' | translate}}</div>
     </div>
-    <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div>
+    <div class="form-text" id="emailHelp">{{'login.email.security' | translate}}</div>
   </div>
 
   <div class="mb-3">
-    <label class="form-label" for="exampleInputPassword1">Password</label>
+    <label class="form-label" for="exampleInputPassword1">{{'login.password.title' | translate}}</label>
 
     <div class="input-group has-validation" id="exampleInputPassword1">
       <input (change)="onPasswordChange()"
@@ -31,8 +31,8 @@
              class="form-control {{ passwordValidity }}"
              name="password"
              type="password">
-      <div class="invalid-feedback">Please enter a password.</div>
-      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">{{'login.password.invalid' | translate}}</div>
+      <div class="valid-feedback">{{'login.password.valid' | translate}}</div>
     </div>
   </div>
 
@@ -42,7 +42,7 @@
     <button (click)="onSubmit()" [disabled]="loading || emailValidity !== 'is-valid' || passwordValidity !== 'is-valid'"
             class="btn btn-primary" type="button">
       <span *ngIf="loading" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-      <span>&nbsp;{{loading ? "Loading..." : "Login"}}&nbsp;</span>
+      <span>&nbsp;{{(loading ? "login.button.loading" : "login.button.login") | translate}}&nbsp;</span>
     </button>
   </div>
 </form>

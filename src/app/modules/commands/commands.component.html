@@ -1,50 +1,21 @@
 <ul class="list-group centeredList">
   <li class="list-group-item clearfix">
-    Reset database
+    {{'commands.reset.text' | translate}}
     <hr>
-    Reset desc
+    {{'commands.reset.description' | translate}}
     <span class="pull-right">
         <button (click)="resetDatabase()" class="btn btn-primary" type="button">
-          Reset
-          <span class="badge badge-light">New</span>
+          {{'commands.reset.button' | translate}}
+          <span class="badge badge-light"> {{'commands.reset.new' | translate}}"</span>
         </button>
     </span>
   <li class="list-group-item clearfix">
-    Clear database
+    {{'commands.clear.text' | translate}}
+    <hr>
+    {{'commands.clear.description' | translate}}
     <span class="pull-right">
         <button (click)="clearDatabase()" class="btn btn-primary" type="button">
-          Clear
+          {{'commands.clear.button' | translate}}
         </button>
     </span>
 </ul>
-<a aria-controls="offcanvasExample" class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample"
-   role="button">
-  Link with href
-</a>
-<button aria-controls="offcanvasExample" class="btn btn-primary" data-bs-target="#offcanvasExample"
-        data-bs-toggle="offcanvas"
-        type="button">
-  Button with data-bs-target
-</button>
-
-<div aria-labelledby="offcanvasExampleLabel" class="offcanvas offcanvas-start" id="offcanvasExample" tabindex="-1">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
-  </div>
-</div>

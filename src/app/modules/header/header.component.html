@@ -4,17 +4,18 @@
     <div class="collapse navbar-collapse" id="navbarsExample02">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a aria-current="page" class="nav-link active" routerLink="/upload">Upload</a>
+          <a aria-current="page" class="nav-link active" routerLink="/upload">{{'header.upload' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a aria-current="page" class="nav-link active" routerLink="/commands">Commands</a>
+          <a aria-current="page" class="nav-link active" routerLink="/commands">{{'header.commands' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a aria-current="page" class="nav-link active" routerLink="/users">Users</a>
+          <a aria-current="page" class="nav-link active" routerLink="/users">{{'header.users' | translate}}</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <a (click)="logout()" aria-current="page" class="nav-link active" href="/" role="button">Log out</a>
+        <a (click)="logout()" aria-current="page" class="nav-link active" href="/"
+           role="button">{{'header.logout' | translate}}</a>
       </ul>
     </div>
   </div>

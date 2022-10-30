@@ -17,8 +17,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AlertComponent} from './services/alert/component/alert.component';
 import {UsersComponent} from './modules/users/users.component';
 import {ResetPasswordComponent} from './modules/reset-password/reset-password.component';
+import {TranslationConfigModule} from "./services/translation/components/translation.config.module";
 
-export const environment = Environment.prod;
+export const environment = Environment.dev;
 const appConfig = new AppConfigService(environment);
 
 function apiConfigFactory(): Configuration {
@@ -46,7 +47,8 @@ function apiConfigFactory(): Configuration {
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TranslationConfigModule
   ],
   providers: [],
   bootstrap: [

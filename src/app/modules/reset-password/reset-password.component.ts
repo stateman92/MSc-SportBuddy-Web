@@ -7,6 +7,7 @@ import {ApiService} from '../../services/api/api.service';
 import {ActivatedRoute} from '@angular/router';
 import {RoutePaths} from '../../services/routing/components/route.paths';
 import {AlertService} from '../../services/alert/alert.service';
+import {TranslationService} from "../../services/translation/translation.service";
 
 @Component({
   selector: 'app-reset-password',
@@ -23,6 +24,7 @@ export class ResetPasswordComponent extends BaseComponent implements OnInit {
     private readonly authenticationService: AuthenticationService,
     private readonly apiService: ApiService,
     private readonly alertService: AlertService,
+    private readonly translationService: TranslationService,
     private readonly route: ActivatedRoute,
     storageService: StorageService,
     routerService: RouterService
@@ -42,12 +44,12 @@ export class ResetPasswordComponent extends BaseComponent implements OnInit {
     this.apiService.resetPassword(this.token, this.password)
       .subscribe(
         _ => {
-          this.alertService.success("Success Success Success Success Success Success Success Success Success ");
+          this.alertService.success(this.translationService.translate("reset.success"));
           this.routerService.navigate(RoutePaths.login)
           this.loading = false;
         },
         _ => {
-          this.alertService.error("Error Error Error Error Error Error Error Error ");
+          this.alertService.error(this.translationService.translate("reset.error"));
           this.loading = false;
         });
   }

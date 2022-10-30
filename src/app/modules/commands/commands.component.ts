@@ -4,6 +4,7 @@ import {ConfirmationService} from "../../services/confirmation/confirmation.serv
 import {BaseComponent} from "../base/base.component";
 import {StorageService} from "../../services/storage/storage.service";
 import {RouterService} from "../../services/routing/router.service";
+import {TranslationService} from "../../services/translation/translation.service";
 
 @Component({
   selector: 'app-commands',
@@ -14,6 +15,7 @@ export class CommandsComponent extends BaseComponent implements OnInit {
   constructor(
     private readonly apiService: ApiService,
     private readonly confirmationService: ConfirmationService,
+    private readonly translationService: TranslationService,
     storageService: StorageService,
     routerService: RouterService
   ) {
@@ -21,13 +23,13 @@ export class CommandsComponent extends BaseComponent implements OnInit {
   }
 
   clearDatabase() {
-    if (this.confirmationService.confirm("Are you sure you want to clear the database?")) {
+    if (this.confirmationService.confirm(this.translationService.translate("commands.clear.confirmation"))) {
       this.apiService.clearDatabase();
     }
   }
 
   resetDatabase() {
-    if (this.confirmationService.confirm("Are you sure you want to reset the database?")) {
+    if (this.confirmationService.confirm(this.translationService.translate("commands.reset.confirmation"))) {
       this.apiService.resetDatabase();
     }
   }

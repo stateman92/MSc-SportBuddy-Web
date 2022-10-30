@@ -7,6 +7,7 @@ import {Validity} from './components/validity';
 import {StorageService} from '../../services/storage/storage.service';
 import {StorageKeys} from '../../services/storage/components/storage.keys';
 import {BaseComponent} from '../base/base.component';
+import {TranslationService} from "../../services/translation/translation.service";
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
   constructor(
     private readonly authenticationService: AuthenticationService,
     private readonly alertService: AlertService,
+    private readonly translationService: TranslationService,
     storageService: StorageService,
     routerService: RouterService
   ) {
@@ -67,12 +69,12 @@ export class LoginComponent extends BaseComponent implements OnInit {
     this.authenticationService.login(this.email, this.password)
       .subscribe(
         _ => {
-          this.alertService.success("Success Success Success Success Success Success Success Success Success ");
+          this.alertService.success(this.translationService.translate("login.result.success"));
           this.routerService.navigate(RoutePaths.upload)
           this.loading = false;
         },
         _ => {
-          this.alertService.error("Error Error Error Error Error Error Error Error ");
+          this.alertService.error(this.translationService.translate("login.result.error"));
           this.loading = false;
         });
   }

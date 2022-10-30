@@ -1,5 +1,73 @@
 {
-  "TEST": {
-    "WELCOME": "welcome"
+  "alert": {
+    "success": "Success!",
+    "error": "Error!",
+    "logout": "Invalid credentials, please log in again."
+  },
+  "commands": {
+    "reset": {
+      "text": "Reset database",
+      "description": "With this command you can reset the database with the only remaining entity will be the admin.",
+      "button": "Reset",
+      "new": "New",
+      "confirmation": "Are you sure you want to reset the database?"
+    },
+    "clear": {
+      "text": "Clear database",
+      "description": "With this command you can clear the database and refill with the initial data.",
+      "button": "Clear",
+      "confirmation": "Are you sure you want to clear the database?"
+    }
+  },
+  "header": {
+    "upload": "Upload",
+    "commands": "Commands",
+    "users": "Users",
+    "logout": "Log out"
+  },
+  "login": {
+    "title": "Login",
+    "email": {
+      "title": "Email",
+      "invalid": "Please enter a valid email.",
+      "valid": "Looks good!",
+      "security": "We'll never share your email with anyone else."
+    },
+    "password": {
+      "title": "Password",
+      "invalid": "Please enter a password.",
+      "valid": "Looks good!"
+    },
+    "button": {
+      "loading": "Loading...",
+      "login": "Login"
+    },
+    "result": {
+      "success": "Successful login!",
+      "error": "Error during login. Try again later."
+    }
+  },
+  "reset": {
+    "title": "Reset password",
+    "password": "Password:",
+    "confirm": "Confirm password:",
+    "submit": "Submit",
+    "success": "Successful change!",
+    "error": "Error during change. Try again later."
+  },
+  "users": {
+    "export": "Export",
+    "exportCsv": "Export CSV",
+    "refresh": "Refresh",
+    "file": "users",
+    "table": {
+      "id": "Id",
+      "name": "Name",
+      "email": "Email",
+      "password": "Password (hashed)",
+      "image": "Profile image",
+      "token": "Token",
+      "chats": "Chats"
+    }
   }
 }

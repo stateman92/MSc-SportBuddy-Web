@@ -4,7 +4,7 @@
         style="float: right;margin: 25px;"
         type="button">
   <span *ngIf="loadingExport" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-  <span>&nbsp;Export&nbsp;</span>
+  <span>&nbsp;{{'users.export' | translate}}&nbsp;</span>
 </button>
 
 <button (click)="exportCsv()"
@@ -13,7 +13,7 @@
         style="float: right;margin: 25px;"
         type="button">
   <span *ngIf="loadingExportCsv" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-  <span>&nbsp;Export CSV&nbsp;</span>
+  <span>&nbsp;{{'users.exportCsv' | translate}}&nbsp;</span>
 </button>
 
 <button (click)="refresh()"
@@ -22,19 +22,19 @@
         style="float: right;margin: 25px;"
         type="button">
   <span *ngIf="loadingRefresh" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-  <span>&nbsp;Refresh&nbsp;</span>
+  <span>&nbsp;{{'users.refresh' | translate}}&nbsp;</span>
 </button>
 
 <div>
   <table id="table">
     <tr>
-      <th style="width:100px">Id</th>
-      <th style="width:100px">Name</th>
-      <th style="width:100px">Email</th>
-      <th style="width:100px">Password (hashed)</th>
-      <th style="width:100px">ProfileImage</th>
-      <th style="width:100px">Token</th>
-      <th style="width:100px">Chats</th>
+      <th style="width:100px">{{'users.table.id' | translate}}</th>
+      <th style="width:100px">{{'users.table.name' | translate}}</th>
+      <th style="width:100px">{{'users.table.email' | translate}}</th>
+      <th style="width:100px">{{'users.table.password' | translate}}</th>
+      <th style="width:100px">{{'users.table.image' | translate}}</th>
+      <th style="width:100px">{{'users.table.token' | translate}}</th>
+      <th style="width:100px">{{'users.table.chats' | translate}}</th>
     </tr>
     <tr *ngFor="let item of users">
       <td>{{item.id}}</td>

@@ -11,7 +11,10 @@ export class AlertComponent implements OnInit {
   visible: boolean;
   alert: Alert;
 
-  constructor(private readonly alertService: AlertService, private readonly alertQueue: AlertQueue) {
+  constructor(
+    private readonly alertService: AlertService,
+    private readonly alertQueue: AlertQueue
+  ) {
   }
 
   ngOnInit() {

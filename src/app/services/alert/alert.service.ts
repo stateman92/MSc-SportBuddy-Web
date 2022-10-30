@@ -2,12 +2,15 @@ import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {Alert} from "./component/alert";
 import {AlertType} from "./component/alert.type";
+import {TranslationService} from "../translation/translation.service";
 
 @Injectable({providedIn: 'root'})
 export class AlertService {
   private subject = new Subject<Alert>();
 
-  constructor() {
+  constructor(
+    private readonly translationService: TranslationService
+  ) {
   }
 
   getAlert(): Observable<Alert> {
@@ -27,6 +30,6 @@ export class AlertService {
   }
 
   logout() {
-    this.error("Invalid credentials, please log in again.");
+    this.error(this.translationService.translate("alert.logout"));
   }
 }
