@@ -37,8 +37,8 @@ describe('StorageService', () => {
     const secondKey = StorageKeys.user;
     expect(service.get(firstKey)).toBe(null);
     expect(service.get(secondKey)).toBe(null);
-    const firstValue = "item1";
-    const secondValue = "item2";
+    const firstValue = 'item1';
+    const secondValue = 'item2';
     service.set(firstKey, firstValue);
     service.set(secondKey, secondValue);
     expect(service.get(firstKey)).toBe(firstValue);

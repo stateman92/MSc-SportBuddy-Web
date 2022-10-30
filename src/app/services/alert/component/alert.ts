@@ -1,4 +1,4 @@
-import {AlertType} from "./alert.type";
+import {AlertType} from './alert.type';
 
 export class Alert {
   constructor(public readonly type: AlertType, public readonly text: string) {

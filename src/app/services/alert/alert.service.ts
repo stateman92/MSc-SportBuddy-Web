@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {Alert} from "./component/alert";
-import {AlertType} from "./component/alert.type";
-import {TranslationService} from "../translation/translation.service";
+import {Alert} from './component/alert';
+import {AlertType} from './component/alert.type';
+import {TranslationService} from '../translation/translation.service';
 
 @Injectable({providedIn: 'root'})
 export class AlertService {
@@ -30,6 +30,6 @@ export class AlertService {
   }
 
   logout() {
-    this.error(this.translationService.translate("alert.logout"));
+    this.error(this.translationService.translate('alert.logout'));
   }
 }

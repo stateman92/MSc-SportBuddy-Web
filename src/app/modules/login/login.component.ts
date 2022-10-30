@@ -7,7 +7,7 @@ import {Validity} from './components/validity';
 import {StorageService} from '../../services/storage/storage.service';
 import {StorageKeys} from '../../services/storage/components/storage.keys';
 import {BaseComponent} from '../base/base.component';
-import {TranslationService} from "../../services/translation/translation.service";
+import {TranslationService} from '../../services/translation/translation.service';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +16,8 @@ import {TranslationService} from "../../services/translation/translation.service
 })
 export class LoginComponent extends BaseComponent implements OnInit {
   loading = false;
-  email = "";
-  password = "";
+  email = '';
+  password = '';
   private emailValid: Validity = null;
   private passwordValid: Validity = null;
 
@@ -69,18 +69,18 @@ export class LoginComponent extends BaseComponent implements OnInit {
     this.authenticationService.login(this.email, this.password)
       .subscribe(
         _ => {
-          this.alertService.success(this.translationService.translate("login.result.success"));
+          this.alertService.success(this.translationService.translate('login.result.success'));
           this.routerService.navigate(RoutePaths.upload)
           this.loading = false;
         },
         _ => {
-          this.alertService.error(this.translationService.translate("login.result.error"));
+          this.alertService.error(this.translationService.translate('login.result.error'));
           this.loading = false;
         });
   }
 
   onEmailChange() {
-    if (this.email == null || this.email === "" || !this.authenticationService.isEmailRightFormatted(this.email)) {
+    if (this.email == null || this.email === '' || !this.authenticationService.isEmailRightFormatted(this.email)) {
       this.emailValid = Validity.invalid
     } else {
       this.emailValid = Validity.valid
@@ -88,7 +88,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
   }
 
   onPasswordChange() {
-    if (this.password == null || this.password === "") {
+    if (this.password == null || this.password === '') {
       this.passwordValid = Validity.invalid
     } else {
       this.passwordValid = Validity.valid

@@ -1,12 +1,10 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppRoutingModule} from './services/routing/components/app.routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './modules/header/header.component';
 import {UploadComponent} from './modules/upload/upload.component';
 import {CommandsComponent} from './modules/commands/commands.component';
-
 import {ApiModule, Configuration, ConfigurationParameters} from './OpenAPI';
 import {AppConfigService} from './services/appConfig/app.config.service';
 import {HttpClientModule} from '@angular/common/http';
@@ -17,9 +15,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AlertComponent} from './services/alert/component/alert.component';
 import {UsersComponent} from './modules/users/users.component';
 import {ResetPasswordComponent} from './modules/reset-password/reset-password.component';
-import {TranslationConfigModule} from "./services/translation/components/translation.config.module";
+import {TranslationConfigModule} from './services/translation/components/translation.config.module';
+import {VersionComponent} from './modules/version/version.component';
 
-export const environment = Environment.dev;
+export const environment = Environment.prod;
 const appConfig = new AppConfigService(environment);
 
 function apiConfigFactory(): Configuration {
@@ -38,7 +37,8 @@ function apiConfigFactory(): Configuration {
     LoginComponent,
     AlertComponent,
     UsersComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    VersionComponent
   ],
   imports: [
     ApiModule.forRoot(apiConfigFactory),

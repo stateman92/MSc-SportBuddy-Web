@@ -1,7 +1,7 @@
-import {Component, OnInit} from "@angular/core";
-import {StorageService} from "../../services/storage/storage.service";
-import {RouterService} from "../../services/routing/router.service";
-import {StorageKeys} from "../../services/storage/components/storage.keys";
+import {Component, OnInit} from '@angular/core';
+import {StorageService} from '../../services/storage/storage.service';
+import {RouterService} from '../../services/routing/router.service';
+import {StorageKeys} from '../../services/storage/components/storage.keys';
 
 @Component({
   selector: 'app-base', // not used

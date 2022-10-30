@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {UserDB} from "../../OpenAPI";
-import {ApiService} from "../../services/api/api.service";
-import {TimingService} from "../../services/timing/timing.service";
-import {ExportService} from "../../services/export/export.service";
-import {UsersCacheService} from "../../services/cache/components/users.cache.service";
-import {BaseComponent} from "../base/base.component";
-import {StorageService} from "../../services/storage/storage.service";
-import {RouterService} from "../../services/routing/router.service";
-import {TranslationService} from "../../services/translation/translation.service";
+import {UserDB} from '../../OpenAPI';
+import {ApiService} from '../../services/api/api.service';
+import {TimingService} from '../../services/timing/timing.service';
+import {ExportService} from '../../services/export/export.service';
+import {UsersCacheService} from '../../services/cache/components/users.cache.service';
+import {BaseComponent} from '../base/base.component';
+import {StorageService} from '../../services/storage/storage.service';
+import {RouterService} from '../../services/routing/router.service';
+import {TranslationService} from '../../services/translation/translation.service';
 
 @Component({
   selector: 'app-users',
@@ -55,7 +55,7 @@ export class UsersComponent extends BaseComponent implements OnInit {
     this.loading = true;
     this.loadingExport = true;
     this.timingService.setTimeout(() => {
-      this.exportService.export(document.getElementById('table'), this.translationService.translate("users.file"));
+      this.exportService.export(document.getElementById('table'), this.translationService.translate('users.file'));
       this.loading = false;
       this.loadingExport = false;
     }, 750);
@@ -65,7 +65,7 @@ export class UsersComponent extends BaseComponent implements OnInit {
     this.loading = true;
     this.loadingExportCsv = true;
     this.timingService.setTimeout(() => {
-      this.exportService.exportCsv(document.getElementById('table'), this.translationService.translate("users.file"));
+      this.exportService.exportCsv(document.getElementById('table'), this.translationService.translate('users.file'));
       this.loading = false;
       this.loadingExportCsv = false;
     }, 750);

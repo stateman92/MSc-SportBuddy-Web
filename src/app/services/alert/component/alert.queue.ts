@@ -1,8 +1,8 @@
-import {Injectable} from "@angular/core";
-import {Alert} from "./alert";
-import {TimingService} from "../../timing/timing.service";
-import {Timer} from "../../timing/components/timer";
-import {Subject} from "rxjs";
+import {Injectable} from '@angular/core';
+import {Alert} from './alert';
+import {TimingService} from '../../timing/timing.service';
+import {Timer} from '../../timing/components/timer';
+import {Subject} from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class AlertQueue {

@@ -2,11 +2,11 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
-import {StorageService} from "../storage/storage.service";
-import {StorageKeys} from "../storage/components/storage.keys";
-import {ApiService} from "../api/api.service";
-import {UserDTO} from "../../OpenAPI";
-import {RouterService} from "../routing/router.service";
+import {StorageService} from '../storage/storage.service';
+import {StorageKeys} from '../storage/components/storage.keys';
+import {ApiService} from '../api/api.service';
+import {UserDTO} from '../../OpenAPI';
+import {RouterService} from '../routing/router.service';
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {

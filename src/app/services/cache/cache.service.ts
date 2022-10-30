@@ -1,4 +1,4 @@
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, Observable} from 'rxjs';
 
 export class CacheService<T> {
   private value = new BehaviorSubject<T>(null);

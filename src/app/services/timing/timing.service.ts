@@ -1,5 +1,5 @@
-import {Injectable} from "@angular/core";
-import {Timer} from "./components/timer";
+import {Injectable} from '@angular/core';
+import {Timer} from './components/timer';
 
 @Injectable({providedIn: 'root'})
 export class TimingService {
