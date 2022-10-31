@@ -1,9 +1,10 @@
 import {UuidService} from './uuid.service';
+import {RegexService} from '../regex/regex.service';
 
 describe('UuidService', () => {
   let service: UuidService;
   beforeEach(() => {
-    service = new UuidService();
+    service = new UuidService(new RegexService());
   });
 
   it('.get should return a valid uuid value', () => {

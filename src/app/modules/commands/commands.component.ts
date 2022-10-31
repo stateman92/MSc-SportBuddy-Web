@@ -6,8 +6,8 @@ import {StorageService} from '../../services/storage/storage.service';
 import {RouterService} from '../../services/routing/router.service';
 import {TranslationService} from '../../services/translation/translation.service';
 import {AlertService} from '../../services/alert/alert.service';
-import {UuidService} from "../../services/uuid/uuid.service";
-import {Validity} from "../login/components/validity";
+import {UuidService} from '../../services/uuid/uuid.service';
+import {Validity} from '../login/components/validity';
 
 @Component({
   selector: 'app-commands',
