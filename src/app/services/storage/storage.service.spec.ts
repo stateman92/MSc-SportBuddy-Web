@@ -2,6 +2,7 @@ import {StorageService} from './storage.service';
 import {StorageKeys} from './components/storage.keys';
 import {LocalStorageWrapper} from './components/local.storage.wrapper';
 import {UuidService} from '../uuid/uuid.service';
+import {RegexService} from "../regex/regex.service";
 
 describe('StorageService', () => {
   let service: StorageService;
@@ -17,7 +18,7 @@ describe('StorageService', () => {
   it('.get() should return a null value, and after that a non-null value', () => {
     const key = StorageKeys.token;
     expect(service.get(key)).toBe(null);
-    let uuid = (new UuidService()).get();
+    let uuid = (new UuidService(new RegexService())).get();
     service.set(key, uuid);
     expect(service.get(key)).toBe(uuid);
   });
@@ -25,7 +26,7 @@ describe('StorageService', () => {
   it('.get() should return a null value, and after that a non-null value, and after that a null value', () => {
     const key = StorageKeys.token;
     expect(service.get(key)).toBe(null);
-    let uuid = (new UuidService()).get();
+    let uuid = (new UuidService(new RegexService())).get();
     service.set(key, uuid);
     expect(service.get(key)).toBe(uuid);
     service.remove(key);
