@@ -34,7 +34,7 @@ export class ApiService {
         this.handleError(error);
         return of(0);
       })
-    ).subscribe();
+    );
   }
 
   getUsers() {
@@ -54,7 +54,7 @@ export class ApiService {
         this.handleError(error);
         return of(0);
       })
-    ).subscribe();
+    );
   }
 
   deleteExercise(id: string) {
@@ -64,7 +64,7 @@ export class ApiService {
         this.handleError(error);
         return of(0);
       })
-    ).subscribe();
+    );
   }
 
   resetPassword(id: string, password: string) {

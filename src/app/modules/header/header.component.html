@@ -1,7 +1,7 @@
 <nav *ngIf="visible" aria-label="Second navbar example" class="navbar navbar-expand navbar-dark bg-dark">
   <div class="container-fluid" style="padding: 10px 50px;">
-    <a class="navbar-brand">SportBuddy Admin</a>
-    <div class="collapse navbar-collapse" id="navbarsExample02">
+    <a class="navbar-brand" routerLink="/upload">SportBuddy Admin</a>
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a aria-current="page" class="nav-link active" routerLink="/upload">{{'header.upload' | translate}}</a>

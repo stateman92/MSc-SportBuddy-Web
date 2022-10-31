@@ -10,13 +10,26 @@
       "description": "With this command you can reset the database with the only remaining entity will be the admin.",
       "button": "Reset",
       "new": "New",
-      "confirmation": "Are you sure you want to reset the database?"
+      "confirmation": "Are you sure you want to reset the database?",
+      "success": "Successful reset!",
+      "error": "Error during reset. Try again later."
     },
     "clear": {
       "text": "Clear database",
       "description": "With this command you can clear the database and refill with the initial data.",
       "button": "Clear",
-      "confirmation": "Are you sure you want to clear the database?"
+      "confirmation": "Are you sure you want to clear the database?",
+      "success": "Successful cleaning!",
+      "error": "Error during cleaning. Try again later."
+    },
+    "delete": {
+      "text": "Delete exercise",
+      "description": "With this command you can delete any exercise.",
+      "button": "Delete exercise",
+      "placeholder": "Exercise",
+      "prefix": "UUID",
+      "success": "Successful deletion!",
+      "error": "Error during deletion. Try again later."
     }
   },
   "header": {

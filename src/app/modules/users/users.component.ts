@@ -55,7 +55,7 @@ export class UsersComponent extends BaseComponent implements OnInit {
     this.loading = true;
     this.loadingExport = true;
     this.timingService.setTimeout(() => {
-      this.exportService.export(document.getElementById('table'), this.translationService.translate('users.file'));
+      this.exportService.exportXlsx(document.getElementById('table'), this.translationService.translate('users.file'));
       this.loading = false;
       this.loadingExport = false;
     }, 750);

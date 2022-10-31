@@ -1,23 +1,20 @@
 import * as XLSX from 'xlsx/xlsx.mjs';
 import {Injectable} from '@angular/core';
-import * as fs from 'fs';
+import {ExportType} from "./components/export.type";
 
 @Injectable({providedIn: 'root'})
 export class ExportService {
-  export(table: HTMLElement, fileName: string, sheetName = 'Sheet1') {
-    const workSheet = this.worksheet(table);
-    const workBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workBook, workSheet, sheetName);
-    XLSX.writeFile(workBook, `${fileName}.xlsx`);
+  exportXlsx(table: HTMLElement, fileName: string, sheetName = 'Sheet1') {
+    this.export(table, fileName, sheetName, ExportType.xlsx)
   }
 
   exportCsv(table: HTMLElement, fileName: string) {
-    const workSheet = this.worksheet(table);
-    const stream = XLSX.stream.to_csv(workSheet);
-    stream.pipe(fs.createWriteStream(`${fileName}.csv`));
+    this.export(table, fileName, '', ExportType.csv)
   }
 
-  private worksheet(ofTable: HTMLElement) {
-    return XLSX.utils.table_to_sheet(ofTable);
+  private export(table: HTMLElement, fileName: string, sheetName: string, type: ExportType) {
+    const workBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workBook, XLSX.utils.table_to_sheet(table), sheetName);
+    XLSX.writeFile(workBook, `${fileName}.${type.toLowerCase()}`);
   }
 }

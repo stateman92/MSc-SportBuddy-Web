@@ -17,12 +17,14 @@ import {UsersComponent} from './modules/users/users.component';
 import {ResetPasswordComponent} from './modules/reset-password/reset-password.component';
 import {TranslationConfigModule} from './services/translation/components/translation.config.module';
 import {VersionComponent} from './modules/version/version.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatCardModule} from "@angular/material/card";
 
-export const environment = Environment.prod;
+export const environment = Environment.dev;
 const appConfig = new AppConfigService(environment);
 
-function apiConfigFactory(): Configuration {
-  const params: ConfigurationParameters = {
+function apiConfigFactory() {
+  const params = {
     basePath: appConfig.serverUrl,
   };
   return new Configuration(params);
@@ -48,7 +50,9 @@ function apiConfigFactory(): Configuration {
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    TranslationConfigModule
+    TranslationConfigModule,
+    MatToolbarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [
