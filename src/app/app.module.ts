@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './modules/header/header.component';
 import {UploadComponent} from './modules/upload/upload.component';
 import {CommandsComponent} from './modules/commands/commands.component';
-import {ApiModule, Configuration, ConfigurationParameters} from './OpenAPI';
+import {ApiModule, Configuration} from './OpenAPI';
 import {AppConfigService} from './services/appConfig/app.config.service';
 import {HttpClientModule} from '@angular/common/http';
 import {Environment} from './services/appConfig/components/environment';
@@ -17,8 +17,9 @@ import {UsersComponent} from './modules/users/users.component';
 import {ResetPasswordComponent} from './modules/reset-password/reset-password.component';
 import {TranslationConfigModule} from './services/translation/components/translation.config.module';
 import {VersionComponent} from './modules/version/version.component';
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatCardModule} from "@angular/material/card";
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {ButtonComponent} from './components/button/button.component';
 
 export const environment = Environment.dev;
 const appConfig = new AppConfigService(environment);
@@ -40,7 +41,8 @@ function apiConfigFactory() {
     AlertComponent,
     UsersComponent,
     ResetPasswordComponent,
-    VersionComponent
+    VersionComponent,
+    ButtonComponent
   ],
   imports: [
     ApiModule.forRoot(apiConfigFactory),

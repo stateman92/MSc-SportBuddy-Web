@@ -7,18 +7,15 @@
       <div>
         <h3 class="fs-2">{{'commands.reset.text' | translate}}</h3>
         <p>{{'commands.reset.description' | translate}}</p>
-        <button (click)="resetDatabase()"
-                [disabled]="loading"
-                class="btn btn-primary position-relative"
-                type="button">
-          <span *ngIf="loadingReset" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-          <span>
-            &nbsp;{{'commands.reset.button' | translate}}&nbsp;
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {{'commands.reset.new' | translate}}
-              </span>
+        <app-sb-button (clicked)="resetDatabase()"
+                       [disabled]="loading"
+                       [loading]="loadingReset"
+                       class="position-relative">
+          {{'commands.reset.button' | translate}}
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{'commands.reset.new' | translate}}
           </span>
-        </button>
+        </app-sb-button>
       </div>
     </div>
     <div class="col d-flex align-items-start">
@@ -27,13 +24,10 @@
       <div>
         <h3 class="fs-2">{{'commands.clear.text' | translate}}</h3>
         <p>{{'commands.clear.description' | translate}}</p>
-        <button (click)="clearDatabase()"
-                [disabled]="loading"
-                class="btn btn-primary"
-                type="button">
-          <span *ngIf="loadingClear" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-          <span>&nbsp;{{'commands.clear.button' | translate}}&nbsp;</span>
-        </button>
+        <app-sb-button (clicked)="clearDatabase()"
+                       [disabled]="loading"
+                       [loading]="loadingClear"
+                       [translate]="'commands.clear.button'"></app-sb-button>
       </div>
     </div>
     <div class="col d-flex align-items-start">
@@ -44,17 +38,14 @@
         <p>{{'commands.delete.description' | translate}}</p>
         <div class="input-group">
           <div class="input-group-text">{{'commands.delete.prefix' | translate}}</div>
-          <input [(ngModel)]="deleteId" name="deleteId" class="form-control"
+          <input [(ngModel)]="deleteId" class="form-control" name="deleteId"
                  placeholder="{{'commands.delete.placeholder' | translate}}" type="text">
         </div>
         <br>
-        <button (click)="deleteExercise()"
-                [disabled]="loading"
-                class="btn btn-primary"
-                type="button">
-          <span *ngIf="loadingDelete" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-          <span>&nbsp;{{'commands.delete.button' | translate}}&nbsp;</span>
-        </button>
+        <app-sb-button (clicked)="deleteExercise()"
+                       [disabled]="loading"
+                       [loading]="loadingDelete"
+                       [translate]="'commands.delete.button'"></app-sb-button>
       </div>
     </div>
   </div>

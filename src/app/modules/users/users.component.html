@@ -1,29 +1,17 @@
-<button (click)="export()"
-        [disabled]="loading"
-        class="btn btn-primary"
-        style="float: right;margin: 25px;"
-        type="button">
-  <span *ngIf="loadingExport" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-  <span>&nbsp;{{'users.export' | translate}}&nbsp;</span>
-</button>
+<app-sb-button (clicked)="export()"
+               [disabled]="loading"
+               [loading]="loadingExport"
+               [translate]="'users.export'"></app-sb-button>
 
-<button (click)="exportCsv()"
-        [disabled]="loading"
-        class="btn btn-primary"
-        style="float: right;margin: 25px;"
-        type="button">
-  <span *ngIf="loadingExportCsv" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-  <span>&nbsp;{{'users.exportCsv' | translate}}&nbsp;</span>
-</button>
+<app-sb-button (clicked)="exportCsv()"
+               [disabled]="loading"
+               [loading]="loadingExportCsv"
+               [translate]="'users.exportCsv'"></app-sb-button>
 
-<button (click)="refresh()"
-        [disabled]="loading"
-        class="btn btn-primary"
-        style="float: right;margin: 25px;"
-        type="button">
-  <span *ngIf="loadingRefresh" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-  <span>&nbsp;{{'users.refresh' | translate}}&nbsp;</span>
-</button>
+<app-sb-button (clicked)="refresh()"
+               [disabled]="loading"
+               [loading]="loadingRefresh"
+               [translate]="'users.refresh'"></app-sb-button>
 
 <div>
   <table id="table">

@@ -36,13 +36,13 @@
     </div>
   </div>
 
-  <input hidden="true" type="submit"/> <!-- submit with pressing enter -->
+  <input [disabled]="loading || emailValidity !== 'is-valid' || passwordValidity !== 'is-valid'" hidden="true"
+         type="submit"/> <!-- submit with pressing enter -->
 
   <div class="form-group" style="text-align: center;">
-    <button (click)="onSubmit()" [disabled]="loading || emailValidity !== 'is-valid' || passwordValidity !== 'is-valid'"
-            class="btn btn-primary" type="button">
-      <span *ngIf="loading" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
-      <span>&nbsp;{{(loading ? "login.button.loading" : "login.button.login") | translate}}&nbsp;</span>
-    </button>
+    <app-sb-button (clicked)="onSubmit()"
+                   [disabled]="loading || emailValidity !== 'is-valid' || passwordValidity !== 'is-valid'"
+                   [loading]="loading"
+                   [translate]="'login.button.login'"></app-sb-button>
   </div>
 </form>

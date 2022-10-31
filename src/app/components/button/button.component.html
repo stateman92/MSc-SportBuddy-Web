@@ -1,0 +1,10 @@
+<ng-container>
+  <button (click)="onClick($event)"
+          [disabled]="disabled"
+          class="btn btn-primary {{class}}"
+          type="button">
+    <span *ngIf="loading" aria-hidden="true" class="spinner-border spinner-border-sm" role="status"></span>
+    <span *ngIf="translate !== ''">&nbsp;{{(loading ? "login.button.loading" : translate) | translate}}&nbsp;</span>
+    <span *ngIf="translate === ''">&nbsp;<ng-content></ng-content>&nbsp;</span>
+  </button>
+</ng-container>

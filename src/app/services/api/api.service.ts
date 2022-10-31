@@ -29,11 +29,7 @@ export class ApiService {
 
   clearDatabase() {
     return this.backendService.clearDatabasePost().pipe(
-      first(),
-      catchError((error, caught) => {
-        this.handleError(error);
-        return of(0);
-      })
+      first()
     );
   }
 
@@ -49,21 +45,13 @@ export class ApiService {
 
   resetDatabase() {
     return this.backendService.resetDatabasePost().pipe(
-      first(),
-      catchError((error, caught) => {
-        this.handleError(error);
-        return of(0);
-      })
+      first()
     );
   }
 
   deleteExercise(id: string) {
     return this.backendService.deleteExerciseModelPost(id).pipe(
-      first(),
-      catchError((error, caught) => {
-        this.handleError(error);
-        return of(0);
-      })
+      first()
     );
   }
 
