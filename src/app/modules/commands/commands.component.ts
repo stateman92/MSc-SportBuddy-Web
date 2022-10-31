@@ -6,6 +6,8 @@ import {StorageService} from '../../services/storage/storage.service';
 import {RouterService} from '../../services/routing/router.service';
 import {TranslationService} from '../../services/translation/translation.service';
 import {AlertService} from '../../services/alert/alert.service';
+import {UuidService} from "../../services/uuid/uuid.service";
+import {Validity} from "../login/components/validity";
 
 @Component({
   selector: 'app-commands',
@@ -18,16 +20,29 @@ export class CommandsComponent extends BaseComponent implements OnInit {
   loadingClear = false;
   loadingReset = false;
   loadingDelete = false;
+  private deleteIdValid: Validity = null;
 
   constructor(
     private readonly apiService: ApiService,
     private readonly confirmationService: ConfirmationService,
     private readonly translationService: TranslationService,
     private readonly alertService: AlertService,
+    private readonly uuidService: UuidService,
     storageService: StorageService,
     routerService: RouterService
   ) {
     super(storageService, routerService);
+  }
+
+  get deleteIdValidity() {
+    switch (this.deleteIdValid) {
+      case Validity.invalid:
+        return 'is-invalid';
+      case Validity.valid:
+        return 'is-valid';
+      default:
+        return null
+    }
   }
 
   clearDatabase() {
@@ -83,5 +98,13 @@ export class CommandsComponent extends BaseComponent implements OnInit {
           this.loading = false;
           this.loadingDelete = false;
         });
+  }
+
+  onDeleteIdChange() {
+    if (this.deleteId == null || this.deleteId === '' || !this.uuidService.isValid(this.deleteId)) {
+      this.deleteIdValid = Validity.invalid
+    } else {
+      this.deleteIdValid = Validity.valid
+    }
   }
 }

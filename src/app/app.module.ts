@@ -20,6 +20,7 @@ import {VersionComponent} from './modules/version/version.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {ButtonComponent} from './components/button/button.component';
+import {SubmitComponent} from './components/input/submit.component';
 
 export const environment = Environment.dev;
 const appConfig = new AppConfigService(environment);
@@ -32,18 +33,19 @@ function apiConfigFactory() {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    UploadComponent,
-    CommandsComponent,
-    LoginComponent,
-    AlertComponent,
-    UsersComponent,
-    ResetPasswordComponent,
-    VersionComponent,
-    ButtonComponent
-  ],
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        UploadComponent,
+        CommandsComponent,
+        LoginComponent,
+        AlertComponent,
+        UsersComponent,
+        ResetPasswordComponent,
+        VersionComponent,
+        ButtonComponent,
+        SubmitComponent
+    ],
   imports: [
     ApiModule.forRoot(apiConfigFactory),
     HttpClientModule,

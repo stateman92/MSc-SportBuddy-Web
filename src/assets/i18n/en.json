@@ -1,4 +1,5 @@
 {
+  "loading": "Loading...",
   "alert": {
     "success": "Success!",
     "error": "Error!",
@@ -26,10 +27,12 @@
       "text": "Delete exercise",
       "description": "With this command you can delete any exercise.",
       "button": "Delete exercise",
-      "placeholder": "Exercise",
+      "placeholder": "exercise",
       "prefix": "UUID",
       "success": "Successful deletion!",
-      "error": "Error during deletion. Try again later."
+      "error": "Error during deletion. Try again later.",
+      "invalid": "Please enter a valid UUID.",
+      "valid": "Looks good!"
     }
   },
   "header": {
@@ -52,7 +55,6 @@
       "valid": "Looks good!"
     },
     "button": {
-      "loading": "Loading...",
       "login": "Login"
     },
     "result": {

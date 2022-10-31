@@ -1,8 +1,8 @@
 <h1 style="text-align: center;">{{'login.title' | translate}}</h1>
 <form (ngSubmit)="onSubmit()" class="login-wrapper">
   <div class="mb-3">
-    <label class="form-label" for="exampleInputEmail1">{{'login.email.title' | translate}}</label>
-    <div class="input-group has-validation" id="exampleInputEmail1">
+    <label class="form-label" for="inputEmail1">{{'login.email.title' | translate}}</label>
+    <div class="input-group has-validation" id="inputEmail1">
       <span class="input-group-text" id="inputGroupPrepend">@</span>
       <input (change)="onEmailChange()"
              (input)="onEmailChange()"
@@ -21,9 +21,9 @@
   </div>
 
   <div class="mb-3">
-    <label class="form-label" for="exampleInputPassword1">{{'login.password.title' | translate}}</label>
+    <label class="form-label" for="inputPassword1">{{'login.password.title' | translate}}</label>
 
-    <div class="input-group has-validation" id="exampleInputPassword1">
+    <div class="input-group has-validation" id="inputPassword1">
       <input (change)="onPasswordChange()"
              (input)="onPasswordChange()"
              [(ngModel)]="password"
@@ -36,8 +36,8 @@
     </div>
   </div>
 
-  <input [disabled]="loading || emailValidity !== 'is-valid' || passwordValidity !== 'is-valid'" hidden="true"
-         type="submit"/> <!-- submit with pressing enter -->
+  <app-sb-submit
+    [disabled]="loading || emailValidity !== 'is-valid' || passwordValidity !== 'is-valid'"></app-sb-submit>
 
   <div class="form-group" style="text-align: center;">
     <app-sb-button (clicked)="onSubmit()"

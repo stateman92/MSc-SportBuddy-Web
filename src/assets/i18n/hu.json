@@ -1,4 +1,5 @@
 {
+  "loading": "Betöltés...",
   "alert": {
     "success": "Siker!",
     "error": "Hiba!",
@@ -10,13 +11,28 @@
       "description": "Ezzel a paranccsal visszaállíthatod az adatbázist, és az egyetlen entitás az admin felhasználó lesz.",
       "button": "Visszaállítás",
       "new": "Új",
-      "confirmation": "Biztos vagy benne, hogy visszaállítod?"
+      "confirmation": "Biztos vagy benne, hogy visszaállítod?",
+      "success": "Sikeres visszaállítás!",
+      "error": "Hiba történt a visszaállítás közben. Kérjük próbáld újra."
     },
     "clear": {
       "text": "Adatbázis törlése",
       "description": "Ezzel a paranccsal visszaállíthatod az adatbázist, és az a kezdeti állapotásban lesz.",
       "button": "Törlés",
-      "confirmation": "Biztos vagy benne, hogy törlöd?"
+      "confirmation": "Biztos vagy benne, hogy törlöd?",
+      "success": "Sikeres törlés!",
+      "error": "Hiba történt a törlés közben. Kérjük próbáld újra."
+    },
+    "delete": {
+      "text": "Gyakorlat törlése",
+      "description": "Ezzel a paranccsal bármelyik gyakorlatot letörölheted.",
+      "button": "Törlés",
+      "placeholder": "gyakorlat",
+      "prefix": "UUID",
+      "success": "Sikeres törlés!",
+      "error": "Hiba történt a törlés közben. Kérjük próbáld újra.",
+      "invalid": "Írj be egy érvényes UUID-t.",
+      "valid": "Oké!"
     }
   },
   "header": {
@@ -39,7 +55,6 @@
       "valid": "Oké!"
     },
     "button": {
-      "loading": "Betöltés...",
       "login": "Bejelentkezés"
     },
     "result": {

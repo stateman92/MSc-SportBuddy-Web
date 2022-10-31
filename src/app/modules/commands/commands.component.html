@@ -36,14 +36,29 @@
       <div>
         <h3 class="fs-2">{{'commands.delete.text' | translate}}</h3>
         <p>{{'commands.delete.description' | translate}}</p>
-        <div class="input-group">
-          <div class="input-group-text">{{'commands.delete.prefix' | translate}}</div>
-          <input [(ngModel)]="deleteId" class="form-control" name="deleteId"
-                 placeholder="{{'commands.delete.placeholder' | translate}}" type="text">
-        </div>
-        <br>
+
+        <form (submit)="deleteExercise()">
+          <div class="input-group">
+            <div class="input-group has-validation">
+              <div class="input-group-text">{{'commands.delete.prefix' | translate}}</div>
+              <input (change)="onDeleteIdChange()"
+                     (input)="onDeleteIdChange()"
+                     [(ngModel)]="deleteId"
+                     [disabled]="loading"
+                     class="form-control {{ deleteIdValidity }}"
+                     name="deleteId"
+                     placeholder="{{'commands.delete.placeholder' | translate}}"
+                     type="text">
+              <div class="invalid-feedback">{{'commands.delete.invalid' | translate}}</div>
+              <div class="valid-feedback">{{'commands.delete.valid' | translate}}</div>
+            </div>
+          </div>
+          <br>
+          <app-sb-submit [disabled]="loading || deleteIdValidity !== 'is-valid'"></app-sb-submit>
+        </form>
+
         <app-sb-button (clicked)="deleteExercise()"
-                       [disabled]="loading"
+                       [disabled]="loading || deleteIdValidity !== 'is-valid'"
                        [loading]="loadingDelete"
                        [translate]="'commands.delete.button'"></app-sb-button>
       </div>
