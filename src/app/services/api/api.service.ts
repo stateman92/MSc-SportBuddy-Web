@@ -36,7 +36,7 @@ export class ApiService {
   getUsers() {
     return this.backendService.usersGet().pipe(
       first(),
-      catchError((error, caught) => {
+      catchError((error, _) => {
         this.handleError(error);
         return of([]);
       })
@@ -63,12 +63,8 @@ export class ApiService {
 
   uploadExercise(exercise: ExerciseModelDTO) {
     return this.backendService.uploadExerciseModelPost(exercise).pipe(
-      first(),
-      catchError((error, caught) => {
-        this.handleError(error);
-        return of(0);
-      })
-    ).subscribe();
+      first()
+    );
   }
 
   private setup() {

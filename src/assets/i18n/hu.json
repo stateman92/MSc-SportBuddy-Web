@@ -47,12 +47,14 @@
       "title": "Email",
       "invalid": "Írj be egy érvényes emailt.",
       "valid": "Oké!",
-      "security": "Nem osztjuk meg az emailedet senkivel."
+      "security": "Nem osztjuk meg az emailedet senkivel.",
+      "placeholder": "email"
     },
     "password": {
       "title": "Jelszó",
       "invalid": "Írj be egy jelszót.",
-      "valid": "Oké!"
+      "valid": "Oké!",
+      "placeholder": "jelszó"
     },
     "button": {
       "login": "Bejelentkezés"
@@ -64,8 +66,14 @@
   },
   "reset": {
     "title": "Jelszó visszaállítása",
-    "password": "Jelszó:",
-    "confirm": "Jelszó megerősítése:",
+    "password":{
+      "title": "Jelszó:",
+      "placeholder": "jelszó"
+    },
+    "confirm":{
+      "title": "Jelszó megerősítése:",
+      "placeholder": "jelszó"
+    },
     "submit": "Beküldés",
     "success": "Sikeres módosítás!",
     "error": "Sikertelen módosítás. Próbáld újra később."
@@ -83,6 +91,28 @@
       "image": "Profilkép",
       "token": "Token",
       "chats": "Chatek"
+    }
+  },
+  "upload": {
+    "sequence": {
+      "title": "Gyakorlatok száma",
+      "details": "Az a szám, mely megadja, hogy a gyakorlatot hányszor kell végrehajtani"
+    },
+    "delay": {
+      "title": "A mozdulatok közötti várakozás (másodpercben)",
+      "details": "A gyakorlat mozdulatai közötti várakozás (másodpercben)"
+    },
+    "video": {
+      "title": "A videó azonosítója",
+      "details": "A 11 karakter hosszú YouTube azonosító, például 'dQw4w9WgXcQ'"
+    },
+    "name": {
+      "title": "A gyakorlat neve",
+      "details": "A gyakorlat neve, ami a kliens alkalmazásban lesz feloldva"
+    },
+    "details": {
+      "title": "A gyakorlat részletei",
+      "details": "A gyakorlat részletei, ami a kliens alkalmazásban lesz feloldva"
     }
   }
 }

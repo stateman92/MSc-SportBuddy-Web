@@ -1,1 +1,86 @@
-upload works!
+<div class="centered">
+  <div class="row">
+    <div class="col">
+      <div class="mb-3">
+        <label class="form-label">{{'upload.sequence.title' | translate}}</label>
+        <div class="input-group">
+          <input [(ngModel)]="sequenceCount"
+                 [disabled]="loading"
+                 class="form-control"
+                 min="1"
+                 name="sequenceCount"
+                 onblur="if (this.value < 1) this.value = 1"
+                 onkeyup="if (this.value < 1) this.value = 1"
+                 pattern="^[0-9]"
+                 required
+                 step="1"
+                 type="number">
+        </div>
+        <div class="form-text">{{'upload.sequence.details' | translate}}</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-3">
+        <label class="form-label">{{'upload.delay.title' | translate}}</label>
+        <div class="input-group">
+          <input [(ngModel)]="delay"
+                 [disabled]="loading"
+                 class="form-control"
+                 min="0"
+                 name="delay"
+                 onblur="if (this.value === '' || this.value < 0) this.value = 0"
+                 onkeyup="if (this.value === '' || this.value < 0) this.value = 0"
+                 pattern="^[0-9]"
+                 required
+                 type="number">
+        </div>
+        <div class="form-text">{{'upload.delay.details' | translate}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">{{'upload.video.title' | translate}}</label>
+    <div class="input-group">
+      <input [(ngModel)]="videoId"
+             [disabled]="loading"
+             class="form-control"
+             name="videoId"
+             required
+             type="text">
+    </div>
+    <div class="form-text">{{'upload.video.details' | translate}}</div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="mb-3">
+        <label class="form-label">{{'upload.name.title' | translate}}</label>
+        <div class="input-group">
+          <input [(ngModel)]="name"
+                 [disabled]="loading"
+                 class="form-control"
+                 min="0"
+                 name="name"
+                 required
+                 type="text">
+        </div>
+        <div class="form-text">{{'upload.name.details' | translate}}</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-3">
+        <label class="form-label">{{'upload.details.title' | translate}}</label>
+        <div class="input-group">
+          <input [(ngModel)]="details"
+                 [disabled]="loading"
+                 class="form-control"
+                 name="delay"
+                 required
+                 type="text">
+        </div>
+        <div class="form-text">{{'upload.details.details' | translate}}</div>
+      </div>
+    </div>
+  </div>
+</div>

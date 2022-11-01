@@ -1,16 +1,19 @@
 <app-sb-button (clicked)="export()"
                [disabled]="loading"
                [loading]="loadingExport"
+               style="float: right;margin: 20px;"
                [translate]="'users.export'"></app-sb-button>
 
 <app-sb-button (clicked)="exportCsv()"
                [disabled]="loading"
                [loading]="loadingExportCsv"
+               style="float: right;margin: 20px;"
                [translate]="'users.exportCsv'"></app-sb-button>
 
 <app-sb-button (clicked)="refresh()"
                [disabled]="loading"
                [loading]="loadingRefresh"
+               style="float: right;margin: 20px;"
                [translate]="'users.refresh'"></app-sb-button>
 
 <div>

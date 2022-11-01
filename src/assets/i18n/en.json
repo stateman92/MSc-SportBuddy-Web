@@ -47,12 +47,14 @@
       "title": "Email",
       "invalid": "Please enter a valid email.",
       "valid": "Looks good!",
-      "security": "We'll never share your email with anyone else."
+      "security": "We'll never share your email with anyone else.",
+      "placeholder": "email"
     },
     "password": {
       "title": "Password",
       "invalid": "Please enter a password.",
-      "valid": "Looks good!"
+      "valid": "Looks good!",
+      "placeholder": "password"
     },
     "button": {
       "login": "Login"
@@ -64,8 +66,14 @@
   },
   "reset": {
     "title": "Reset password",
-    "password": "Password:",
-    "confirm": "Confirm password:",
+    "password":{
+      "title": "Password:",
+      "placeholder": "password"
+    },
+    "confirm":{
+      "title": "Confirm password:",
+      "placeholder": "password"
+    },
     "submit": "Submit",
     "success": "Successful change!",
     "error": "Error during change. Try again later."
@@ -83,6 +91,28 @@
       "image": "Profile image",
       "token": "Token",
       "chats": "Chats"
+    }
+  },
+  "upload": {
+    "sequence": {
+      "title": "Number of sequences",
+      "details": "The number of how many times should the user repeat the exercise"
+    },
+    "delay": {
+      "title": "The delay (in seconds) between moments",
+      "details": "The delay (in seconds) between the moments of the exercise"
+    },
+    "video": {
+      "title": "The video identifier of the exercise",
+      "details": "The 11 character long YouTube id, for instance 'dQw4w9WgXcQ'"
+    },
+    "name": {
+      "title": "The name of the exercise",
+      "details": "The name of the exercise that will be resolved in the client application"
+    },
+    "details": {
+      "title": "The details of the exercise",
+      "details": "The details of the exercise that will be resolved in the client application"
     }
   }
 }
