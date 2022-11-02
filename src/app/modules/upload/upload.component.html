@@ -83,4 +83,283 @@
       </div>
     </div>
   </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div *ngFor="let sequence of sequence">
+    <!--
+    <div>{{sequence.armCharacteristics.firstHalfPositionType}}</div>
+    <div>{{sequence.armCharacteristics.firstFullPositionType}}</div>
+    <div>{{sequence.armCharacteristics.secondFullPositionType}}</div>
+    <div>{{sequence.armCharacteristics.secondHalfPositionType}}</div>
+    <div>{{sequence.armCharacteristics.distanceType}}</div>
+    <div>{{sequence.legCharacteristics.firstHalfPositionType}}</div>
+    <div>{{sequence.legCharacteristics.firstFullPositionType}}</div>
+    <div>{{sequence.legCharacteristics.secondFullPositionType}}</div>
+    <div>{{sequence.legCharacteristics.secondHalfPositionType}}</div>
+    <div>{{sequence.legCharacteristics.distanceType}}</div>
+    -->
+
+    <div class="row">
+      <div class="col">
+        <label class="form-label" for="firstHalfArm">First half position type (arm)</label>
+        <select class="form-select" id="firstHalfArm" [(ngModel)]="sequence.armCharacteristics.firstHalfPositionType">
+          <option value="around0">Around 0 degrees</option>
+          <option value="around45">Around 45 degrees</option>
+          <option value="around90">Around 90 degrees</option>
+          <option value="around135">Around 135 degrees</option>
+          <option value="around180">Around 180 degrees</option>
+        </select>
+      </div>
+      <div class="col">
+        <label class="form-label" for="firstFullArm">First full position type (arm)</label>
+        <select class="form-select" id="firstFullArm" [(ngModel)]="sequence.armCharacteristics.firstFullPositionType">
+          <option value="around0">Around 0 degrees</option>
+          <option value="around45">Around 45 degrees</option>
+          <option value="around90">Around 90 degrees</option>
+          <option value="around135">Around 135 degrees</option>
+          <option value="around180">Around 180 degrees</option>
+          <option value="around225">Around 225 degrees</option>
+          <option value="around270">Around 270 degrees</option>
+          <option value="around315">Around 315 degrees</option>
+        </select>
+      </div>
+      <div class="col">
+        <label class="form-label" for="secondHalfArm">Second half position type (arm)</label>
+        <select class="form-select" id="secondHalfArm" [(ngModel)]="sequence.armCharacteristics.secondHalfPositionType">
+          <option value="around0">Around 0 degrees</option>
+          <option value="around45">Around 45 degrees</option>
+          <option value="around90">Around 90 degrees</option>
+          <option value="around135">Around 135 degrees</option>
+          <option value="around180">Around 180 degrees</option>
+        </select>
+      </div>
+      <div class="col">
+        <label class="form-label" for="secondFullArm">Second full position type (arm)</label>
+        <select class="form-select" id="secondFullArm" [(ngModel)]="sequence.armCharacteristics.secondFullPositionType">
+          <option value="around0">Around 0 degrees</option>
+          <option value="around45">Around 45 degrees</option>
+          <option value="around90">Around 90 degrees</option>
+          <option value="around135">Around 135 degrees</option>
+          <option value="around180">Around 180 degrees</option>
+          <option value="around225">Around 225 degrees</option>
+          <option value="around270">Around 270 degrees</option>
+          <option value="around315">Around 315 degrees</option>
+        </select>
+      </div>
+      <div class="col">
+        <label class="form-label" for="distanceArm">Distance (arm)</label>
+        <select class="form-select" id="distanceArm" [(ngModel)]="sequence.armCharacteristics.distanceType">
+          <option value="around0">Around 0</option>
+          <option value="around1">Around 1</option>
+          <option value="around2">Around 2</option>
+          <option value="around3">Around 3</option>
+          <option value="around4">Around 4</option>
+          <option value="aroundMinus1">Around -1</option>
+          <option value="aroundMinus2">Around -2</option>
+          <option value="aroundMinus3">Around -3</option>
+          <option value="aroundMinus4">Around -4</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <label class="form-label" for="firstHalfLeg">First half position type (leg)</label>
+        <select class="form-select" id="firstHalfLeg" [(ngModel)]="sequence.legCharacteristics.firstHalfPositionType">
+          <option value="around0">Around 0 degrees</option>
+          <option value="around45">Around 45 degrees</option>
+          <option value="around90">Around 90 degrees</option>
+          <option value="around135">Around 135 degrees</option>
+          <option value="around180">Around 180 degrees</option>
+        </select>
+      </div>
+      <div class="col">
+        <label class="form-label" for="firstFullLeg">First full position type (leg)</label>
+        <select class="form-select" id="firstFullLeg" [(ngModel)]="sequence.legCharacteristics.firstFullPositionType">
+          <option value="around0">Around 0 degrees</option>
+          <option value="around45">Around 45 degrees</option>
+          <option value="around90">Around 90 degrees</option>
+          <option value="around135">Around 135 degrees</option>
+          <option value="around180">Around 180 degrees</option>
+          <option value="around225">Around 225 degrees</option>
+          <option value="around270">Around 270 degrees</option>
+          <option value="around315">Around 315 degrees</option>
+        </select>
+      </div>
+      <div class="col">
+        <label class="form-label" for="secondHalfLeg">Second half position type (leg)</label>
+        <select class="form-select" id="secondHalfLeg" [(ngModel)]="sequence.legCharacteristics.secondHalfPositionType">
+          <option value="around0">Around 0 degrees</option>
+          <option value="around45">Around 45 degrees</option>
+          <option value="around90">Around 90 degrees</option>
+          <option value="around135">Around 135 degrees</option>
+          <option value="around180">Around 180 degrees</option>
+        </select>
+      </div>
+      <div class="col">
+        <label class="form-label" for="secondFullLeg">Second full position type (leg)</label>
+        <select class="form-select" id="secondFullLeg" [(ngModel)]="sequence.legCharacteristics.secondFullPositionType">
+          <option value="around0">Around 0 degrees</option>
+          <option value="around45">Around 45 degrees</option>
+          <option value="around90">Around 90 degrees</option>
+          <option value="around135">Around 135 degrees</option>
+          <option value="around180">Around 180 degrees</option>
+          <option value="around225">Around 225 degrees</option>
+          <option value="around270">Around 270 degrees</option>
+          <option value="around315">Around 315 degrees</option>
+        </select>
+      </div>
+      <div class="col">
+        <label class="form-label" for="distanceLeg">Distance (leg)</label>
+        <select class="form-select" id="distanceLeg" [(ngModel)]="sequence.legCharacteristics.distanceType">
+          <option value="around0">Around 0</option>
+          <option value="around1">Around 1</option>
+          <option value="around2">Around 2</option>
+          <option value="around3">Around 3</option>
+          <option value="around4">Around 4</option>
+          <option value="aroundMinus1">Around -1</option>
+          <option value="aroundMinus2">Around -2</option>
+          <option value="aroundMinus3">Around -3</option>
+          <option value="aroundMinus4">Around -4</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <div *ngFor="let error of sequence.errors">
+      <!--
+      <div>{{error.error}}</div>
+      <div>{{error.characteristics.firstHalfPositionType}}</div>
+      <div>{{error.characteristics.firstFullPositionType}}</div>
+      <div>{{error.characteristics.secondFullPositionType}}</div>
+      <div>{{error.characteristics.secondHalfPositionType}}</div>
+      <div>{{error.characteristics.distanceType}}</div>
+      <div>{{error.characteristics.type}}</div>
+      -->
+
+      <br>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <label class="form-label" for="errorDescription">Error desciprtion</label>
+          <input [(ngModel)]="error.error"
+                 id="errorDescription"
+                 placeholder="error description"
+                 class="form-control"
+                 name="error"
+                 type="test">
+        </div>
+        <div class="col">
+          <label class="form-label" for="error">Error type</label>
+          <select class="form-select" id="error" [(ngModel)]="error.characteristics.type">
+            <option value="arms">Arms</option>
+            <option value="legs">Legs</option>
+          </select>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col">
+          <app-sb-button (clicked)="removeError(error)" [translate]="'Delete error'"></app-sb-button>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <label class="form-label" for="firstHalfError">First half position type</label>
+          <select class="form-select" id="firstHalfError" [(ngModel)]="error.characteristics.firstHalfPositionType">
+            <option value="around0">Around 0 degrees</option>
+            <option value="around45">Around 45 degrees</option>
+            <option value="around90">Around 90 degrees</option>
+            <option value="around135">Around 135 degrees</option>
+            <option value="around180">Around 180 degrees</option>
+          </select>
+        </div>
+        <div class="col">
+          <label class="form-label" for="firstFullError">First full position type</label>
+          <select class="form-select" id="firstFullError" [(ngModel)]="error.characteristics.firstFullPositionType">
+            <option value="around0">Around 0 degrees</option>
+            <option value="around45">Around 45 degrees</option>
+            <option value="around90">Around 90 degrees</option>
+            <option value="around135">Around 135 degrees</option>
+            <option value="around180">Around 180 degrees</option>
+            <option value="around225">Around 225 degrees</option>
+            <option value="around270">Around 270 degrees</option>
+            <option value="around315">Around 315 degrees</option>
+          </select>
+        </div>
+        <div class="col">
+          <label class="form-label" for="secondHalfError">Second half position type</label>
+          <select class="form-select" id="secondHalfError" [(ngModel)]="error.characteristics.secondHalfPositionType">
+            <option value="around0">Around 0 degrees</option>
+            <option value="around45">Around 45 degrees</option>
+            <option value="around90">Around 90 degrees</option>
+            <option value="around135">Around 135 degrees</option>
+            <option value="around180">Around 180 degrees</option>
+          </select>
+        </div>
+        <div class="col">
+          <label class="form-label" for="secondFullError">Second full position type</label>
+          <select class="form-select" id="secondFullError" [(ngModel)]="error.characteristics.secondFullPositionType">
+            <option value="around0">Around 0 degrees</option>
+            <option value="around45">Around 45 degrees</option>
+            <option value="around90">Around 90 degrees</option>
+            <option value="around135">Around 135 degrees</option>
+            <option value="around180">Around 180 degrees</option>
+            <option value="around225">Around 225 degrees</option>
+            <option value="around270">Around 270 degrees</option>
+            <option value="around315">Around 315 degrees</option>
+          </select>
+        </div>
+        <div class="col">
+          <label class="form-label" for="distanceError">Distance</label>
+          <select class="form-select" id="distanceError" [(ngModel)]="error.characteristics.distanceType">
+            <option value="around0">Around 0</option>
+            <option value="around1">Around 1</option>
+            <option value="around2">Around 2</option>
+            <option value="around3">Around 3</option>
+            <option value="around4">Around 4</option>
+            <option value="aroundMinus1">Around -1</option>
+            <option value="aroundMinus2">Around -2</option>
+            <option value="aroundMinus3">Around -3</option>
+            <option value="aroundMinus4">Around -4</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <app-sb-button (clicked)="addNewError(sequence.id)" [translate]="'Add new error'"></app-sb-button>
+      </div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+
+    <br>
+    <br>
+
+    <app-sb-button (clicked)="removeItem(sequence)" [translate]="'Delete item'"></app-sb-button>
+
+    <br>
+    <hr>
+  </div>
+
+  <app-sb-button (clicked)="addNewItem()" [translate]="'Add new item'"></app-sb-button>
+
 </div>

@@ -14,6 +14,7 @@ import { ExerciseErrorDTO } from './exerciseErrorDTO';
 
 
 export interface ExerciseMomentDTO { 
+    id: string;
     armCharacteristics: CharacteristicsDTO;
     legCharacteristics: CharacteristicsDTO;
     errors: Array<ExerciseErrorDTO>;

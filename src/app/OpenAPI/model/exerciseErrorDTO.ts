@@ -13,6 +13,7 @@ import { CharacteristicsDTO } from './characteristicsDTO';
 
 
 export interface ExerciseErrorDTO { 
+    id: string;
     characteristics: CharacteristicsDTO;
     /**
      * the identifier of the client side text
