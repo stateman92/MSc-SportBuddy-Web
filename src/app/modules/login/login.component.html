@@ -8,11 +8,11 @@
              (input)="onEmailChange()"
              [(ngModel)]="email"
              [disabled]="loading"
-             placeholder="{{'login.email.placeholder' | translate}}"
              aria-describedby="inputGroupPrepend"
              autofocus
              class="form-control {{ emailValidity }}"
              name="email"
+             placeholder="{{'login.email.placeholder' | translate}}"
              required
              type="text">
       <div class="invalid-feedback">{{'login.email.invalid' | translate}}</div>
@@ -29,9 +29,9 @@
              (input)="onPasswordChange()"
              [(ngModel)]="password"
              [disabled]="loading"
-             placeholder="{{'login.password.placeholder' | translate}}"
              class="form-control {{ passwordValidity }}"
              name="password"
+             placeholder="{{'login.password.placeholder' | translate}}"
              type="password">
       <div class="invalid-feedback">{{'login.password.invalid' | translate}}</div>
       <div class="valid-feedback">{{'login.password.valid' | translate}}</div>

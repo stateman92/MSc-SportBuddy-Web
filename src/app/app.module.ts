@@ -22,7 +22,7 @@ import {MatCardModule} from '@angular/material/card';
 import {ButtonComponent} from './components/button/button.component';
 import {SubmitComponent} from './components/input/submit.component';
 
-export const environment = Environment.dev;
+export const environment = Environment.prod;
 const appConfig = new AppConfigService(environment);
 
 function apiConfigFactory() {

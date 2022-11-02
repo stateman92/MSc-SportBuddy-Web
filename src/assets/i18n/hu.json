@@ -113,6 +113,81 @@
     "details": {
       "title": "A gyakorlat részletei",
       "details": "A gyakorlat részletei, ami a kliens alkalmazásban lesz feloldva"
+    },
+    "item": {
+      "half": {
+        "around0": "Kb. 0 fok",
+        "around45": "Kb. 45 fok",
+        "around90": "Kb. 90 fok",
+        "around135": "Kb. 135 fok",
+        "around180": "Kb. 180 fok"
+      },
+      "full": {
+        "around0": "Kb. 0 fok",
+        "around45": "Kb. 45 fok",
+        "around90": "Kb. 90 fok",
+        "around135": "Kb. 135 fok",
+        "around180": "Kb. 180 fok",
+        "around225": "Kb. 225 fok",
+        "around270": "Kb. 270 fok",
+        "around315": "Kb. 315 fok"
+      },
+      "distance": {
+        "around0": "Kb. 0 egység",
+        "around1": "Kb. 1 egység",
+        "around2": "Kb. 2 egység",
+        "around3": "Kb. 3 egység",
+        "around4": "Kb. 4 egység",
+        "aroundMinus1": "Kb. -1 egység",
+        "aroundMinus2": "Kb. -2 egység",
+        "aroundMinus3": "Kb. -3 egység",
+        "aroundMinus4": "Kb. -4 egység"
+      },
+      "type": {
+        "arms": "Kezek",
+        "legs": "Lábak"
+      },
+      "titles": {
+        "arm": {
+          "firstHalf": "Első fél-típusú pozíció (kéz)",
+          "firstFull": "Első teljes-típusú pozíció (kéz)",
+          "secondHalf": "Második fél-típusú pozíció (kéz)",
+          "secondFull": "Második teljes-típusú pozíció (kéz)",
+          "distance": "Távolság (kéz)"
+        },
+        "leg": {
+          "firstHalf": "Első fél-típusú pozíció (láb)",
+          "firstFull": "Első teljes-típusú pozíció (láb)",
+          "secondHalf": "Második fél-típusú pozíció (láb)",
+          "secondFull": "Második teljes-típusú pozíció (láb)",
+          "distance": "Távolság (láb)"
+        },
+        "error": {
+          "title": "Hibaleírás",
+          "placeholder": "hibaleírás",
+          "type": "Hiba típusa",
+          "firstHalf": "Első fél-típusú pozíció",
+          "firstFull": "Első teljes-típusú pozíció",
+          "secondHalf": "Második fél-típusú pozíció",
+          "secondFull": "Második teljes-típusú pozíció",
+          "distance": "Távolság"
+        }
+      },
+      "buttons": {
+        "error": {
+          "remove": "Hiba törlése",
+          "add": "Hiba hozzáadása"
+        },
+        "item": {
+          "remove": "Elem törlése",
+          "add": "Elem hozzáadása"
+        },
+        "upload": "Feltöltés"
+      },
+      "results": {
+        "success": "Sikeres feltöltés!",
+        "error": "Hiba a feltöltés során. Kérjük próbáld újra."
+      }
     }
   }
 }

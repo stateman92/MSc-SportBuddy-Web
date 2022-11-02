@@ -1,6 +1,6 @@
 import * as XLSX from 'xlsx/xlsx.mjs';
 import {Injectable} from '@angular/core';
-import {ExportType} from "./components/export.type";
+import {ExportType} from './components/export.type';
 
 @Injectable({providedIn: 'root'})
 export class ExportService {

@@ -7,6 +7,8 @@ SportBuddy Web admin app
 
 [Run Angular tests on GitHub Actions CI](https://stackoverflow.com/a/69780948)
 
+[OpenAPI generated DELETE method Expected 1-2 arguments, but got 3](https://github.com/OpenAPITools/openapi-generator/issues/10864)
+
 ## Setup
 
 - Checkout repo
@@ -23,7 +25,7 @@ SportBuddy Web admin app
 
 #### Update openapi generated files
 
-- Make sure you've installed [OpenAPI generator](https://github.com/OpenAPITools/openapi-generator) - if not, use e.g. `brew install openapi-generator` via [Homebrew](https://brew.sh/)
+- Make sure you've installed [OpenAPI generator](https://github.com/OpenAPITools/openapi-generator) 6.2.1 - if not, use e.g. `brew install openapi-generator` via [Homebrew](https://brew.sh/)
 
 - Run `openapi-generator generate -i /path/to/descriptor/swagger.yaml -g typescript-angular -o /path/to/output` in the terminal
 

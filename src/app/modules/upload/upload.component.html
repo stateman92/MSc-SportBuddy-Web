@@ -86,81 +86,67 @@
 
   <br>
   <hr>
-  <br>
 
   <div *ngFor="let sequence of sequence">
-    <!--
-    <div>{{sequence.armCharacteristics.firstHalfPositionType}}</div>
-    <div>{{sequence.armCharacteristics.firstFullPositionType}}</div>
-    <div>{{sequence.armCharacteristics.secondFullPositionType}}</div>
-    <div>{{sequence.armCharacteristics.secondHalfPositionType}}</div>
-    <div>{{sequence.armCharacteristics.distanceType}}</div>
-    <div>{{sequence.legCharacteristics.firstHalfPositionType}}</div>
-    <div>{{sequence.legCharacteristics.firstFullPositionType}}</div>
-    <div>{{sequence.legCharacteristics.secondFullPositionType}}</div>
-    <div>{{sequence.legCharacteristics.secondHalfPositionType}}</div>
-    <div>{{sequence.legCharacteristics.distanceType}}</div>
-    -->
-
     <div class="row">
       <div class="col">
-        <label class="form-label" for="firstHalfArm">First half position type (arm)</label>
-        <select class="form-select" id="firstHalfArm" [(ngModel)]="sequence.armCharacteristics.firstHalfPositionType">
-          <option value="around0">Around 0 degrees</option>
-          <option value="around45">Around 45 degrees</option>
-          <option value="around90">Around 90 degrees</option>
-          <option value="around135">Around 135 degrees</option>
-          <option value="around180">Around 180 degrees</option>
+        <label class="form-label" for="firstHalfArm">{{'upload.item.titles.arm.firstHalf' | translate}}</label>
+        <select [(ngModel)]="sequence.armCharacteristics.firstHalfPositionType" class="form-select" id="firstHalfArm">
+          <option value="around0">{{'upload.item.half.around0' | translate}}</option>
+          <option value="around45">{{'upload.item.half.around45' | translate}}</option>
+          <option value="around90">{{'upload.item.half.around90' | translate}}</option>
+          <option value="around135">{{'upload.item.half.around135' | translate}}</option>
+          <option value="around180">{{'upload.item.half.around180' | translate}}</option>
         </select>
       </div>
       <div class="col">
-        <label class="form-label" for="firstFullArm">First full position type (arm)</label>
-        <select class="form-select" id="firstFullArm" [(ngModel)]="sequence.armCharacteristics.firstFullPositionType">
-          <option value="around0">Around 0 degrees</option>
-          <option value="around45">Around 45 degrees</option>
-          <option value="around90">Around 90 degrees</option>
-          <option value="around135">Around 135 degrees</option>
-          <option value="around180">Around 180 degrees</option>
-          <option value="around225">Around 225 degrees</option>
-          <option value="around270">Around 270 degrees</option>
-          <option value="around315">Around 315 degrees</option>
+        <label class="form-label" for="firstFullArm">{{'upload.item.titles.arm.firstFull' | translate}}</label>
+        <select [(ngModel)]="sequence.armCharacteristics.firstFullPositionType" class="form-select" id="firstFullArm">
+          <option value="around0">{{'upload.item.full.around0' | translate}}</option>
+          <option value="around45">{{'upload.item.full.around45' | translate}}</option>
+          <option value="around90">{{'upload.item.full.around90' | translate}}</option>
+          <option value="around135">{{'upload.item.full.around135' | translate}}</option>
+          <option value="around180">{{'upload.item.full.around180' | translate}}</option>
+          <option value="around225">{{'upload.item.full.around225' | translate}}</option>
+          <option value="around270">{{'upload.item.full.around270' | translate}}</option>
+          <option value="around315">{{'upload.item.full.around315' | translate}}</option>
         </select>
       </div>
       <div class="col">
-        <label class="form-label" for="secondHalfArm">Second half position type (arm)</label>
-        <select class="form-select" id="secondHalfArm" [(ngModel)]="sequence.armCharacteristics.secondHalfPositionType">
-          <option value="around0">Around 0 degrees</option>
-          <option value="around45">Around 45 degrees</option>
-          <option value="around90">Around 90 degrees</option>
-          <option value="around135">Around 135 degrees</option>
-          <option value="around180">Around 180 degrees</option>
+        <label class="form-label" for="secondHalfArm">{{'upload.item.titles.arm.secondHalf' | translate}}</label>
+        <select [(ngModel)]="sequence.armCharacteristics.secondHalfPositionType" class="form-select" id="secondHalfArm">
+          <option value="around0">{{'upload.item.half.around0' | translate}}</option>
+          <option value="around45">{{'upload.item.half.around45' | translate}}</option>
+          <option value="around90">{{'upload.item.half.around90' | translate}}</option>
+          <option value="around135">{{'upload.item.half.around135' | translate}}</option>
+          <option value="around180">{{'upload.item.half.around180' | translate}}</option>
         </select>
       </div>
       <div class="col">
-        <label class="form-label" for="secondFullArm">Second full position type (arm)</label>
-        <select class="form-select" id="secondFullArm" [(ngModel)]="sequence.armCharacteristics.secondFullPositionType">
-          <option value="around0">Around 0 degrees</option>
-          <option value="around45">Around 45 degrees</option>
-          <option value="around90">Around 90 degrees</option>
-          <option value="around135">Around 135 degrees</option>
-          <option value="around180">Around 180 degrees</option>
-          <option value="around225">Around 225 degrees</option>
-          <option value="around270">Around 270 degrees</option>
-          <option value="around315">Around 315 degrees</option>
+        <label class="form-label" for="secondFullArm">{{'upload.item.titles.arm.secondFull' | translate}}</label>
+        <select [(ngModel)]="sequence.armCharacteristics.secondFullPositionType" class="form-select" id="secondFullArm">
+          <option value="around0">{{'upload.item.full.around0' | translate}}</option>
+          <option value="around45">{{'upload.item.full.around45' | translate}}</option>
+          <option value="around90">{{'upload.item.full.around90' | translate}}</option>
+          <option value="around135">{{'upload.item.full.around135' | translate}}</option>
+          <option value="around180">{{'upload.item.full.around180' | translate}}</option>
+          <option value="around225">{{'upload.item.full.around225' | translate}}</option>
+          <option value="around270">{{'upload.item.full.around270' | translate}}</option>
+          <option value="around315">{{'upload.item.full.around315' | translate}}</option>
         </select>
       </div>
       <div class="col">
-        <label class="form-label" for="distanceArm">Distance (arm)</label>
-        <select class="form-select" id="distanceArm" [(ngModel)]="sequence.armCharacteristics.distanceType">
-          <option value="around0">Around 0</option>
-          <option value="around1">Around 1</option>
-          <option value="around2">Around 2</option>
-          <option value="around3">Around 3</option>
-          <option value="around4">Around 4</option>
-          <option value="aroundMinus1">Around -1</option>
-          <option value="aroundMinus2">Around -2</option>
-          <option value="aroundMinus3">Around -3</option>
-          <option value="aroundMinus4">Around -4</option>
+        <label class="form-label" for="distanceArm">{{'upload.item.titles.arm.distance' | translate}}</label>
+        <select [(ngModel)]="sequence.armCharacteristics.distanceType" class="form-select" id="distanceArm">
+          <option value="around0">{{'upload.item.distance.around0' | translate}}</option>
+          <option value="around1">{{'upload.item.distance.around1' | translate}}</option>
+          <option value="around2">{{'upload.item.distance.around2' | translate}}</option>
+          <option value="around3">{{'upload.item.distance.around3' | translate}}</option>
+          <option value="around4">{{'upload.item.distance.around4' | translate}}</option>
+          <option value="aroundMinus1">{{'upload.item.distance.aroundMinus1' | translate}}</option>
+          <option value="aroundMinus2">{{'upload.item.distance.aroundMinus2' | translate}}</option>
+          <option value="aroundMinus3">{{'upload.item.distance.aroundMinus3' | translate}}</option>
+          <option value="aroundMinus4">{{'upload.item.distance.aroundMinus4' | translate}}</option>
         </select>
       </div>
     </div>
@@ -169,63 +155,63 @@
 
     <div class="row">
       <div class="col">
-        <label class="form-label" for="firstHalfLeg">First half position type (leg)</label>
-        <select class="form-select" id="firstHalfLeg" [(ngModel)]="sequence.legCharacteristics.firstHalfPositionType">
-          <option value="around0">Around 0 degrees</option>
-          <option value="around45">Around 45 degrees</option>
-          <option value="around90">Around 90 degrees</option>
-          <option value="around135">Around 135 degrees</option>
-          <option value="around180">Around 180 degrees</option>
+        <label class="form-label" for="firstHalfLeg">{{'upload.item.titles.leg.firstHalf' | translate}}</label>
+        <select [(ngModel)]="sequence.legCharacteristics.firstHalfPositionType" class="form-select" id="firstHalfLeg">
+          <option value="around0">{{'upload.item.half.around0' | translate}}</option>
+          <option value="around45">{{'upload.item.half.around45' | translate}}</option>
+          <option value="around90">{{'upload.item.half.around90' | translate}}</option>
+          <option value="around135">{{'upload.item.half.around135' | translate}}</option>
+          <option value="around180">{{'upload.item.half.around180' | translate}}</option>
         </select>
       </div>
       <div class="col">
-        <label class="form-label" for="firstFullLeg">First full position type (leg)</label>
-        <select class="form-select" id="firstFullLeg" [(ngModel)]="sequence.legCharacteristics.firstFullPositionType">
-          <option value="around0">Around 0 degrees</option>
-          <option value="around45">Around 45 degrees</option>
-          <option value="around90">Around 90 degrees</option>
-          <option value="around135">Around 135 degrees</option>
-          <option value="around180">Around 180 degrees</option>
-          <option value="around225">Around 225 degrees</option>
-          <option value="around270">Around 270 degrees</option>
-          <option value="around315">Around 315 degrees</option>
+        <label class="form-label" for="firstFullLeg">{{'upload.item.titles.leg.firstFull' | translate}}</label>
+        <select [(ngModel)]="sequence.legCharacteristics.firstFullPositionType" class="form-select" id="firstFullLeg">
+          <option value="around0">{{'upload.item.full.around0' | translate}}</option>
+          <option value="around45">{{'upload.item.full.around45' | translate}}</option>
+          <option value="around90">{{'upload.item.full.around90' | translate}}</option>
+          <option value="around135">{{'upload.item.full.around135' | translate}}</option>
+          <option value="around180">{{'upload.item.full.around180' | translate}}</option>
+          <option value="around225">{{'upload.item.full.around225' | translate}}</option>
+          <option value="around270">{{'upload.item.full.around270' | translate}}</option>
+          <option value="around315">{{'upload.item.full.around315' | translate}}</option>
         </select>
       </div>
       <div class="col">
-        <label class="form-label" for="secondHalfLeg">Second half position type (leg)</label>
-        <select class="form-select" id="secondHalfLeg" [(ngModel)]="sequence.legCharacteristics.secondHalfPositionType">
-          <option value="around0">Around 0 degrees</option>
-          <option value="around45">Around 45 degrees</option>
-          <option value="around90">Around 90 degrees</option>
-          <option value="around135">Around 135 degrees</option>
-          <option value="around180">Around 180 degrees</option>
+        <label class="form-label" for="secondHalfLeg">{{'upload.item.titles.leg.secondHalf' | translate}}</label>
+        <select [(ngModel)]="sequence.legCharacteristics.secondHalfPositionType" class="form-select" id="secondHalfLeg">
+          <option value="around0">{{'upload.item.half.around0' | translate}}</option>
+          <option value="around45">{{'upload.item.half.around45' | translate}}</option>
+          <option value="around90">{{'upload.item.half.around90' | translate}}</option>
+          <option value="around135">{{'upload.item.half.around135' | translate}}</option>
+          <option value="around180">{{'upload.item.half.around180' | translate}}</option>
         </select>
       </div>
       <div class="col">
-        <label class="form-label" for="secondFullLeg">Second full position type (leg)</label>
-        <select class="form-select" id="secondFullLeg" [(ngModel)]="sequence.legCharacteristics.secondFullPositionType">
-          <option value="around0">Around 0 degrees</option>
-          <option value="around45">Around 45 degrees</option>
-          <option value="around90">Around 90 degrees</option>
-          <option value="around135">Around 135 degrees</option>
-          <option value="around180">Around 180 degrees</option>
-          <option value="around225">Around 225 degrees</option>
-          <option value="around270">Around 270 degrees</option>
-          <option value="around315">Around 315 degrees</option>
+        <label class="form-label" for="secondFullLeg">{{'upload.item.titles.leg.secondFull' | translate}}</label>
+        <select [(ngModel)]="sequence.legCharacteristics.secondFullPositionType" class="form-select" id="secondFullLeg">
+          <option value="around0">{{'upload.item.full.around0' | translate}}</option>
+          <option value="around45">{{'upload.item.full.around45' | translate}}</option>
+          <option value="around90">{{'upload.item.full.around90' | translate}}</option>
+          <option value="around135">{{'upload.item.full.around135' | translate}}</option>
+          <option value="around180">{{'upload.item.full.around180' | translate}}</option>
+          <option value="around225">{{'upload.item.full.around225' | translate}}</option>
+          <option value="around270">{{'upload.item.full.around270' | translate}}</option>
+          <option value="around315">{{'upload.item.full.around315' | translate}}</option>
         </select>
       </div>
       <div class="col">
-        <label class="form-label" for="distanceLeg">Distance (leg)</label>
-        <select class="form-select" id="distanceLeg" [(ngModel)]="sequence.legCharacteristics.distanceType">
-          <option value="around0">Around 0</option>
-          <option value="around1">Around 1</option>
-          <option value="around2">Around 2</option>
-          <option value="around3">Around 3</option>
-          <option value="around4">Around 4</option>
-          <option value="aroundMinus1">Around -1</option>
-          <option value="aroundMinus2">Around -2</option>
-          <option value="aroundMinus3">Around -3</option>
-          <option value="aroundMinus4">Around -4</option>
+        <label class="form-label" for="distanceLeg">{{'upload.item.titles.leg.distance' | translate}}</label>
+        <select [(ngModel)]="sequence.legCharacteristics.distanceType" class="form-select" id="distanceLeg">
+          <option value="around0">{{'upload.item.distance.around0' | translate}}</option>
+          <option value="around1">{{'upload.item.distance.around1' | translate}}</option>
+          <option value="around2">{{'upload.item.distance.around2' | translate}}</option>
+          <option value="around3">{{'upload.item.distance.around3' | translate}}</option>
+          <option value="around4">{{'upload.item.distance.around4' | translate}}</option>
+          <option value="aroundMinus1">{{'upload.item.distance.aroundMinus1' | translate}}</option>
+          <option value="aroundMinus2">{{'upload.item.distance.aroundMinus2' | translate}}</option>
+          <option value="aroundMinus3">{{'upload.item.distance.aroundMinus3' | translate}}</option>
+          <option value="aroundMinus4">{{'upload.item.distance.aroundMinus4' | translate}}</option>
         </select>
       </div>
     </div>
@@ -233,40 +219,31 @@
     <br>
 
     <div *ngFor="let error of sequence.errors">
-      <!--
-      <div>{{error.error}}</div>
-      <div>{{error.characteristics.firstHalfPositionType}}</div>
-      <div>{{error.characteristics.firstFullPositionType}}</div>
-      <div>{{error.characteristics.secondFullPositionType}}</div>
-      <div>{{error.characteristics.secondHalfPositionType}}</div>
-      <div>{{error.characteristics.distanceType}}</div>
-      <div>{{error.characteristics.type}}</div>
-      -->
-
       <br>
 
       <div class="row">
         <div class="col"></div>
         <div class="col">
-          <label class="form-label" for="errorDescription">Error desciprtion</label>
+          <label class="form-label" for="errorDescription">{{'upload.item.titles.error.title' | translate}}</label>
           <input [(ngModel)]="error.error"
-                 id="errorDescription"
-                 placeholder="error description"
                  class="form-control"
+                 id="errorDescription"
                  name="error"
+                 placeholder="{{'upload.item.titles.error.placeholder' | translate}}"
                  type="test">
         </div>
         <div class="col">
-          <label class="form-label" for="error">Error type</label>
-          <select class="form-select" id="error" [(ngModel)]="error.characteristics.type">
-            <option value="arms">Arms</option>
-            <option value="legs">Legs</option>
+          <label class="form-label" for="error">{{'upload.item.titles.error.type' | translate}}</label>
+          <select [(ngModel)]="error.characteristics.type" class="form-select" id="error">
+            <option value="arms">{{'upload.item.type.arms' | translate}}</option>
+            <option value="legs">{{'upload.item.type.legs' | translate}}</option>
           </select>
         </div>
         <div class="col"></div>
         <div class="col"></div>
         <div class="col">
-          <app-sb-button (clicked)="removeError(error)" [translate]="'Delete error'"></app-sb-button>
+          <app-sb-button (clicked)="removeError(error)" [disabled]="loading"
+                         [translate]="'upload.item.buttons.error.remove'"></app-sb-button>
         </div>
       </div>
 
@@ -275,63 +252,63 @@
       <div class="row">
         <div class="col"></div>
         <div class="col">
-          <label class="form-label" for="firstHalfError">First half position type</label>
-          <select class="form-select" id="firstHalfError" [(ngModel)]="error.characteristics.firstHalfPositionType">
-            <option value="around0">Around 0 degrees</option>
-            <option value="around45">Around 45 degrees</option>
-            <option value="around90">Around 90 degrees</option>
-            <option value="around135">Around 135 degrees</option>
-            <option value="around180">Around 180 degrees</option>
+          <label class="form-label" for="firstHalfError">{{'upload.item.titles.error.firstHalf' | translate}}</label>
+          <select [(ngModel)]="error.characteristics.firstHalfPositionType" class="form-select" id="firstHalfError">
+            <option value="around0">{{'upload.item.half.around0' | translate}}</option>
+            <option value="around45">{{'upload.item.half.around45' | translate}}</option>
+            <option value="around90">{{'upload.item.half.around90' | translate}}</option>
+            <option value="around135">{{'upload.item.half.around135' | translate}}</option>
+            <option value="around180">{{'upload.item.half.around180' | translate}}</option>
           </select>
         </div>
         <div class="col">
-          <label class="form-label" for="firstFullError">First full position type</label>
-          <select class="form-select" id="firstFullError" [(ngModel)]="error.characteristics.firstFullPositionType">
-            <option value="around0">Around 0 degrees</option>
-            <option value="around45">Around 45 degrees</option>
-            <option value="around90">Around 90 degrees</option>
-            <option value="around135">Around 135 degrees</option>
-            <option value="around180">Around 180 degrees</option>
-            <option value="around225">Around 225 degrees</option>
-            <option value="around270">Around 270 degrees</option>
-            <option value="around315">Around 315 degrees</option>
+          <label class="form-label" for="firstFullError">{{'upload.item.titles.error.firstFull' | translate}}</label>
+          <select [(ngModel)]="error.characteristics.firstFullPositionType" class="form-select" id="firstFullError">
+            <option value="around0">{{'upload.item.full.around0' | translate}}</option>
+            <option value="around45">{{'upload.item.full.around45' | translate}}</option>
+            <option value="around90">{{'upload.item.full.around90' | translate}}</option>
+            <option value="around135">{{'upload.item.full.around135' | translate}}</option>
+            <option value="around180">{{'upload.item.full.around180' | translate}}</option>
+            <option value="around225">{{'upload.item.full.around225' | translate}}</option>
+            <option value="around270">{{'upload.item.full.around270' | translate}}</option>
+            <option value="around315">{{'upload.item.full.around315' | translate}}</option>
           </select>
         </div>
         <div class="col">
-          <label class="form-label" for="secondHalfError">Second half position type</label>
-          <select class="form-select" id="secondHalfError" [(ngModel)]="error.characteristics.secondHalfPositionType">
-            <option value="around0">Around 0 degrees</option>
-            <option value="around45">Around 45 degrees</option>
-            <option value="around90">Around 90 degrees</option>
-            <option value="around135">Around 135 degrees</option>
-            <option value="around180">Around 180 degrees</option>
+          <label class="form-label" for="secondHalfError">{{'upload.item.titles.error.secondHalf' | translate}}</label>
+          <select [(ngModel)]="error.characteristics.secondHalfPositionType" class="form-select" id="secondHalfError">
+            <option value="around0">{{'upload.item.half.around0' | translate}}</option>
+            <option value="around45">{{'upload.item.half.around45' | translate}}</option>
+            <option value="around90">{{'upload.item.half.around90' | translate}}</option>
+            <option value="around135">{{'upload.item.half.around135' | translate}}</option>
+            <option value="around180">{{'upload.item.half.around180' | translate}}</option>
           </select>
         </div>
         <div class="col">
-          <label class="form-label" for="secondFullError">Second full position type</label>
-          <select class="form-select" id="secondFullError" [(ngModel)]="error.characteristics.secondFullPositionType">
-            <option value="around0">Around 0 degrees</option>
-            <option value="around45">Around 45 degrees</option>
-            <option value="around90">Around 90 degrees</option>
-            <option value="around135">Around 135 degrees</option>
-            <option value="around180">Around 180 degrees</option>
-            <option value="around225">Around 225 degrees</option>
-            <option value="around270">Around 270 degrees</option>
-            <option value="around315">Around 315 degrees</option>
+          <label class="form-label" for="secondFullError">{{'upload.item.titles.error.secondFull' | translate}}</label>
+          <select [(ngModel)]="error.characteristics.secondFullPositionType" class="form-select" id="secondFullError">
+            <option value="around0">{{'upload.item.full.around0' | translate}}</option>
+            <option value="around45">{{'upload.item.full.around45' | translate}}</option>
+            <option value="around90">{{'upload.item.full.around90' | translate}}</option>
+            <option value="around135">{{'upload.item.full.around135' | translate}}</option>
+            <option value="around180">{{'upload.item.full.around180' | translate}}</option>
+            <option value="around225">{{'upload.item.full.around225' | translate}}</option>
+            <option value="around270">{{'upload.item.full.around270' | translate}}</option>
+            <option value="around315">{{'upload.item.full.around315' | translate}}</option>
           </select>
         </div>
         <div class="col">
-          <label class="form-label" for="distanceError">Distance</label>
-          <select class="form-select" id="distanceError" [(ngModel)]="error.characteristics.distanceType">
-            <option value="around0">Around 0</option>
-            <option value="around1">Around 1</option>
-            <option value="around2">Around 2</option>
-            <option value="around3">Around 3</option>
-            <option value="around4">Around 4</option>
-            <option value="aroundMinus1">Around -1</option>
-            <option value="aroundMinus2">Around -2</option>
-            <option value="aroundMinus3">Around -3</option>
-            <option value="aroundMinus4">Around -4</option>
+          <label class="form-label" for="distanceError">{{'upload.item.titles.error.distance' | translate}}</label>
+          <select [(ngModel)]="error.characteristics.distanceType" class="form-select" id="distanceError">
+            <option value="around0">{{'upload.item.distance.around0' | translate}}</option>
+            <option value="around1">{{'upload.item.distance.around1' | translate}}</option>
+            <option value="around2">{{'upload.item.distance.around2' | translate}}</option>
+            <option value="around3">{{'upload.item.distance.around3' | translate}}</option>
+            <option value="around4">{{'upload.item.distance.around4' | translate}}</option>
+            <option value="aroundMinus1">{{'upload.item.distance.aroundMinus1' | translate}}</option>
+            <option value="aroundMinus2">{{'upload.item.distance.aroundMinus2' | translate}}</option>
+            <option value="aroundMinus3">{{'upload.item.distance.aroundMinus3' | translate}}</option>
+            <option value="aroundMinus4">{{'upload.item.distance.aroundMinus4' | translate}}</option>
           </select>
         </div>
       </div>
@@ -343,7 +320,8 @@
     <div class="row">
       <div class="col"></div>
       <div class="col">
-        <app-sb-button (clicked)="addNewError(sequence.id)" [translate]="'Add new error'"></app-sb-button>
+        <app-sb-button (clicked)="addNewError(sequence.id)" [disabled]="loading"
+                       [translate]="'upload.item.buttons.error.add'"></app-sb-button>
       </div>
       <div class="col"></div>
       <div class="col"></div>
@@ -354,12 +332,20 @@
     <br>
     <br>
 
-    <app-sb-button (clicked)="removeItem(sequence)" [translate]="'Delete item'"></app-sb-button>
+    <app-sb-button (clicked)="removeItem(sequence)" [disabled]="loading"
+                   [translate]="'upload.item.buttons.item.remove'"></app-sb-button>
 
     <br>
     <hr>
   </div>
 
-  <app-sb-button (clicked)="addNewItem()" [translate]="'Add new item'"></app-sb-button>
+  <app-sb-button (clicked)="addNewItem()" [disabled]="loading"
+                 [translate]="'upload.item.buttons.item.add'"></app-sb-button>
+
+  <br>
+  <hr>
+
+  <app-sb-button (clicked)="upload()" [disabled]="loading" [loading]="loading"
+                 [translate]="'upload.item.buttons.upload'"></app-sb-button>
 
 </div>

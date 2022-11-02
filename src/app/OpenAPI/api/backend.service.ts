@@ -13,7 +13,7 @@
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext
+         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
         }       from '@angular/common/http';
 import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
@@ -45,11 +45,15 @@ export class BackendService {
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;
 
-    constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
+    constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string|string[], @Optional() configuration: Configuration) {
         if (configuration) {
             this.configuration = configuration;
         }
         if (typeof this.configuration.basePath !== 'string') {
+            if (Array.isArray(basePath) && basePath.length > 0) {
+                basePath = basePath[0];
+            }
+
             if (typeof basePath !== 'string') {
                 basePath = this.basePath;
             }
@@ -59,6 +63,7 @@ export class BackendService {
     }
 
 
+    // @ts-ignore
     private addToHttpParams(httpParams: HttpParams, value: any, key?: string): HttpParams {
         if (typeof value === "object" && value instanceof Date === false) {
             httpParams = this.addToHttpParamsRecursive(httpParams, value);
@@ -78,8 +83,7 @@ export class BackendService {
                 (value as any[]).forEach( elem => httpParams = this.addToHttpParamsRecursive(httpParams, elem, key));
             } else if (value instanceof Date) {
                 if (key != null) {
-                    httpParams = httpParams.append(key,
-                        (value as Date).toISOString().substr(0, 10));
+                    httpParams = httpParams.append(key, (value as Date).toISOString().substr(0, 10));
                 } else {
                    throw Error("key may not be null if value is Date");
                 }
@@ -98,8 +102,8 @@ export class BackendService {
     /**
      * Login an existing admin
      * Login an existing admin of the application
-     * @param email
-     * @param password
+     * @param email 
+     * @param password 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -155,8 +159,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<UserResponseDTO>(`${this.configuration.basePath}/adminLogin`,
-            null,
+        let localVarPath = `/adminLogin`;
+        return this.httpClient.request<UserResponseDTO>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -172,7 +176,7 @@ export class BackendService {
     /**
      * Chatting
      * Delete a chat message
-     * @param chatEntryDTOId
+     * @param chatEntryDTOId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -227,8 +231,17 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.delete<any>(`${this.configuration.basePath}/chatEntries`,
-            null
+        let localVarPath = `/chatEntries`;
+        return this.httpClient.request<any>('delete', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                params: localVarQueryParameters,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
         );
     }
 
@@ -281,7 +294,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.get<Array<ChatDTO>>(`${this.configuration.basePath}/chatEntries`,
+        let localVarPath = `/chatEntries`;
+        return this.httpClient.request<Array<ChatDTO>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -296,7 +310,7 @@ export class BackendService {
     /**
      * Chatting
      * Undo message deletion
-     * @param chatEntryDTOId
+     * @param chatEntryDTOId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -351,8 +365,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.patch<any>(`${this.configuration.basePath}/chatEntries`,
-            null,
+        let localVarPath = `/chatEntries`;
+        return this.httpClient.request<any>('patch', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -368,8 +382,8 @@ export class BackendService {
     /**
      * Chatting
      * Send a chat message
-     * @param chatId
-     * @param message
+     * @param chatId 
+     * @param message 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -431,8 +445,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<any>(`${this.configuration.basePath}/chatEntries`,
-            null,
+        let localVarPath = `/chatEntries`;
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -448,8 +462,8 @@ export class BackendService {
     /**
      * Chatting
      * Modify a chat message
-     * @param chatEntryDTOId
-     * @param modifiedMessage
+     * @param chatEntryDTOId 
+     * @param modifiedMessage 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -511,8 +525,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.put<any>(`${this.configuration.basePath}/chatEntries`,
-            null,
+        let localVarPath = `/chatEntries`;
+        return this.httpClient.request<any>('put', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -528,9 +542,9 @@ export class BackendService {
     /**
      * Chatting
      * Update a chat
-     * @param chatId
-     * @param users
-     * @param image
+     * @param chatId 
+     * @param users 
+     * @param image 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -600,10 +614,11 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.put<any>(`${this.configuration.basePath}/chat`,
-            image,
+        let localVarPath = `/chat`;
+        return this.httpClient.request<any>('put', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                body: image,
                 params: localVarQueryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
@@ -662,8 +677,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<any>(`${this.configuration.basePath}/clearDatabase`,
-            null,
+        let localVarPath = `/clearDatabase`;
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -678,7 +693,7 @@ export class BackendService {
     /**
      * Delete an exercise
      * Delete an exercise
-     * @param primaryId
+     * @param primaryId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -733,8 +748,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<any>(`${this.configuration.basePath}/deleteExerciseModel`,
-            null,
+        let localVarPath = `/deleteExerciseModel`;
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -796,7 +811,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.get<Array<ExerciseModelDTO>>(`${this.configuration.basePath}/exerciseModels`,
+        let localVarPath = `/exerciseModels`;
+        return this.httpClient.request<Array<ExerciseModelDTO>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -811,7 +827,7 @@ export class BackendService {
     /**
      * Send a recovery email to an existing user
      * Send a recovery email to an existing user of the application or an admin
-     * @param email
+     * @param email 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -859,8 +875,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<any>(`${this.configuration.basePath}/forgotPassword`,
-            null,
+        let localVarPath = `/forgotPassword`;
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -876,7 +892,7 @@ export class BackendService {
     /**
      * Upload an image
      * Upload an image of the user
-     * @param image
+     * @param image 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -932,10 +948,11 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<UserDTO>(`${this.configuration.basePath}/image`,
-            image,
+        let localVarPath = `/image`;
+        return this.httpClient.request<UserDTO>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                body: image,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
@@ -948,8 +965,8 @@ export class BackendService {
     /**
      * Login an existing user
      * Login an existing user or an admin of the application
-     * @param email
-     * @param password
+     * @param email 
+     * @param password 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -1005,8 +1022,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<UserResponseDTO>(`${this.configuration.basePath}/login`,
-            null,
+        let localVarPath = `/login`;
+        return this.httpClient.request<UserResponseDTO>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -1067,8 +1084,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<any>(`${this.configuration.basePath}/logout`,
-            null,
+        let localVarPath = `/logout`;
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -1128,8 +1145,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<any>(`${this.configuration.basePath}/refreshToken`,
-            null,
+        let localVarPath = `/refreshToken`;
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -1144,9 +1161,9 @@ export class BackendService {
     /**
      * Register a user
      * Register a new user in the application
-     * @param name
-     * @param email
-     * @param password
+     * @param name 
+     * @param email 
+     * @param password 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -1209,8 +1226,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<UserResponseDTO>(`${this.configuration.basePath}/register`,
-            null,
+        let localVarPath = `/register`;
+        return this.httpClient.request<UserResponseDTO>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -1271,8 +1288,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<any>(`${this.configuration.basePath}/resetDatabase`,
-            null,
+        let localVarPath = `/resetDatabase`;
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -1287,8 +1304,8 @@ export class BackendService {
     /**
      * Forgotten password
      * Reset a forgotten pasword
-     * @param requestId
-     * @param newPassword
+     * @param requestId 
+     * @param newPassword 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -1343,8 +1360,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<any>(`${this.configuration.basePath}/saveNewPassword`,
-            null,
+        let localVarPath = `/saveNewPassword`;
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -1360,7 +1377,7 @@ export class BackendService {
     /**
      * Search a user
      * Search a user
-     * @param name
+     * @param name 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -1416,8 +1433,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<Array<UserDTO>>(`${this.configuration.basePath}/searchUser`,
-            null,
+        let localVarPath = `/searchUser`;
+        return this.httpClient.request<Array<UserDTO>>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -1431,62 +1448,9 @@ export class BackendService {
     }
 
     /**
-     * Test
-     * Test
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public testGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any>;
-    public testGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpResponse<any>>;
-    public testGet(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<HttpEvent<any>>;
-    public testGet(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined, context?: HttpContext}): Observable<any> {
-
-        let localVarHeaders = this.defaultHeaders;
-
-        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
-        if (localVarHttpHeaderAcceptSelected === undefined) {
-            // to determine the Accept header
-            const httpHeaderAccepts: string[] = [
-            ];
-            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
-        }
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        let localVarHttpContext: HttpContext | undefined = options && options.context;
-        if (localVarHttpContext === undefined) {
-            localVarHttpContext = new HttpContext();
-        }
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        return this.httpClient.get<any>(`${this.configuration.basePath}/test`,
-            {
-                context: localVarHttpContext,
-                responseType: <any>responseType_,
-                withCredentials: this.configuration.withCredentials,
-                headers: localVarHeaders,
-                observe: observe,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
      * Upload a new exercise
      * Upload a new exercise
-     * @param exercise
+     * @param exercise 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -1544,10 +1508,11 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.post<any>(`${this.configuration.basePath}/uploadExerciseModel`,
-            exercise,
+        let localVarPath = `/uploadExerciseModel`;
+        return this.httpClient.request<any>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                body: exercise,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
@@ -1560,7 +1525,7 @@ export class BackendService {
     /**
      * Image gathering
      * Image gathering of a chat (user)
-     * @param chatId
+     * @param chatId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -1616,7 +1581,8 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.get<string>(`${this.configuration.basePath}/userImage`,
+        let localVarPath = `/userImage`;
+        return this.httpClient.request<string>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters,
@@ -1678,7 +1644,63 @@ export class BackendService {
             }
         }
 
-        return this.httpClient.get<Array<UserDB>>(`${this.configuration.basePath}/users`,
+        let localVarPath = `/users`;
+        return this.httpClient.request<Array<UserDB>>('get', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * Get the version
+     * Get the version of the backend. It serves as a test endpoint too
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public versionGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<string>;
+    public versionGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<string>>;
+    public versionGet(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<string>>;
+    public versionGet(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+
+        let localVarHeaders = this.defaultHeaders;
+
+        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
+        if (localVarHttpHeaderAcceptSelected === undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] = [
+                'application/json'
+            ];
+            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        let localVarHttpContext: HttpContext | undefined = options && options.context;
+        if (localVarHttpContext === undefined) {
+            localVarHttpContext = new HttpContext();
+        }
+
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/version`;
+        return this.httpClient.request<string>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,

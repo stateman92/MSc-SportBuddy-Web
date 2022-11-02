@@ -12,6 +12,8 @@ import {
   HalfPositionTypeDTO
 } from '../../OpenAPI';
 import {UuidService} from '../../services/uuid/uuid.service';
+import {AlertService} from '../../services/alert/alert.service';
+import {TranslationService} from '../../services/translation/translation.service';
 
 @Component({
   selector: 'app-upload',
@@ -30,6 +32,8 @@ export class UploadComponent extends BaseComponent implements OnInit {
   constructor(
     private readonly apiService: ApiService,
     private readonly uuidService: UuidService,
+    private readonly alertService: AlertService,
+    private readonly translationService: TranslationService,
     storageService: StorageService,
     routerService: RouterService
   ) {
@@ -49,10 +53,18 @@ export class UploadComponent extends BaseComponent implements OnInit {
     })
       .subscribe(
         _ => {
+          this.sequenceCount = 1;
+          this.delay = 0;
+          this.videoId = '';
+          this.name = '';
+          this.details = '';
+          this.sequence = [this.defaultItem()];
           this.loading = false;
+          this.alertService.success(this.translationService.translate('upload.item.results.success'));
         },
         _ => {
           this.loading = false;
+          this.alertService.error(this.translationService.translate('upload.item.results.error'));
         });
   }
 
@@ -64,12 +76,7 @@ export class UploadComponent extends BaseComponent implements OnInit {
     const index = this.sequence.findIndex(object => {
       return object.id === id;
     });
-    const errors = this.sequence[index].errors;
-    if (errors === null || errors === undefined) {
-      this.sequence[index].errors = [this.defaultError()];
-    } else {
-      this.sequence[index].errors.push(this.defaultError());
-    }
+    this.sequence[index].errors.push(this.defaultError());
   }
 
   removeItem(moment: ExerciseMomentDTO) {
@@ -128,7 +135,7 @@ export class UploadComponent extends BaseComponent implements OnInit {
         distanceType: DistanceTypeDTO.Around0,
         type: CharacteristicsTypeDTO.Arms
       },
-      error: 'string'
+      error: ''
     };
   }
 }

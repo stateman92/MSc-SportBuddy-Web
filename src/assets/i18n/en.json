@@ -113,6 +113,81 @@
     "details": {
       "title": "The details of the exercise",
       "details": "The details of the exercise that will be resolved in the client application"
+    },
+    "item": {
+      "half": {
+        "around0": "Around 0 degrees",
+        "around45": "Around 45 degrees",
+        "around90": "Around 90 degrees",
+        "around135": "Around 135 degrees",
+        "around180": "Around 180 degrees"
+      },
+      "full": {
+        "around0": "Around 0 degrees",
+        "around45": "Around 45 degrees",
+        "around90": "Around 90 degrees",
+        "around135": "Around 135 degrees",
+        "around180": "Around 180 degrees",
+        "around225": "Around 225 degrees",
+        "around270": "Around 270 degrees",
+        "around315": "Around 315 degrees"
+      },
+      "distance": {
+        "around0": "Around 0",
+        "around1": "Around 1",
+        "around2": "Around 2",
+        "around3": "Around 3",
+        "around4": "Around 4",
+        "aroundMinus1": "Around -1",
+        "aroundMinus2": "Around -2",
+        "aroundMinus3": "Around -3",
+        "aroundMinus4": "Around -4"
+      },
+      "type": {
+        "arms": "Arms",
+        "legs": "Legs"
+      },
+      "titles": {
+        "arm": {
+          "firstHalf": "First half position type (arm)",
+          "firstFull": "First full position type (arm)",
+          "secondHalf": "Second half position type (arm)",
+          "secondFull": "Second full position type (arm)",
+          "distance": "Distance (arm)"
+        },
+        "leg": {
+          "firstHalf": "First half position type (leg)",
+          "firstFull": "First full position type (leg)",
+          "secondHalf": "Second half position type (leg)",
+          "secondFull": "Second full position type (leg)",
+          "distance": "Distance (leg)"
+        },
+        "error": {
+          "title": "Error description",
+          "placeholder": "error description",
+          "type": "Error type",
+          "firstHalf": "First half position type",
+          "firstFull": "First full position type",
+          "secondHalf": "Second half position type",
+          "secondFull": "Second full position type",
+          "distance": "Distance"
+        }
+      },
+      "buttons": {
+        "error": {
+          "remove": "Delete error",
+          "add": "Add new error"
+        },
+        "item": {
+          "remove": "Delete item",
+          "add": "Add new item"
+        },
+        "upload": "Upload exercise"
+      },
+      "results": {
+        "success": "Successful upload!",
+        "error": "Error during upload. Try again later."
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "sportbuddyweb",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "browser": {
     "fs": false,
     "os": false,

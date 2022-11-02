@@ -9,7 +9,7 @@ import {StorageKeys} from '../../services/storage/components/storage.keys';
   styles: []
 })
 export abstract class BaseComponent implements OnInit {
-  constructor(
+  protected constructor(
     protected readonly storageService: StorageService,
     protected readonly routerService: RouterService) {
   }
