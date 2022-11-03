@@ -62,7 +62,7 @@ export class ApiService {
   }
 
   uploadExercise(exercise: ExerciseModelDTO) {
-    return this.backendService.uploadExerciseModelPost(exercise).pipe(
+    return this.backendService.exerciseModelsPost(exercise).pipe(
       first()
     );
   }

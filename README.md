@@ -29,6 +29,12 @@ SportBuddy Web admin app
 
 - Run `openapi-generator generate -i /path/to/descriptor/swagger.yaml -g typescript-angular -o /path/to/output` in the terminal
 
+#### Update version
+
+- Run `sh bump.sh` in the terminal
+
+- By default it bumps the patch version. If you want other behavior, add a `major` / `minor` / `patch` flag, e.g. `sh bump.sh major`
+
 #### Remove default clashing key-binding
 
 - If you want, you can install Presentation Assistant (WebStorm / Preferences / Plugins) to see the action you make with shortcuts
