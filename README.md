@@ -9,6 +9,8 @@ SportBuddy Web admin app
 
 [OpenAPI generated DELETE method Expected 1-2 arguments, but got 3](https://github.com/OpenAPITools/openapi-generator/issues/10864)
 
+[Angular Input to Directive](https://github.com/angular/angular/issues/7920#issuecomment-205939620)
+
 ## Setup
 
 - Checkout repo

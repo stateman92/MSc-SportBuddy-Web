@@ -21,8 +21,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {ButtonComponent} from './components/button/button.component';
 import {SubmitComponent} from './components/input/submit.component';
+import {TooltipComponent} from './components/tooltip/tooltip.component';
 
-export const environment = Environment.prod;
+export const environment = Environment.dev;
 const appConfig = new AppConfigService(environment);
 
 function apiConfigFactory() {
@@ -33,19 +34,20 @@ function apiConfigFactory() {
 }
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        UploadComponent,
-        CommandsComponent,
-        LoginComponent,
-        AlertComponent,
-        UsersComponent,
-        ResetPasswordComponent,
-        VersionComponent,
-        ButtonComponent,
-        SubmitComponent
-    ],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    UploadComponent,
+    CommandsComponent,
+    LoginComponent,
+    AlertComponent,
+    UsersComponent,
+    ResetPasswordComponent,
+    VersionComponent,
+    ButtonComponent,
+    SubmitComponent,
+    TooltipComponent
+  ],
   imports: [
     ApiModule.forRoot(apiConfigFactory),
     HttpClientModule,

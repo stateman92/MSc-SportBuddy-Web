@@ -67,6 +67,16 @@ export class ApiService {
     );
   }
 
+  getExercises() {
+    return this.backendService.exerciseModelsGet().pipe(
+      first(),
+      catchError((error, _) => {
+        this.handleError(error);
+        return of([]);
+      })
+    );
+  }
+
   private setup() {
     this.storageService.subscribe<string>(StorageKeys.token)
       .subscribe(token => {

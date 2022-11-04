@@ -58,3 +58,5 @@ else
     patch
   fi
 fi
+
+npm install
