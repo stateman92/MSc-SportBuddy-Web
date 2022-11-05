@@ -9,6 +9,7 @@ import {ExercisesComponent} from '../../../modules/exercises/exercises.component
 
 export const routes: Routes = [
   {path: RoutePaths.login, component: LoginComponent},
+  {path: RoutePaths.uploadWithParam, component: UploadComponent},
   {path: RoutePaths.upload, component: UploadComponent},
   {path: RoutePaths.commands, component: CommandsComponent},
   {path: RoutePaths.users, component: UsersComponent},

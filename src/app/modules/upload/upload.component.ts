@@ -14,6 +14,9 @@ import {
 import {UuidService} from '../../services/uuid/uuid.service';
 import {AlertService} from '../../services/alert/alert.service';
 import {TranslationService} from '../../services/translation/translation.service';
+import {ActivatedRoute} from "@angular/router";
+import {ExercisesCacheService} from "../../services/cache/components/exercises.cache.service";
+import {RoutePaths} from "../../services/routing/components/route.paths";
 
 @Component({
   selector: 'app-upload',
@@ -27,6 +30,7 @@ export class UploadComponent extends BaseComponent implements OnInit {
   videoId = '';
   name = '';
   details = '';
+  id = '';
   sequence: ExerciseMomentDTO[] = [this.defaultItem()];
 
   constructor(
@@ -34,16 +38,30 @@ export class UploadComponent extends BaseComponent implements OnInit {
     private readonly uuidService: UuidService,
     private readonly alertService: AlertService,
     private readonly translationService: TranslationService,
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly exercisesCacheService: ExercisesCacheService,
     storageService: StorageService,
     routerService: RouterService
   ) {
     super(storageService, routerService);
+    this.id = this.activatedRoute.snapshot.paramMap.get('id')
+    const model = exercisesCacheService.get()?.find(item => { return item.id === this.id });
+    if (this.id === null) {
+      this.id = this.uuidService.get();
+    } else if (model !== null) {
+      this.sequenceCount = model.sequenceCount;
+      this.delay = model.delay;
+      this.videoId = model.videoId;
+      this.name = model.name;
+      this.details = model.details;
+      this.sequence = model.sequence;
+    }
   }
 
   upload() {
     this.loading = true;
     this.apiService.uploadExercise({
-      id: this.uuidService.get(),
+      id: this.id.toLowerCase(),
       sequence: this.sequence,
       sequenceCount: this.sequenceCount,
       delay: this.delay,
@@ -53,13 +71,8 @@ export class UploadComponent extends BaseComponent implements OnInit {
     })
       .subscribe(
         _ => {
-          this.sequenceCount = 1;
-          this.delay = 0;
-          this.videoId = '';
-          this.name = '';
-          this.details = '';
-          this.sequence = [this.defaultItem()];
           this.loading = false;
+          this.routerService.navigate(RoutePaths.upload);
           this.alertService.success(this.translationService.translate('upload.item.results.success'));
         },
         _ => {

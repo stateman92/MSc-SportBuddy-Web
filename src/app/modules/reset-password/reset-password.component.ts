@@ -25,12 +25,12 @@ export class ResetPasswordComponent extends BaseComponent implements OnInit {
     private readonly apiService: ApiService,
     private readonly alertService: AlertService,
     private readonly translationService: TranslationService,
-    private readonly route: ActivatedRoute,
+    private readonly activatedRoute: ActivatedRoute,
     storageService: StorageService,
     routerService: RouterService
   ) {
     super(storageService, routerService);
-    this.token = this.route.snapshot.queryParams['token'];
+    this.token = this.activatedRoute.snapshot.queryParams['token'];
   }
 
   override ngOnInit() {
