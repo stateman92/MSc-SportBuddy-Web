@@ -1,40 +1,46 @@
-<app-sb-button (clicked)="export()"
-               [disabled]="loading"
-               [loading]="loadingExport"
-               [translate]="'users.export'"
-               style="float: right;margin: 20px;"></app-sb-button>
+<div class="container px-4 py-2">
+  <h2 class="pb-2">{{'header.users' | translate}}</h2>
+  <h5 class="pb-2 border-bottom">{{'header.details.users' | translate}}</h5>
+  <div>
+    <app-sb-button (clicked)="export()"
+                   [disabled]="loading"
+                   [loading]="loadingExport"
+                   [translate]="'users.export'"
+                   style="float: right;margin: 20px;"></app-sb-button>
 
-<app-sb-button (clicked)="exportCsv()"
-               [disabled]="loading"
-               [loading]="loadingExportCsv"
-               [translate]="'users.exportCsv'"
-               style="float: right;margin: 20px;"></app-sb-button>
+    <app-sb-button (clicked)="exportCsv()"
+                   [disabled]="loading"
+                   [loading]="loadingExportCsv"
+                   [translate]="'users.exportCsv'"
+                   style="float: right;margin: 20px;"></app-sb-button>
 
-<app-sb-button (clicked)="refresh()"
-               [disabled]="loading"
-               [loading]="loadingRefresh"
-               [translate]="'users.refresh'"
-               style="float: right;margin: 20px;"></app-sb-button>
+    <app-sb-button (clicked)="refresh()"
+                   [disabled]="loading"
+                   [loading]="loadingRefresh"
+                   [translate]="'users.refresh'"
+                   style="float: right;margin: 20px;"></app-sb-button>
 
-<div>
-  <table id="table">
-    <tr>
-      <th style="width:100px">{{'users.table.id' | translate}}</th>
-      <th style="width:100px">{{'users.table.name' | translate}}</th>
-      <th style="width:100px">{{'users.table.email' | translate}}</th>
-      <th style="width:100px">{{'users.table.password' | translate}}</th>
-      <th style="width:100px">{{'users.table.image' | translate}}</th>
-      <th style="width:100px">{{'users.table.token' | translate}}</th>
-      <th style="width:100px">{{'users.table.chats' | translate}}</th>
-    </tr>
-    <tr *ngFor="let item of users">
-      <td>{{item.id}}</td>
-      <td>{{item.name}}</td>
-      <td>{{item.email}}</td>
-      <td>{{item.password}}</td>
-      <td>{{item.profileImage}}</td>
-      <td>{{item.token}}</td>
-      <td>{{item.chats.join(", ")}}</td>
-    </tr>
-  </table>
+    <div>
+      <table id="table">
+        <tr>
+          <th style="width:100px">{{'users.table.id' | translate}}</th>
+          <th style="width:100px">{{'users.table.name' | translate}}</th>
+          <th style="width:100px">{{'users.table.email' | translate}}</th>
+          <th style="width:100px">{{'users.table.password' | translate}}</th>
+          <th style="width:100px">{{'users.table.image' | translate}}</th>
+          <th style="width:100px">{{'users.table.token' | translate}}</th>
+          <th style="width:100px">{{'users.table.chats' | translate}}</th>
+        </tr>
+        <tr *ngFor="let item of users">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.password}}</td>
+          <td>{{item.profileImage}}</td>
+          <td>{{item.token}}</td>
+          <td>{{item.chats.join(", ")}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>

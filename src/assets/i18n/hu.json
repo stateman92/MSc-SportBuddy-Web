@@ -39,7 +39,13 @@
     "upload": "Feltöltés",
     "commands": "Parancsok",
     "users": "Felhasználók",
-    "logout": "Kijelentkezés"
+    "logout": "Kijelentkezés",
+    "details": {
+      "upload": "Ezen az oldalon gyakorlatokat tölthetsz fel. Az info tooltip mutatja a részleteket",
+      "commands": "Ezen az oldalon admin parancsokat hajthatsz végre",
+      "users": "Ezen az oldalon meg lehet tekinteni a felhasználók adatait, és ki lehet exportálni .xlsx vagy .csv fájlba",
+      "reset": "Ezen az oldalon állíthatod be az új jelszavadat"
+    }
   },
   "login": {
     "title": "Bejelentkezés",

@@ -39,7 +39,13 @@
     "upload": "Upload",
     "commands": "Commands",
     "users": "Users",
-    "logout": "Log out"
+    "logout": "Log out",
+    "details": {
+      "upload": "On this page you can upload exercises. See the info tooltip for help",
+      "commands": "On this page you can perform administrative commands",
+      "users": "On this page you can see the users' data, and export it to an .xlsx or a .csv file",
+      "reset": "On this page you can reset your password to a new one"
+    }
   },
   "login": {
     "title": "Login",
