@@ -22,6 +22,7 @@ import {MatCardModule} from '@angular/material/card';
 import {ButtonComponent} from './components/button/button.component';
 import {SubmitComponent} from './components/input/submit.component';
 import {TooltipComponent} from './components/tooltip/tooltip.component';
+import {ExercisesComponent} from './modules/exercises/exercises.component';
 
 export const environment = Environment.dev;
 const appConfig = new AppConfigService(environment);
@@ -46,7 +47,8 @@ function apiConfigFactory() {
     VersionComponent,
     ButtonComponent,
     SubmitComponent,
-    TooltipComponent
+    TooltipComponent,
+    ExercisesComponent
   ],
   imports: [
     ApiModule.forRoot(apiConfigFactory),

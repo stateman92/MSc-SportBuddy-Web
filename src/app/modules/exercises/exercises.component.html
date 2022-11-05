@@ -1,0 +1,28 @@
+<div class="container px-4 py-2">
+  <h2 class="pb-2">{{'header.exercises' | translate}}</h2>
+  <h5 class="pb-2 border-bottom">{{'header.details.exercises' | translate}}</h5>
+  <div>
+    <app-sb-button (clicked)="refresh()"
+                   [disabled]="loading"
+                   [loading]="loadingRefresh"
+                   [translate]="'users.refresh'"
+                   style="float: right;margin: 20px;"></app-sb-button>
+
+    <div>
+      <table id="table">
+        <tr>
+          <th style="width:300px">{{'exercises.table.id' | translate}}</th>
+          <th style="width:300px">{{'exercises.table.name' | translate}}</th>
+          <th style="width:300px">{{'exercises.table.details' | translate}}</th>
+          <th style="width:300px">{{'exercises.table.videoId' | translate}}</th>
+        </tr>
+        <tr *ngFor="let item of exercises" (click)="tapped(item)">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.details}}</td>
+          <td>{{item.videoId}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

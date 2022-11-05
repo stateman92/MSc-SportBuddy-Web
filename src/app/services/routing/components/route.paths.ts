@@ -3,6 +3,7 @@ export enum RoutePaths {
   upload = 'upload',
   commands = 'commands',
   users = 'users',
+  exercises = 'exercises',
   resetPassword = 'resetPassword',
   default = '**'
 }

@@ -39,11 +39,13 @@
     "upload": "Upload",
     "commands": "Commands",
     "users": "Users",
+    "exercises": "Exercises",
     "logout": "Log out",
     "details": {
       "upload": "On this page you can upload exercises. See the info tooltip for help",
       "commands": "On this page you can perform administrative commands",
       "users": "On this page you can see the users' data, and export it to an .xlsx or a .csv file",
+      "exercises": "On this page you can see the exercises' data, and modify them if you click one of them",
       "reset": "On this page you can reset your password to a new one"
     }
   },
@@ -220,6 +222,14 @@
         }
       },
       "na": "Doesn't matter"
+    }
+  },
+  "exercises": {
+    "table": {
+      "id": "Id",
+      "name": "Name",
+      "details": "Details",
+      "videoId": "Video id"
     }
   }
 }
