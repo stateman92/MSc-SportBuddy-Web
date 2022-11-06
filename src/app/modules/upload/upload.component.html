@@ -1,86 +1,102 @@
-<div class="container px-4 py-2">
+<div class="container py-2">
   <h2 class="pb-2">{{'header.upload' | translate}}</h2>
   <h5 class="pb-2 border-bottom">{{'header.details.upload' | translate}}</h5>
-  <div  class="row g-4 row-cols-1 row-cols-lg-3">
-    <div class="col">
-      <div class="mb-3">
-        <label class="form-label">{{'upload.sequence.title' | translate}}</label>
-        <div class="input-group">
-          <input [(ngModel)]="sequenceCount"
-                 [disabled]="loading"
-                 class="form-control"
-                 min="1"
-                 name="sequenceCount"
-                 onblur="if (this.value < 1) this.value = 1"
-                 onkeyup="if (this.value < 1) this.value = 1"
-                 pattern="^[0-9]"
-                 required
-                 step="1"
-                 type="number">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="row g-4 row-cols-1 row-cols-lg-2">
+          <div class="col-12 col-lg-6">
+            <div class="mb-3">
+              <label class="form-label">{{'upload.sequence.title' | translate}}</label>
+              <div class="input-group">
+                <input [(ngModel)]="sequenceCount"
+                       [disabled]="loading"
+                       class="form-control"
+                       min="1"
+                       name="sequenceCount"
+                       onblur="if (this.value < 1) this.value = 1"
+                       onkeyup="if (this.value < 1) this.value = 1"
+                       pattern="^[0-9]"
+                       required
+                       step="1"
+                       type="number">
+              </div>
+              <div class="form-text">{{'upload.sequence.details' | translate}}</div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="mb-3">
+              <label class="form-label">{{'upload.delay.title' | translate}}</label>
+              <div class="input-group">
+                <input [(ngModel)]="delay"
+                       [disabled]="loading"
+                       class="form-control"
+                       min="0"
+                       name="delay"
+                       onblur="if (this.value < 0) this.value = 0"
+                       onkeyup="if (this.value < 0) this.value = 0"
+                       required
+                       type="number">
+              </div>
+              <div class="form-text">{{'upload.delay.details' | translate}}</div>
+            </div>
+          </div>
         </div>
-        <div class="form-text">{{'upload.sequence.details' | translate}}</div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="mb-3">
-        <label class="form-label">{{'upload.delay.title' | translate}}</label>
-        <div class="input-group">
-          <input [(ngModel)]="delay"
-                 [disabled]="loading"
-                 class="form-control"
-                 min="0"
-                 name="delay"
-                 onblur="if (this.value < 0) this.value = 0"
-                 onkeyup="if (this.value < 0) this.value = 0"
-                 required
-                 type="number">
-        </div>
-        <div class="form-text">{{'upload.delay.details' | translate}}</div>
-      </div>
-    </div>
-  </div>
 
-  <div class="mb-3">
-    <label class="form-label">{{'upload.video.title' | translate}}</label>
-    <div class="input-group">
-      <input [(ngModel)]="videoId"
-             [disabled]="loading"
-             class="form-control"
-             name="videoId"
-             required
-             type="text">
-    </div>
-    <div class="form-text">{{'upload.video.details' | translate}}</div>
-  </div>
+        <div class="mb-3">
+          <div class="mb-3">
+            <label class="form-label">{{'upload.video.title' | translate}}</label>
+            <div class="input-group">
+              <input [(ngModel)]="videoId"
+                     [disabled]="loading"
+                     class="form-control"
+                     name="videoId"
+                     required
+                     type="text">
+            </div>
+            <div class="form-text">{{'upload.video.details' | translate}}</div>
+          </div>
+        </div>
 
-  <div class="row">
-    <div class="col">
-      <div class="mb-3">
-        <label class="form-label">{{'upload.name.title' | translate}}</label>
-        <div class="input-group">
-          <input [(ngModel)]="name"
-                 [disabled]="loading"
-                 class="form-control"
-                 min="0"
-                 name="name"
-                 required
-                 type="text">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="mb-3">
+              <label class="form-label">{{'upload.name.title' | translate}}</label>
+              <div class="input-group">
+                <input [(ngModel)]="name"
+                       [disabled]="loading"
+                       class="form-control"
+                       min="0"
+                       name="name"
+                       required
+                       type="text">
+              </div>
+              <div class="form-text">{{'upload.name.details' | translate}}</div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="mb-3">
+              <label class="form-label">{{'upload.details.title' | translate}}</label>
+              <div class="input-group">
+                <input [(ngModel)]="details"
+                       [disabled]="loading"
+                       class="form-control"
+                       name="delay"
+                       required
+                       type="text">
+              </div>
+              <div class="form-text">{{'upload.details.details' | translate}}</div>
+            </div>
+          </div>
         </div>
-        <div class="form-text">{{'upload.name.details' | translate}}</div>
       </div>
-    </div>
-    <div class="col">
-      <div class="mb-3">
-        <label class="form-label">{{'upload.details.title' | translate}}</label>
-        <div class="input-group">
-          <input [(ngModel)]="details"
-                 [disabled]="loading"
-                 class="form-control"
-                 name="delay"
-                 required
-                 type="text">
-        </div>
-        <div class="form-text">{{'upload.details.details' | translate}}</div>
+      <div class="col-4">
+        <img src="/assets/images/uploadHelper.png" width="350">
+        <!--
+        source: https://developers.google.com/ml-kit/vision/pose-detection
+        the image is under Creative Commons 4.0 (CC BY 4.0)
+        the colored parts are added to the image by me, and the original image is grayed out
+         -->
       </div>
     </div>
   </div>
@@ -90,7 +106,7 @@
 
   <div *ngFor="let sequence of sequence">
     <div class="row">
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="firstHalfArm">{{'upload.item.titles.arm.firstHalf' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -104,7 +120,7 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="firstFullArm">{{'upload.item.titles.arm.firstFull' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -121,7 +137,7 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="secondHalfArm">{{'upload.item.titles.arm.secondHalf' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -136,7 +152,7 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="secondFullArm">{{'upload.item.titles.arm.secondFull' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -154,7 +170,7 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="distanceArm">{{'upload.item.titles.arm.distance' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -177,7 +193,7 @@
     <br>
 
     <div class="row">
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="firstHalfLeg">{{'upload.item.titles.leg.firstHalf' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -191,7 +207,7 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="firstFullLeg">{{'upload.item.titles.leg.firstFull' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -208,7 +224,7 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="secondHalfLeg">{{'upload.item.titles.leg.secondHalf' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -223,7 +239,7 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="secondFullLeg">{{'upload.item.titles.leg.secondFull' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -241,7 +257,7 @@
           </select>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-auto">
         <label class="form-label" for="distanceLeg">{{'upload.item.titles.leg.distance' | translate}}</label>
         <div class="input-group">
           <app-sb-tooltip class="input-group-text"
@@ -267,8 +283,8 @@
       <br>
 
       <div class="row">
-        <div class="col"></div>
-        <div class="col">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2">
           <label class="form-label" for="errorDescription">{{'upload.item.titles.error.title' | translate}}</label>
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
@@ -281,7 +297,7 @@
                    type="test">
           </div>
         </div>
-        <div class="col">
+        <div class="col-lg-2">
           <label class="form-label" for="error">{{'upload.item.titles.error.type' | translate}}</label>
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
@@ -292,9 +308,9 @@
             </select>
           </div>
         </div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2">
           <app-sb-button (clicked)="removeError(error)" [disabled]="loading"
                          [translate]="'upload.item.buttons.error.remove'"></app-sb-button>
         </div>
@@ -303,8 +319,8 @@
       <br>
 
       <div class="row">
-        <div class="col"></div>
-        <div class="col">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2">
           <label class="form-label" for="firstHalfError">{{'upload.item.titles.error.firstHalf' | translate}}</label>
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
@@ -318,7 +334,7 @@
             </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col-lg-2">
           <label class="form-label" for="firstFullError">{{'upload.item.titles.error.firstFull' | translate}}</label>
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
@@ -336,7 +352,7 @@
             </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col-lg-2">
           <label class="form-label" for="secondHalfError">{{'upload.item.titles.error.secondHalf' | translate}}</label>
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
@@ -351,7 +367,7 @@
             </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col-lg-2">
           <label class="form-label" for="secondFullError">{{'upload.item.titles.error.secondFull' | translate}}</label>
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
@@ -369,7 +385,7 @@
             </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col-lg-2">
           <label class="form-label" for="distanceError">{{'upload.item.titles.error.distance' | translate}}</label>
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
@@ -395,15 +411,15 @@
     <br>
 
     <div class="row">
-      <div class="col"></div>
-      <div class="col">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-2">
         <app-sb-button (clicked)="addNewError(sequence.id)" [disabled]="loading"
                        [translate]="'upload.item.buttons.error.add'"></app-sb-button>
       </div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
+      <div class="col-lg-2"></div>
+      <div class="col-lg-2"></div>
+      <div class="col-lg-2"></div>
+      <div class="col-lg-2"></div>
     </div>
 
     <br>

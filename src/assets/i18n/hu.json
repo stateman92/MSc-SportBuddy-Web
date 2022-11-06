@@ -198,27 +198,27 @@
       },
       "info": {
         "arm": {
-          "firstHalf": "A jobb alkar és felkar közötti szög",
-          "firstFull": "A jobb felkar és a vállak által bezárt szög",
-          "secondHalf": "A bal alkar és felkar közötti szög",
-          "secondFull": "A bal felkar és a vállak által bezárt szög",
-          "distance": "A kézfejek közötti távolság egy egységhez képest. Az egység a csípő és a vállak távolsága"
+          "firstHalf": "A jobb alkar és felkar közötti szög - A1 az ábrán",
+          "firstFull": "A jobb felkar és a vállak által bezárt szög - A2 az ábrán",
+          "secondHalf": "A bal alkar és felkar közötti szög - A4 az ábrán",
+          "secondFull": "A bal felkar és a vállak által bezárt szög - A3 az ábrán",
+          "distance": "A kézfejek közötti távolság - D2 az ábrán (egy egységhez képest, ami a csípő és a vállak távolsága - U az ábrán)"
         },
         "leg": {
-          "firstHalf": "A jobb vádli és comb közötti szög",
-          "firstFull": "A jobb comb és a csípő vonala által bezárt szög",
-          "secondHalf": "A bal vádli és comb közötti szög",
-          "secondFull": "A bal comb és a csípő vonala által bezárt szög",
-          "distance": "A lábfejek közötti távolság egy egységhez képest. Az egység a csípő és a vállak távolsága"
+          "firstHalf": "A jobb vádli és comb közötti szög - L1 az ábrán",
+          "firstFull": "A jobb comb és a csípő vonala által bezárt szög - L2 az ábrán",
+          "secondHalf": "A bal vádli és comb közötti szög - L4 az ábrán",
+          "secondFull": "A bal comb és a csípő vonala által bezárt szög - L3 az ábrán",
+          "distance": "A lábfejek közötti távolság - D1 az ábrán (egy egységhez képest, ami a csípő és a vállak távolsága - U az ábrán)"
         },
         "error": {
           "title": "A hiba leírása",
           "type": "A hiba a kezekkel vagy a lábakkal történhetett",
-          "firstHalf": "A jobb alkar és felkar vagy a jobb vádli és comb közötti szög",
-          "firstFull": "A jobb felkar és a vállak által bezárt szög vagy a jobb comb és a csípő vonala által bezárt szög",
-          "secondHalf": "A bal alkar és felkar közötti szög vagy a bal vádli és comb közötti szög",
-          "secondFull": "A bal felkar és a vállak által bezárt szög vagy a bal comb és a csípő vonala által bezárt szög",
-          "distance": "A kézfejek vagy lábfejek közötti távolság egy egységhez képest. Az egység a csípő és a vállak távolsága"
+          "firstHalf": "A jobb alkar és felkar vagy a jobb vádli és comb közötti szög - A1 vagy L1 az ábrán",
+          "firstFull": "A jobb felkar és a vállak által bezárt szög vagy a jobb comb és a csípő vonala által bezárt szög - A2 vagy L2 az ábrán",
+          "secondHalf": "A bal alkar és felkar közötti szög vagy a bal vádli és comb közötti szög - A4 vagy L4 az ábrán",
+          "secondFull": "A bal felkar és a vállak által bezárt szög vagy a bal comb és a csípő vonala által bezárt szög - A3 vagy L3 az ábrán",
+          "distance": "A kézfejek vagy lábfejek közötti távolság - D1 vagy D1 az ábrán (egy egységhez képest, ami a csípő és a vállak távolsága - U az ábrán)"
         }
       },
       "na": "Nem számít"

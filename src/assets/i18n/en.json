@@ -198,27 +198,27 @@
       },
       "info": {
         "arm": {
-          "firstHalf": "Angle between the right forearm and the right upper arm",
-          "firstFull": "Angle between the right upper arm and the shoulders line",
-          "secondHalf": "Angle between the left forearm and the left upper arm",
-          "secondFull": "Angle between the left upper arm and the shoulders line",
-          "distance": "Distance between the end of the arms relative to a unit. The unit is the distance between the hip line and the shoulders line"
+          "firstHalf": "Angle between the right forearm and the right upper arm - A1 on figure",
+          "firstFull": "Angle between the right upper arm and the shoulders line - A2 on figure",
+          "secondHalf": "Angle between the left forearm and the left upper arm - A4 on figure",
+          "secondFull": "Angle between the left upper arm and the shoulders line - A3 on figure",
+          "distance": "Distance between the end of the arms - D2 on figure (relative to a unit which is the distance between the hip line and the shoulders line - U on figure)"
         },
         "leg": {
-          "firstHalf": "Angle between the right calf and the right thigh",
-          "firstFull": "Angle between the right thigh and the hips line",
-          "secondHalf": "Angle between the left calf and the left thigh",
-          "secondFull": "Angle between the left thigh and the hips line",
-          "distance": "Distance between the end of the legs relative to a unit. The unit is the distance between the hip line and the shoulders line"
+          "firstHalf": "Angle between the right calf and the right thigh - L1 on figure",
+          "firstFull": "Angle between the right thigh and the hips line - L2 on figure",
+          "secondHalf": "Angle between the left calf and the left thigh - L4 on figure",
+          "secondFull": "Angle between the left thigh and the hips line - L3 on figure",
+          "distance": "Distance between the end of the legs - D1 on figure (relative to a unit which is the distance between the hip line and the shoulders line - U on figure)"
         },
         "error": {
           "title": "The description of the error",
           "type": "Whether the error should appear with a match with the arms or the legs",
-          "firstHalf": "Angle between the right forearm and the right upper arm or the right calf and the right thigh",
-          "firstFull": "Angle between the right upper arm and the shoulders line or the right thigh and the hips line",
-          "secondHalf": "Angle between the left forearm and the left upper arm or the left calf and the left thigh",
-          "secondFull": "Angle between the left upper arm and the shoulders line or the left thigh and the hips line",
-          "distance": "Distance between the end of the arms or legs relative to a unit. The unit is the distance between the hip line and the shoulders line"
+          "firstHalf": "Angle between the right forearm and the right upper arm or the right calf and the right thigh - A1 or L1 on figure",
+          "firstFull": "Angle between the right upper arm and the shoulders line or the right thigh and the hips line - A2 or L2 on figure",
+          "secondHalf": "Angle between the left forearm and the left upper arm or the left calf and the left thigh - A4 or L4 on figure",
+          "secondFull": "Angle between the left upper arm and the shoulders line or the left thigh and the hips line - A3 or L3 on figure",
+          "distance": "Distance between the end of the arms or legs - D1 or D2 on figure (relative to a unit which is the distance between the hip line and the shoulders line - U on figure)"
         }
       },
       "na": "Doesn't matter"

@@ -24,7 +24,7 @@ import {SubmitComponent} from './components/input/submit.component';
 import {TooltipComponent} from './components/tooltip/tooltip.component';
 import {ExercisesComponent} from './modules/exercises/exercises.component';
 
-export const environment = Environment.prod;
+export const environment = Environment.dev;
 const appConfig = new AppConfigService(environment);
 
 function apiConfigFactory() {
