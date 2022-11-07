@@ -4,6 +4,7 @@ import {StorageService} from '../../services/storage/storage.service';
 import {RouterService} from '../../services/routing/router.service';
 // @ts-ignore
 import packageInfo from '../../../../package.json';
+import {environment} from '../../app.module';
 
 @Component({
   selector: 'app-version',
@@ -12,6 +13,7 @@ import packageInfo from '../../../../package.json';
 })
 export class VersionComponent extends BaseComponent implements OnInit {
   version: string = packageInfo.version;
+  env = environment;
 
   constructor(
     storageService: StorageService,

@@ -1,5 +1,5 @@
 export enum Environment {
-  mock,
-  dev,
-  prod
+  mock= "mock",
+  dev = "dev",
+  prod = "prod"
 }
