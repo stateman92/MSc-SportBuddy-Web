@@ -325,7 +325,10 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.firstHalf' | translate}}"></app-sb-tooltip>
-            <select [(ngModel)]="error.characteristics.firstHalfPositionType" class="form-select" id="firstHalfError">
+            <select [ngModel]="error.characteristics.firstHalfPositionType ?? 'null'"
+                    (ngModelChange)="error.characteristics.firstHalfPositionType = $event"
+                    class="form-select"
+                    id="firstHalfError">
               <option value="around0">{{'upload.item.half.around0' | translate}}</option>
               <option value="around45">{{'upload.item.half.around45' | translate}}</option>
               <option value="around90">{{'upload.item.half.around90' | translate}}</option>
@@ -339,7 +342,10 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.firstFull' | translate}}"></app-sb-tooltip>
-            <select [(ngModel)]="error.characteristics.firstFullPositionType" class="form-select" id="firstFullError">
+            <select [ngModel]="error.characteristics.firstFullPositionType ?? 'null'"
+                    (ngModelChange)="error.characteristics.firstFullPositionType = $event"
+                    class="form-select"
+                    id="firstFullError">
               <option value="around0">{{'upload.item.full.around0' | translate}}</option>
               <option value="around45">{{'upload.item.full.around45' | translate}}</option>
               <option value="around90">{{'upload.item.full.around90' | translate}}</option>
@@ -357,7 +363,10 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.secondHalf' | translate}}"></app-sb-tooltip>
-            <select [(ngModel)]="error.characteristics.secondHalfPositionType" class="form-select" id="secondHalfError">
+            <select [ngModel]="error.characteristics.secondHalfPositionType ?? 'null'"
+                    (ngModelChange)="error.characteristics.secondHalfPositionType = $event"
+                    class="form-select"
+                    id="secondHalfError">
               <option value="around0">{{'upload.item.half.around0' | translate}}</option>
               <option value="around45">{{'upload.item.half.around45' | translate}}</option>
               <option value="around90">{{'upload.item.half.around90' | translate}}</option>
@@ -372,7 +381,10 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.secondFull' | translate}}"></app-sb-tooltip>
-            <select [(ngModel)]="error.characteristics.secondFullPositionType" class="form-select" id="secondFullError">
+            <select [ngModel]="error.characteristics.secondFullPositionType ?? 'null'"
+                    (ngModelChange)="error.characteristics.secondFullPositionType = $event"
+                    class="form-select"
+                    id="secondFullError">
               <option value="around0">{{'upload.item.full.around0' | translate}}</option>
               <option value="around45">{{'upload.item.full.around45' | translate}}</option>
               <option value="around90">{{'upload.item.full.around90' | translate}}</option>
@@ -390,7 +402,10 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.distance' | translate}}"></app-sb-tooltip>
-            <select [(ngModel)]="error.characteristics.distanceType" class="form-select" id="distanceError">
+            <select [ngModel]="error.characteristics.distanceType ?? 'null'"
+                    (ngModelChange)="error.characteristics.distanceType = $event"
+                    class="form-select"
+                    id="distanceError">
               <option value="around0">{{'upload.item.distance.around0' | translate}}</option>
               <option value="around1">{{'upload.item.distance.around1' | translate}}</option>
               <option value="around2">{{'upload.item.distance.around2' | translate}}</option>
