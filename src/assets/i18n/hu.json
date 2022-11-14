@@ -74,11 +74,11 @@
   },
   "reset": {
     "title": "Jelszó visszaállítása",
-    "password":{
+    "password": {
       "title": "Jelszó:",
       "placeholder": "jelszó"
     },
-    "confirm":{
+    "confirm": {
       "title": "Jelszó megerősítése:",
       "placeholder": "jelszó"
     },

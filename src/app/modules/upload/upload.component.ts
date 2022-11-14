@@ -14,9 +14,9 @@ import {
 import {UuidService} from '../../services/uuid/uuid.service';
 import {AlertService} from '../../services/alert/alert.service';
 import {TranslationService} from '../../services/translation/translation.service';
-import {ActivatedRoute} from "@angular/router";
-import {ExercisesCacheService} from "../../services/cache/components/exercises.cache.service";
-import {RoutePaths} from "../../services/routing/components/route.paths";
+import {ActivatedRoute} from '@angular/router';
+import {ExercisesCacheService} from '../../services/cache/components/exercises.cache.service';
+import {RoutePaths} from '../../services/routing/components/route.paths';
 
 @Component({
   selector: 'app-upload',
@@ -45,7 +45,9 @@ export class UploadComponent extends BaseComponent implements OnInit {
   ) {
     super(storageService, routerService);
     this.id = this.activatedRoute.snapshot.paramMap.get('id')
-    const model = exercisesCacheService.get()?.find(item => { return item.id === this.id });
+    const model = exercisesCacheService.get()?.find(item => {
+      return item.id === this.id
+    });
     if (this.id === null) {
       this.id = this.uuidService.get();
     } else if (model !== null) {

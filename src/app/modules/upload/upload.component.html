@@ -325,8 +325,8 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.firstHalf' | translate}}"></app-sb-tooltip>
-            <select [ngModel]="error.characteristics.firstHalfPositionType ?? 'null'"
-                    (ngModelChange)="error.characteristics.firstHalfPositionType = $event"
+            <select (ngModelChange)="error.characteristics.firstHalfPositionType = $event"
+                    [ngModel]="error.characteristics.firstHalfPositionType ?? 'null'"
                     class="form-select"
                     id="firstHalfError">
               <option value="around0">{{'upload.item.half.around0' | translate}}</option>
@@ -342,8 +342,8 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.firstFull' | translate}}"></app-sb-tooltip>
-            <select [ngModel]="error.characteristics.firstFullPositionType ?? 'null'"
-                    (ngModelChange)="error.characteristics.firstFullPositionType = $event"
+            <select (ngModelChange)="error.characteristics.firstFullPositionType = $event"
+                    [ngModel]="error.characteristics.firstFullPositionType ?? 'null'"
                     class="form-select"
                     id="firstFullError">
               <option value="around0">{{'upload.item.full.around0' | translate}}</option>
@@ -363,8 +363,8 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.secondHalf' | translate}}"></app-sb-tooltip>
-            <select [ngModel]="error.characteristics.secondHalfPositionType ?? 'null'"
-                    (ngModelChange)="error.characteristics.secondHalfPositionType = $event"
+            <select (ngModelChange)="error.characteristics.secondHalfPositionType = $event"
+                    [ngModel]="error.characteristics.secondHalfPositionType ?? 'null'"
                     class="form-select"
                     id="secondHalfError">
               <option value="around0">{{'upload.item.half.around0' | translate}}</option>
@@ -381,8 +381,8 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.secondFull' | translate}}"></app-sb-tooltip>
-            <select [ngModel]="error.characteristics.secondFullPositionType ?? 'null'"
-                    (ngModelChange)="error.characteristics.secondFullPositionType = $event"
+            <select (ngModelChange)="error.characteristics.secondFullPositionType = $event"
+                    [ngModel]="error.characteristics.secondFullPositionType ?? 'null'"
                     class="form-select"
                     id="secondFullError">
               <option value="around0">{{'upload.item.full.around0' | translate}}</option>
@@ -402,8 +402,8 @@
           <div class="input-group">
             <app-sb-tooltip class="input-group-text"
                             text="{{'upload.item.info.error.distance' | translate}}"></app-sb-tooltip>
-            <select [ngModel]="error.characteristics.distanceType ?? 'null'"
-                    (ngModelChange)="error.characteristics.distanceType = $event"
+            <select (ngModelChange)="error.characteristics.distanceType = $event"
+                    [ngModel]="error.characteristics.distanceType ?? 'null'"
                     class="form-select"
                     id="distanceError">
               <option value="around0">{{'upload.item.distance.around0' | translate}}</option>

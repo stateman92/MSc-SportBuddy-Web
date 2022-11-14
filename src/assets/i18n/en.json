@@ -74,11 +74,11 @@
   },
   "reset": {
     "title": "Reset password",
-    "password":{
+    "password": {
       "title": "Password:",
       "placeholder": "password"
     },
-    "confirm":{
+    "confirm": {
       "title": "Confirm password:",
       "placeholder": "password"
     },
