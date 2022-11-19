@@ -1,6 +1,6 @@
 {
   "name": "sportbuddyweb",
-  "version": "1.0.18",
+  "version": "1.1.0",
   "browser": {
     "fs": false,
     "os": false,
@@ -24,7 +24,7 @@
     "@angular/compiler": "14.2.7",
     "@angular/compiler-cli": "14.2.7",
     "@angular/core": "14.2.7",
-    "@angular/flex-layout": "^14.0.0-beta.41",
+    "@angular/flex-layout": "14.0.0-beta.41",
     "@angular/forms": "14.2.7",
     "@angular/material": "14.2.5",
     "@angular/platform-browser": "14.2.7",
@@ -45,7 +45,7 @@
     "zone.js": "0.11.8"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "14.2.6",
+    "@angular-devkit/build-angular": "14.2.10",
     "@angular-eslint/builder": "14.1.2",
     "@angular-eslint/eslint-plugin": "14.1.2",
     "@angular-eslint/eslint-plugin-template": "14.1.2",
