@@ -8,7 +8,14 @@ describe('UuidService', () => {
   });
 
   it('.get should return a valid uuid value', () => {
+    // Given
+
     const regex = new RegExp('^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$');
+
+    // When
+
+    // Then
+
     expect(service.get()).toMatch(regex);
   });
 });

@@ -12,14 +12,28 @@ describe('StorageService', () => {
   });
 
   it('.get() should return a null value', () => {
+    // Given
+
+    // When
+
+    // Then
+
     expect(service.get(StorageKeys.token)).toBe(null);
   });
 
   it('.get() should return a null value, and after that a non-null value', () => {
+    // Given
+
     const key = StorageKeys.token;
-    expect(service.get(key)).toBe(null);
     let uuid = (new UuidService(new RegexService())).get();
+    expect(service.get(key)).toBe(null);
+
+    // When
+
     service.set(key, uuid);
+
+    // Then
+
     expect(service.get(key)).toBe(uuid);
   });
 
